@@ -7,6 +7,7 @@ use common\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -16,19 +17,28 @@ class UserController extends Controller
     /**
      * @inheritDoc
      */
+    
     public function behaviors()
     {
-        return array_merge(
-            parent::behaviors(),
-            [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['admin'], // Apenas permite utilizadores com o role 'admin'
                     ],
+                    // Todas as outras tentativas (incluindo 'viajante' e '?' - convidados)
+                    // serão negadas por defeito.
                 ],
-            ]
-        );
+            ],
+            'verbs' => [ // Este bloco já cá estava, gerado pelo Gii
+                'class' => \yii\filters\VerbFilter::class,
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
     }
 
     /**

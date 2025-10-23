@@ -48,7 +48,7 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
-        
+
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
@@ -56,9 +56,27 @@ class SignupForm extends Model
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
 
-        return $user->save() && $this->sendEmail($user);
-    }
+        // Salva o utilizador E, se for sucesso, atribui o role
+        if ($user->save()) {
 
+            // ---- INÍCIO DO CÓDIGO ADICIONADO ----
+
+            // 1. Obter o gestor de RBAC
+            $auth = Yii::$app->authManager;
+
+            // 2. Obter o role "viajante" que criámos
+            $viajanteRole = $auth->getRole('viajante');
+
+            // 3. Atribuir esse role ao ID do utilizador que acabámos de criar
+            $auth->assign($viajanteRole, $user->getId());
+
+            // ---- FIM DO CÓDIGO ADICIONADO ----
+
+            return $user;
+        }
+
+        return null;
+    }
     /**
      * Sends confirmation email to user
      * @param User $user user model to with email should be send
