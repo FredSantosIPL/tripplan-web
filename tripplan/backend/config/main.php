@@ -12,14 +12,14 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
-    'components' => [
-        'view' => [
-            'theme' => [
-                'pathMap' => [
-                    '@backend/views' => '@vendor/hail812/yii2-adminlte3/src/views'
-                ],
-            ],
-        ],
+    'components' => [ // <-- ARRAY DE COMPONENTES COMEÇA AQUI
+        //'view' => [
+        //    'theme' => [
+        //        'pathMap' => [
+        //            '@backend/views' => '@vendor/hail812/yii2-adminlte3/src/views'
+        //        ],
+        //    ],
+        //],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
@@ -52,6 +52,6 @@ return [
             ],
         ],
         */
-    ],
+    ], // <-- ARRAY DE COMPONENTES FECHA AQUI
     'params' => $params,
 ];
