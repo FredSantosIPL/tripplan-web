@@ -17,7 +17,7 @@ class UserController extends Controller
     /**
      * @inheritDoc
      */
-    
+
     public function behaviors()
     {
         return [
