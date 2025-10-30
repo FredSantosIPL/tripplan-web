@@ -3,7 +3,7 @@
 use yii\db\Migration;
 use common\models\User;
 
-class m251030_210950_create_admin_user extends Migration
+class m251030_210950_create_admin_utilizador extends Migration
 {
     public function safeUp()
     {
