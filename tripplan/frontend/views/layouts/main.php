@@ -102,7 +102,7 @@
 <div class="container-fluid p-0">
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            
+
             <?= $content ?>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
                 <div class="team-item bg-white mb-4">
