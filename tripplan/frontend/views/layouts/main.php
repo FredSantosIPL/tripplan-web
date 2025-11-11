@@ -74,22 +74,25 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <?php use yii\helpers\Url; // Certifique-se que esta linha está no TOPO do ficheiro main.php ?>
+
                 <div class="navbar-nav ml-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="package.html" class="nav-item nav-link">Tour Packages</a>
+                    <a href="<?= Url::to(['/site/index']) ?>" class="nav-item nav-link active">Home</a>
+                    <a href="<?= Url::to(['/site/about']) ?>" class="nav-item nav-link">About</a>
+                    <a href="<?= Url::to(['/site/services']) ?>" class="nav-item nav-link">Services</a>
+                    <a href="<?= Url::to(['/site/packages']) ?>" class="nav-item nav-link">Tour Packages</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                            <a href="destination.html" class="dropdown-item">Destination</a>
-                            <a href="guide.html" class="dropdown-item">Travel Guides</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="<?= Url::to(['/blog/index']) ?>" class="dropdown-item">Blog Grid</a>
+                            <a href="<?= Url::to(['/blog/single']) ?>" class="dropdown-item">Blog Detail</a>
+                            <a href="<?= Url::to(['/destination/index']) ?>" class="dropdown-item">Destination</a>
+                            <a href="<?= Url::to(['/guide/index']) ?>" class="dropdown-item">Travel Guides</a>
+                            <a href="<?= Url::to(['/site/testimonial']) ?>" class="dropdown-item">Testimonial</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contact</a>
+
                 </div>
             </div>
         </nav>
