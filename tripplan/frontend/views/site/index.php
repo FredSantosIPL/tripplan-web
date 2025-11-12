@@ -12,7 +12,7 @@ $baseUrl = Yii::$app->request->baseUrl; // Atalho para os caminhos
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                        <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
+                        <h1 class="display-3 text-white mb-md-4">Let's Plan a Trip</h1>
                         <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ $baseUrl = Yii::$app->request->baseUrl; // Atalho para os caminhos
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
-                        <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
+                        <h1 class="display-3 text-white mb-md-4">Let's Plan a Trip</h1>
                         <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                     </div>
                 </div>
@@ -40,55 +40,7 @@ $baseUrl = Yii::$app->request->baseUrl; // Atalho para os caminhos
         </a>
     </div>
 </div>
-<div class="container-fluid booking mt-5 pb-5">
-    <div class="container pb-5">
-        <div class="bg-light shadow" style="padding: 30px;">
-            <div class="row align-items-center" style="min-height: 60px;">
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected>Destination</option>
-                                    <option value="1">Destination 1</option>
-                                    <option value="2">Destination 1</option>
-                                    <option value="3">Destination 1</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <div class="date" id="date1" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected>Duration</option>
-                                    <option value="1">Duration 1</option>
-                                    <option value="2">Duration 1</option>
-                                    <option value="3">Duration 1</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="container-fluid py-5">
     <div class="container pt-5">
         <div class="row">
@@ -101,7 +53,7 @@ $baseUrl = Yii::$app->request->baseUrl; // Atalho para os caminhos
                 <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
                     <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
-                    <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                    <p>Our agents make sure to create the most fun and diverse tour packages for all your needs.</p>
                     <div class="row mb-4">
                         <div class="col-6">
                             <img class="img-fluid" src="<?= $baseUrl ?>/img/about-1.jpg" alt="">
