@@ -1,3 +1,10 @@
+<?php
+use yii\helpers\Html; // **ADICIONADO:** Necessário para o formulário de Logout
+use yii\helpers\Url;
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\NavBar;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,31 +39,47 @@
     <div class="container-lg position-relative p-0" style="z-index: 9;">
         <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
 
-            <a href="" class="navbar-brand">
+            <a href="<?= Url::to(['/site/index']) ?>" class="navbar-brand">
                 <img src="img/logo.png" alt="logo" class=" w-25">
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                <?php use yii\helpers\Url; // Certifique-se que esta linha está no TOPO do ficheiro main.php ?>
-
                 <div class="navbar-nav ml-auto py-0">
+
+                    <a href="<?= Url::to(['/site/search']) ?>" class="nav-item nav-link">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <a href="<?= Url::to(['/user/favorites']) ?>" class="nav-item nav-link">
+                        <i class="fa fa-heart"></i>
+                    </a>
                     <a href="<?= Url::to(['/site/index']) ?>" class="nav-item nav-link active">Home</a>
-                    <a href="<?= Url::to(['/site/about']) ?>" class="nav-item nav-link">About</a>
-                    <a href="<?= Url::to(['/site/services']) ?>" class="nav-item nav-link">Services</a>
-                    <a href="<?= Url::to(['/site/signup']) ?>" class="nav-item nav-link">Signup</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="<?= Url::to(['/blog/index']) ?>" class="dropdown-item">Blog Grid</a>
-                            <a href="<?= Url::to(['/blog/single']) ?>" class="dropdown-item">Blog Detail</a>
-                            <a href="<?= Url::to(['/destination/index']) ?>" class="dropdown-item">Destination</a>
-                            <a href="<?= Url::to(['/guide/index']) ?>" class="dropdown-item">Travel Guides</a>
-                            <a href="<?= Url::to(['/site/testimonial']) ?>" class="dropdown-item">Testimonial</a>
-                        </div>
-                    </div>
+                    
+                    <a href="<?= Url::to(['/site/trip']) ?>" class="nav-item nav-link ">Trip</a>
+                    <a href="<?= Url::to(['/site/stay']) ?>" class="nav-item nav-link ">Stay</a>
+                    <a href="<?= Url::to(['/site/activities']) ?>" class="nav-item nav-link ">Activities</a>
+
                     <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contact</a>
+
+
+                    <?php if (Yii::$app->user->isGuest): ?>
+                        <a href="<?= Url::to(['/site/signup']) ?>" class="nav-item nav-link">Signup</a>
+                        <a href="<?= Url::to(['/site/login']) ?>" class="nav-item nav-link">Login</a>
+                    <?php else: ?>
+                        <?php
+                        echo Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline m-0'])
+                            . Html::submitButton(
+                                'Logout (' . Yii::$app->user->identity->username . ')',
+                                ['class' => 'nav-item nav-link btn btn-link logout p-0']
+                            )
+                            . Html::endForm();
+                        ?>
+                    <?php endif; ?>
+
+
+
+
 
                 </div>
             </div>
