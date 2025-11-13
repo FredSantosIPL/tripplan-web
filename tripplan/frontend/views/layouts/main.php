@@ -46,6 +46,7 @@
                     <a href="<?= Url::to(['/site/about']) ?>" class="nav-item nav-link">About</a>
                     <a href="<?= Url::to(['/site/services']) ?>" class="nav-item nav-link">Services</a>
                     <a href="<?= Url::to(['/site/signup']) ?>" class="nav-item nav-link">Signup</a>
+                    <a href="<?= Url::to(['/site/login']) ?>" class="nav-item nav-link">Login</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu border-0 rounded-0 m-0">
