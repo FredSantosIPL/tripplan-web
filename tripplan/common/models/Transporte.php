@@ -14,7 +14,7 @@ use Yii;
  * @property string $destino
  * @property string $data_partida
  *
- * @property PlanoViagem $planoViagem
+ * @property PlanoViagem $plano-viagem
  */
 class Transporte extends \yii\db\ActiveRecord
 {

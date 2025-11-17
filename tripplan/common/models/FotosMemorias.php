@@ -12,7 +12,7 @@ use Yii;
  * @property int $plano_viagem_id
  * @property string $comentario
  *
- * @property PlanoViagem $planoViagem
+ * @property PlanoViagem $plano-viagem
  * @property User $user
  */
 class FotosMemorias extends \yii\db\ActiveRecord
