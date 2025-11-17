@@ -35,12 +35,8 @@
             <?php
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
-                    [
-                        'label' => 'Manage Users',
-                        'icon' => 'users',
-                        'url' => ['/user/index'],
-                    ],
-                    ['label' => 'Manage Plans', 'icon' => 'list', 'url' => ['/plan/index']],
+                    ['label' => 'Manage Users', 'icon' => 'users', 'url' => ['/user/index']],
+                    ['label' => 'Manage Plans', 'icon' => 'list', 'url' => ['/plano-viagem/index']],
 
                     ['label' => 'Yii2 PROVIDED', 'header' => true],
                     ['label' => 'Login', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],
@@ -48,10 +44,11 @@
                     ['label' => 'Debug', 'icon' => 'bug', 'url' => ['/debug'], 'target' => '_blank'],
 
                     ['label' => 'Manage the various planning stuff', 'header' => true],
-                    ['label' => 'Stays', 'icon' => 'home', 'url' => ['/stay/index']],
-                    ['label' => 'Places', 'icon' => 'map', 'url' => ['/place/index']],
-                    ['label' => 'Activities', 'icon' => 'list', 'url' => ['/activity/index']],
-                    ['label' => 'cost', 'icon' => 'euro', 'url' => ['/cost/index']]
+                    ['label' => 'Destinations', 'icon' => 'plane', 'url' => ['/destino/index']],
+                    ['label' => 'Stays', 'icon' => 'home', 'url' => ['/estadia/index']],
+                    ['label' => 'Activities', 'icon' => 'list', 'url' => ['/atividade/index']],
+                    ['label' => 'Costs', 'icon' => 'money-bill', 'url' => ['/despesa/index']],
+                    ['label' => 'Transport', 'icon' => 'bus', 'url' => ['/transporte/index']]
 
                 ],
             ]);
