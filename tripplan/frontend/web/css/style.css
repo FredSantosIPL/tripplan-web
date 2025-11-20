@@ -62,6 +62,7 @@ body {
   color: #656565;
   text-align: left;
   background-color: #F3F3F3;
+  padding: 100px;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -603,6 +604,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  padding: 80px
 }
 
 @media (min-width: 576px) {
@@ -4015,6 +4017,7 @@ input[type="button"].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .navbar-brand {

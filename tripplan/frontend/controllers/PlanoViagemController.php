@@ -31,7 +31,7 @@ class PlanoViagemController extends Controller
                             'roles' => ['@'], // Usuários logados
                         ],
                     ],
-                    
+
                     'denyCallback' => function ($rule, $action) {
                         return $this->redirect(['/site/login']);
                     },

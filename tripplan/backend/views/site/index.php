@@ -65,7 +65,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-plane"></i>
                     </div>
 
-                    <a href="<?= Url::to(['/trip/index']) ?>" class="small-box-footer">
+                    <a href="<?= Url::to(['/plano-viagem/index']) ?>" class="small-box-footer">
                         View Trips <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
