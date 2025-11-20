@@ -59,21 +59,19 @@ class SignupForm extends Model
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
 
-        // Salva o utilizador E, se for sucesso, atribui o role
+
         if ($user->save()) {
 
-            // ---- INÍCIO DO CÓDIGO ADICIONADO ----
 
-            // 1. Obter o gestor de RBAC
             $auth = Yii::$app->authManager;
 
-            // 2. Obter o role "viajante" que criámos
-            $viajanteRole = $auth->getRole('viajante');
 
-            // 3. Atribuir esse role ao ID do utilizador que acabámos de criar
-            $auth->assign($viajanteRole, $user->getId());
+            $authorRole = $auth->getRole('viajante');
 
-            // ---- FIM DO CÓDIGO ADICIONADO ----
+
+            $auth->assign($authorRole, $user->getId());
+
+
 
             return $user;
         }

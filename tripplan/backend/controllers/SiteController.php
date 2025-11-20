@@ -3,11 +3,13 @@
 namespace backend\controllers;
 
 use common\models\LoginForm;
+use common\models\PlanoViagem;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
+
 
 /**
  * Site controller
@@ -21,21 +23,32 @@ class SiteController extends Controller
     {
         return [
             'access' => [
-                'class' => AccessControl::class,
+                'class' => \yii\filters\AccessControl::class,
                 'rules' => [
+                    // 1. Login e Error: Permitido a todos (convidados e logados)
                     [
                         'actions' => ['login', 'error'],
                         'allow' => true,
                     ],
+
+                    // 2. Logout: Permitido a qualquer utilizador autenticado (@)
+                    // Isto resolve o teu problema. Não importa o role, se está logado, pode sair.
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
+                    ],
+
+                    // 3. Index (Dashboard): Restrito apenas a Agentes (e Admins por herança)
+                    [
+                        'actions' => ['index'],
+                        'allow' => true,
+                        'roles' => ['agente'],
                     ],
                 ],
             ],
             'verbs' => [
-                'class' => VerbFilter::class,
+                'class' => \yii\filters\VerbFilter::class,
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -62,7 +75,24 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        // 1. Count total users
+        $totalUsers = \common\models\User::find()->count();
+
+        // 2. Count agents only (using the assignment table)
+        // This performs a join to count how many users have the 'agente' role
+        $totalAgents = \common\models\User::find()
+            ->alias('u')
+            ->innerJoin('auth_assignment a', 'a.user_id = u.id')
+            ->where(['a.item_name' => 'agente'])
+            ->count();
+
+        $totalTrips = PlanoViagem::find()->count();
+
+        return $this->render('index', [
+            'totalUsers' => $totalUsers,
+            'totalAgents' => $totalAgents,
+            'totalTrips' => $totalTrips, // <--- Send variable to view
+        ]);
     }
 
     /**

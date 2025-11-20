@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use Yii;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -140,5 +141,32 @@ class UserController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    /**
+     * Promove um utilizador a Agente de Viagens
+     */
+    public function actionPromote($id)
+    {
+        $auth = Yii::$app->authManager;
+        $agenteRole = $auth->getRole('agente');
+
+        // 1. Verificar se o role existe
+        if (!$agenteRole) {
+            Yii::$app->session->setFlash('error', 'O role "agente" não existe.');
+            return $this->redirect(['index']);
+        }
+
+        // 2. Limpar roles antigos (opcional, mas recomendado para não ser Cliente e Agente ao mesmo tempo)
+        // CUIDADO: Isto remove também se ele for Admin.
+        // Se quiseres apenas remover cliente, terias de usar $auth->revoke($clienteRole, $id);
+        $auth->revokeAll($id);
+
+        // 3. Atribuir o novo role
+        $auth->assign($agenteRole, $id);
+
+        Yii::$app->session->setFlash('success', 'Utilizador promovido a Agente com sucesso.');
+
+        return $this->redirect(['index']);
     }
 }

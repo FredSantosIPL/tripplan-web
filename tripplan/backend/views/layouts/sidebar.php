@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="index.php" class="brand-link">
         <img src="<?=$assetDir?>/img/tripplan.png" alt="TripPlan Logo" class="brand-image img-circle elevation-3" style="background-color: white;">
         <span class="brand-text font-weight-light">TripPlan</span>
     </a>
@@ -13,7 +13,9 @@
                 <img src="<?=$assetDir?>/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Admin (Mudar depois)</a>
+                <a href="#" class="d-block">
+                    <?= Yii::$app->user->identity->username ?>
+                </a>
             </div>
         </div>
 
@@ -35,8 +37,8 @@
             <?php
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
-                    ['label' => 'Manage Users', 'icon' => 'users', 'url' => ['/user/index']],
-                    ['label' => 'Manage Plans', 'icon' => 'list', 'url' => ['/plano-viagem/index']],
+                    ['label' => 'Manage Users', 'icon' => 'users', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
+                    ['label' => 'Manage Trips', 'icon' => 'list', 'url' => ['/plano-viagem/index']],
 
                     ['label' => 'Yii2 PROVIDED', 'header' => true],
                     ['label' => 'Login', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],
