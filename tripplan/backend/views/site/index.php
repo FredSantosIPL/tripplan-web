@@ -1,53 +1,76 @@
 <?php
 
-/** @var yii\web\View $this */
+use yii\helpers\Html;
+use yii\helpers\Url;
 
-$this->title = 'My Yii Application';
+$this->title = 'Dashboard';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-index">
 
-    <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations!</h1>
+    <div class="jumbotron text-center bg-white shadow-sm pt-4 pb-4">
+        <h1 class="display-4">Hello, <?= Html::encode(Yii::$app->user->identity->username) ?>!</h1>
+        <p class="lead">Welcome to the <b>TripPlan</b> management dashboard.</p>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
+        <?php if (Yii::$app->user->can('admin')): ?>
+            <p class="text-muted"><small>You have Administrator permissions.</small></p>
+        <?php else: ?>
+            <p class="text-muted"><small>Travel Agent Dashboard.</small></p>
+        <?php endif; ?>
     </div>
 
-    <div class="body-content">
-
+    <div class="body-content mt-5">
         <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+            <?php if (Yii::$app->user->can('admin')): ?>
+                <div class="col-lg-4 col-xs-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3><?= $totalUsers ?></h3>
+                            <p>Registered Users</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <a href="<?= Url::to(['/user/index']) ?>" class="small-box-footer">
+                            Manage Users <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            <?php endif; ?>
 
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3><?= $totalAgents ?></h3>
+                        <p>Travel Agents</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">
+                        View Team <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+            <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3><?= $totalTrips ?></h3>
 
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                        <p>Planned Trips</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-plane"></i>
+                    </div>
+
+                    <a href="<?= Url::to(['/trip/index']) ?>" class="small-box-footer">
+                        View Trips <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
         </div>
-
     </div>
 </div>
