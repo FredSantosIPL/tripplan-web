@@ -36,7 +36,7 @@ use yii\bootstrap4\NavBar;
 <body>
 <!-- Navbar Start -->
 <div class="container-fluid position-relative nav-bar p-0">
-    <div class=" position-relative p-0" style="z-index: 9;">
+    <div class="container-fluid position-relative p-0" style="z-index: 9;">
         <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
 
             <a href="<?= Url::to(['/site/index']) ?>" class="navbar-brand">
