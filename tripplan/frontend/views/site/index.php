@@ -1,7 +1,9 @@
 <?php
+
 /** @var yii\web\View $this */
 $this->title = 'TripPlan Home'; // Define o título da página
 $baseUrl = Yii::$app->request->baseUrl; // Atalho para os caminhos
+use yii\helpers\Url;
 ?>
 
 <div class="container-fluid p-0">
@@ -13,7 +15,7 @@ $baseUrl = Yii::$app->request->baseUrl; // Atalho para os caminhos
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
                         <h1 class="display-3 text-white mb-md-4">Let's Plan a Trip</h1>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                        <a href="<?= Url::to(['/plano-viagem/index']) ?>" class="btn btn-primary py-md-3 px-md-5 mt-2">Plan Trip</a>
                     </div>
                 </div>
             </div>

@@ -55,10 +55,14 @@ use yii\bootstrap4\NavBar;
                         <i class="fa fa-heart"></i>
                     </a>
                     <a href="<?= Url::to(['/site/index']) ?>" class="nav-item nav-link active">Home</a>
-                    
-                    <a href="<?= Url::to(['/site/trip']) ?>" class="nav-item nav-link ">Trip</a>
-                    <a href="<?= Url::to(['/site/stay']) ?>" class="nav-item nav-link ">Stay</a>
-                    <a href="<?= Url::to(['/site/activities']) ?>" class="nav-item nav-link ">Activities</a>
+
+                    <?php if (!Yii::$app->user->isGuest): ?>
+
+                        <a href="<?= Url::to(['/plano-viagem/index']) ?>" class="nav-item nav-link ">Trip</a>
+                        <a href="<?= Url::to(['/estadia/index']) ?>" class="nav-item nav-link ">Stay</a>
+                        <a href="<?= Url::to(['/atividade/index']) ?>" class="nav-item nav-link ">Activities</a>
+
+                    <?php endif; ?>
 
                     <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contact</a>
 
@@ -76,11 +80,6 @@ use yii\bootstrap4\NavBar;
                             . Html::endForm();
                         ?>
                     <?php endif; ?>
-
-
-
-
-
                 </div>
             </div>
         </nav>
@@ -95,23 +94,8 @@ use yii\bootstrap4\NavBar;
         <div class="carousel-inner">
 
             <?= $content ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                <div class="team-item bg-white mb-4">
-                    <div class="team-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
-                        <div class="team-social">
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <h5 class="text-truncate">Guide Name</h5>
-                        <p class="m-0">Designation</p>
-                    </div>
-                </div>
-            </div>
+
+
         </div>
     </div>
 </div>

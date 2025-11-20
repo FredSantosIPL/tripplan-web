@@ -4,12 +4,12 @@ namespace common\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Transporte;
+use common\models\Review;
 
 /**
- * TransporteSearch represents the model behind the search form of `common\models\Transporte`.
+ * ReviewSearch represents the model behind the search form of `common\models\Review`.
  */
-class TransporteSearch extends Transporte
+class ReviewSearch extends Review
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class TransporteSearch extends Transporte
     public function rules()
     {
         return [
-            [['id', 'plano_viagem_id'], 'integer'],
-            [['tipo', 'origem', 'destino', 'data_partida'], 'safe'],
+            [['id', 'utilizador_id', 'destino_id', 'classificacao'], 'integer'],
+            [['comentario'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class TransporteSearch extends Transporte
      */
     public function search($params, $formName = null)
     {
-        $query = Transporte::find();
+        $query = Review::find();
 
         // add conditions that should always apply here
 
@@ -60,13 +60,12 @@ class TransporteSearch extends Transporte
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'plano_viagem_id' => $this->plano_viagem_id,
-            'data_partida' => $this->data_partida,
+            'utilizador_id' => $this->utilizador_id,
+            'destino_id' => $this->destino_id,
+            'classificacao' => $this->classificacao,
         ]);
 
-        $query->andFilterWhere(['like', 'tipo', $this->tipo])
-            ->andFilterWhere(['like', 'origem', $this->origem])
-            ->andFilterWhere(['like', 'destino', $this->destino]);
+        $query->andFilterWhere(['like', 'comentario', $this->comentario]);
 
         return $dataProvider;
     }
