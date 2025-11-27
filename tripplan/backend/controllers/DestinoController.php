@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use common\models\Destino;
 use common\models\DestinoSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -68,6 +69,8 @@ class DestinoController extends Controller
     public function actionCreate()
     {
         $model = new Destino();
+
+        $model->agente_viagem_id = Yii::$app->user->identity->id;
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
