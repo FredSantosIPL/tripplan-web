@@ -36,7 +36,7 @@ use yii\bootstrap4\NavBar;
 <body>
 <!-- Navbar Start -->
 <div class="container-fluid position-relative nav-bar p-0">
-    <div class=" position-relative p-0" style="z-index: 9;">
+    <div class="container-fluid position-relative p-0" style="z-index: 9;">
         <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
 
             <a href="<?= Url::to(['/site/index']) ?>" class="navbar-brand">
@@ -45,36 +45,39 @@ use yii\bootstrap4\NavBar;
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
 
-                    <a href="<?= Url::to(['/site/search']) ?>" class="nav-item nav-link">
-                        <i class="fa fa-search"></i>
-                    </a>
                     <a href="<?= Url::to(['/user/favorites']) ?>" class="nav-item nav-link">
                         <i class="fa fa-heart"></i>
                     </a>
-                    <a href="<?= Url::to(['/site/index']) ?>" class="nav-item nav-link active">Home</a>
 
-                    <?php if (!Yii::$app->user->isGuest): ?>
+                        <a href="<?= Url::to(['/plano-viagem/index']) ?>" class="nav-item nav-link ">Viagem</a>
+                        <a href="<?= Url::to(['/estadia/index']) ?>" class="nav-item nav-link ">Estadia</a>
+                        <a href="<?= Url::to(['/atividade/index']) ?>" class="nav-item nav-link ">Actividades</a>
 
-                        <a href="<?= Url::to(['/plano-viagem/index']) ?>" class="nav-item nav-link ">Trip</a>
-                        <a href="<?= Url::to(['/estadia/index']) ?>" class="nav-item nav-link ">Stay</a>
-                        <a href="<?= Url::to(['/atividade/index']) ?>" class="nav-item nav-link ">Activities</a>
 
-                    <?php endif; ?>
+                    <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contactos</a>
 
-                    <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contact</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu border-0 m-0">
+
 
 
                     <?php if (Yii::$app->user->isGuest): ?>
                         <a href="<?= Url::to(['/site/signup']) ?>" class="nav-item nav-link">Signup</a>
-                        <a href="<?= Url::to(['/site/login']) ?>" class="nav-item nav-link">Login</a>
+                        <a href="<?= Url::to(['/site/login']) ?>" class="dropdown-item" data-toggle="modal"
+                           data-target="#login-modal">Login</a>
+                        <a href="<?= Url::to(['/']) ?>" class="nav-item nav-link">Perfil</a>
                     <?php else: ?>
                         <?php
                         echo Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline m-0'])
                             . Html::submitButton(
-                                'Logout (' . Yii::$app->user->identity->username . ')',
+                                'Logout',
                                 ['class' => 'nav-item nav-link btn btn-link logout p-0']
                             )
                             . Html::endForm();
@@ -101,73 +104,36 @@ use yii\bootstrap4\NavBar;
 </div>
 
 
-
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
     <div class="row pt-5">
         <div class="col-lg-3 col-md-6 mb-5">
             <a href="" class="navbar-brand">
-                <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
+                <h1 class="text-primary"><span class="text-white">Trip</span>Plan</h1>
             </a>
-            <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
-            <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
-            <div class="d-flex justify-content-start">
-                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+            <p>Organize as suas viagens de forma mais eficiente com a TripPlan. A nossa plataforma intuitiva
+                permite planear destinos, estadias, transportes e atividades , tudo num só sistema integrado.</p>
+
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Our Services</h5>
+            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Serviços</h5>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Destination</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Packages</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Guides</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Testimonial</a>
-                <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+                <a class="text-white-50 mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Login</a>
+                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Signup</a>
+                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contactos</a>
+                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Perfil</a>
+
             </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Usefull Links</h5>
+            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Viagem</h5>
             <div class="d-flex flex-column justify-content-start">
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Destination</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Services</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Packages</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Guides</a>
-                <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Testimonial</a>
-                <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+                <a class="text-white-50 mb-2" href="<?= Url::to(['/plano-viagem/index']) ?>"><i class="fa fa-angle-right mr-2"></i>Planos Viagem</a>
+                <a class="text-white-50 mb-2" href="<?= Url::to(['/estadia/index']) ?>"><i class="fa fa-angle-right mr-2"></i>Estadia</a>
+                <a class="text-white-50 mb-2" href="<?= Url::to(['/atividade/index']) ?>"><i class="fa fa-angle-right mr-2"></i>Atividades</a>
+
+
             </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contact Us</h5>
-            <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
-            <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-            <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
-            <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Newsletter</h6>
-            <div class="w-100">
-                <div class="input-group">
-                    <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary px-3">Sign Up</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-    <div class="row">
-        <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-            <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</a>
-            </p>
-        </div>
-        <div class="col-lg-6 text-center text-md-right">
-            <p class="m-0 text-white-50">Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-            </p>
         </div>
     </div>
 </div>
@@ -193,6 +159,30 @@ use yii\bootstrap4\NavBar;
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+
+<! janela do login -->
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Aceder à TripPlan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <p class="small text-center w-100">
+                    Não tem conta? <a href="<?= Url::to(['/site/signup']) ?>">Registar aqui</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 
 </html>
