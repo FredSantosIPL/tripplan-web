@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\LoginForm;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -10,7 +11,6 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -89,28 +89,33 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $model = new LoginForm();
+        $model = new \common\models\LoginForm();
+
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            if (Yii::$app->request->isAjax) {
+                return 'success';
+            }
             return $this->goBack();
+        }else{
+            if (Yii::$app->request->isAjax) {
+                return $this->renderPartial('_loginForm', [
+                    'model' => $model,
+                ]);
+            }
         }
 
-        $model->password = '';
 
+        if (Yii::$app->request->isAjax) {
+            return $this->renderPartial('_loginForm', [
+                'model' => $model,
+            ]);
+        }
+
+        // 4. Acesso direto pela url (sem modal)
+        $model->password = '';
         return $this->render('login', [
             'model' => $model,
         ]);
-    }
-
-    /**
-     * Logs out the current user.
-     *
-     * @return mixed
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
     }
 
     /**
@@ -255,5 +260,12 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
     }
 }

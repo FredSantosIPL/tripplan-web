@@ -160,8 +160,8 @@ use yii\bootstrap4\NavBar;
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
 
-<! janela do login -->
 
+<!-- janela do login -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -182,6 +182,22 @@ use yii\bootstrap4\NavBar;
     </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $('#login-modal').on('show.bs.modal', function (e) {
+            var modal = $(this);
+            // Carrega o conteúdo do formulário de login usando AJAX
+            modal.find('.modal-body').load('<?= Url::to(['site/login']) ?>', function() {
+                // Se você quiser que o login.php apenas retorne o formulário,
+                // você precisa mudar a actionLogin no Controller para apenas renderizar o parcial:
+                // return $this->renderPartial('_loginForm', ['model' => $model]);
+
+                // Alternativamente, se o seu site/login retornar o layout completo, você pode precisar de extrair apenas o formulário.
+                // A melhor prática é fazer com que a Action retorne APENAS o formulário.
+            });
+        });
+    });
+</script>
 
 </body>
 
