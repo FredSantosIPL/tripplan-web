@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use common\models\Destino;
 
 /** @var yii\web\View $this */
 /** @var common\models\Atividade $model */
@@ -12,7 +14,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'destino_id')->textInput() ?>
+    <?php
+    $destinos = \common\models\Destino::find()->all();
+    $listaDestinos = \yii\helpers\ArrayHelper::map($destinos, 'id', 'nome_cidade');
+    ?>
+
+    <?= $form->field($model, 'destino_id')->dropDownList(
+        $listaDestinos,
+        ['prompt' => 'Selecione o Destino...']
+    ) ?>
 
     <?= $form->field($model, 'nome_atividade')->textInput(['maxlength' => true]) ?>
 

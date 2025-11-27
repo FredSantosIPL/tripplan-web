@@ -32,11 +32,10 @@ class SiteController extends Controller
                     ],
 
                     // 2. Logout: Permitido a qualquer utilizador autenticado (@)
-                    // Isto resolve o teu problema. Não importa o role, se está logado, pode sair.
                     [
                         'actions' => ['logout'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['acederBackofficeAgente'],
                     ],
 
                     // 3. Index (Dashboard): Restrito apenas a Agentes (e Admins por herança)
@@ -64,6 +63,7 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => \yii\web\ErrorAction::class,
+                'layout' => Yii::$app->user->isGuest ? 'main-login' : 'main',
             ],
         ];
     }
@@ -110,7 +110,17 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+
+            if (Yii::$app->user->can('acederBackOfficeAgente')) {
+                return $this->goBack();
+            }
+            Yii::$app->user->logout();
+            $model->addError('password', 'Não tem permissão para aceder ao sistema');
+
+
+            return $this->render('login', [
+                'model' => $model,
+            ]);
         }
 
         $model->password = '';
