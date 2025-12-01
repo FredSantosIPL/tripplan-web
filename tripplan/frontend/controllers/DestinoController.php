@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use common\models\Destino;
 use common\models\DestinoSearch;
 use yii\web\Controller;
@@ -68,6 +69,8 @@ class DestinoController extends Controller
     public function actionCreate()
     {
         $model = new Destino();
+
+        $model->agente_viagem_id = Yii::$app->user->identity->id;
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {

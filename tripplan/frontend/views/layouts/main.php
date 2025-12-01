@@ -1,10 +1,13 @@
 <?php
 use yii\helpers\Html; // **ADICIONADO:** Necessário para o formulário de Logout
 use yii\helpers\Url;
-use yii\bootstrap4\Nav;
-use yii\bootstrap4\NavBar;
+use yii\bootstrap5\Nav;
+use yii\bootstrap5\NavBar;
+use frontend\assets\AppAsset; // Certifique-se que o AppAsset está a ser usado
 
+AppAsset::register($this);
 ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +17,7 @@ use yii\bootstrap4\NavBar;
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+    <?php $this->registerCsrfMetaTags() ?>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -31,9 +35,14 @@ use yii\bootstrap4\NavBar;
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
+    <?php $this->head() ?>
 </head>
 
 <body>
+<?php $this->beginBody() ?>
+
 <!-- Navbar Start -->
 <div class="container-fluid position-relative nav-bar p-0">
     <div class="container-fluid position-relative p-0" style="z-index: 9;">
@@ -54,8 +63,10 @@ use yii\bootstrap4\NavBar;
                     </a>
 
                         <a href="<?= Url::to(['/plano-viagem/index']) ?>" class="nav-item nav-link ">Viagem</a>
+                    <a href="<?= Url::to(['/destino/index']) ?>" class="nav-item nav-link ">Destino</a>
                         <a href="<?= Url::to(['/estadia/index']) ?>" class="nav-item nav-link ">Estadia</a>
                         <a href="<?= Url::to(['/atividade/index']) ?>" class="nav-item nav-link ">Actividades</a>
+
 
 
                     <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contactos</a>
@@ -97,7 +108,6 @@ use yii\bootstrap4\NavBar;
         <div class="carousel-inner">
 
             <?= $content ?>
-
 
         </div>
     </div>
@@ -143,9 +153,9 @@ use yii\bootstrap4\NavBar;
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-
+<?php $this->endBody() ?>
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="lib/easing/easing.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
@@ -188,17 +198,14 @@ use yii\bootstrap4\NavBar;
             var modal = $(this);
             // Carrega o conteúdo do formulário de login usando AJAX
             modal.find('.modal-body').load('<?= Url::to(['site/login']) ?>', function() {
-                // Se você quiser que o login.php apenas retorne o formulário,
-                // você precisa mudar a actionLogin no Controller para apenas renderizar o parcial:
-                // return $this->renderPartial('_loginForm', ['model' => $model]);
 
-                // Alternativamente, se o seu site/login retornar o layout completo, você pode precisar de extrair apenas o formulário.
-                // A melhor prática é fazer com que a Action retorne APENAS o formulário.
             });
         });
     });
 </script>
 
+
 </body>
 
 </html>
+<?php $this->endPage() ?>
