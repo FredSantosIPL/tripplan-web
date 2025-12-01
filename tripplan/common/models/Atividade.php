@@ -33,8 +33,8 @@ class Atividade extends \yii\db\ActiveRecord
     {
         return [
             [['destino_id', 'nome_atividade', 'tipo'], 'required'],
-            [['destino_id', 'tipo'], 'integer'],
-            [['nome_atividade'], 'string', 'max' => 100],
+            [['destino_id'], 'integer'],
+            [['nome_atividade', 'tipo'], 'string', 'max' => 255],
             [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
         ];
     }

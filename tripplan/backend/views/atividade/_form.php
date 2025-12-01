@@ -14,13 +14,15 @@ use common\models\Destino;
 
     <?php $form = ActiveForm::begin(); ?>
 
+
+
     <?php
     $destinos = \common\models\Destino::find()->all();
     $listaDestinos = \yii\helpers\ArrayHelper::map($destinos, 'id', 'nome_cidade');
     ?>
 
     <?= $form->field($model, 'destino_id')->dropDownList(
-        $listaDestinos,
+            $listaDestinos,
         ['prompt' => 'Selecione o Destino...']
     ) ?>
 
