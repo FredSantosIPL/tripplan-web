@@ -84,12 +84,16 @@ class PlanoViagemController extends Controller
     {
         $model = new PlanoViagem();
 
+
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
-            $model->loadDefaultValues();
+            if ($model->hasErrors()) {
+                var_dump($model->getErrors());
+                die();
+            }
         }
 
         return $this->render('create', [

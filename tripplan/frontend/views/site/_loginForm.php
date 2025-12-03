@@ -1,58 +1,66 @@
 <?php
-//use yii\bootstrap5  \Html;
-//use yii\bootstrap5\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/** @var \common\models\LoginForm $model */
+/** @var common\models\LoginForm $model */
 
+// 1. Início do Formulário
 $form = ActiveForm::begin([
-        'id' => 'login-form-modal',
+    'id' => 'login-form-modal',
+    'enableAjaxValidation' => false, // Desligamos isto para controlar nós o AJAX
     'enableClientValidation' => true,
+    'options' => ['class' => 'form-horizontal'],
 ]); ?>
 
-    <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('Nome de Utilizador ou Email') ?>
+<?= $form->errorSummary($model, ['class' => 'alert alert-danger', 'header' ]) ?>
 
-    <?= $form->field($model, 'password')->passwordInput() ?>
+    <div class="form-group mb-3">
+        <label>Nome de Utilizador</label>
+        <?= $form->field($model, 'username')->textInput(['class' => 'form-control', 'autofocus' => true])->label(false) ?>
+    </div>
 
-    <?= $form->field($model, 'rememberMe')->checkbox() ?>
+    <div class="form-group mb-3">
+        <label>Senha</label>
+        <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control'])->label(false) ?>
+    </div>
 
+    <div class="form-group mb-3">
+        <?= $form->field($model, 'rememberMe')->checkbox() ?>
+    </div>
 
-    <div class="form-group text-center mt-4">
-        <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+    <div class="form-group">
+        <?= Html::submitButton('Entrar', ['class' => 'btn btn-primary btn-block w-100', 'name' => 'login-button']) ?>
     </div>
 
 <?php ActiveForm::end(); ?>
 
+<script>
+    $(document).ready(function() {
+
+        $('#login-form-modal').on('beforeSubmit', function(e) {
+            var $form = $(this);
 
 
-<?php
-// ADICIONE ESTE BLOCO DE SCRIPT NO FINAL DO FICHEIRO
-$script = <<< JS
-$('form#login-form-modal').on('beforeSubmit', function(e) {
-    var \$form = $(this);
-    
-    // Envia os dados por AJAX para o SiteController
-    $.post(
-        \$form.attr("action"), // O URL (site/login)
-        \$form.serialize()     // Os dados (username, password)
-    )
-    .done(function(result) {
-        if(result == "success") {
-            // SE SUCESSO: Recarrega a página para atualizar a Navbar
-            $(document).find('#login-modal').modal('hide');
-            location.reload();
-        } else {
-            // SE ERRO: Substitui o conteúdo do modal pelo formulário com erros
-            $('.modal-body').html(result);
-        }
-    })
-    .fail(function() {
-        console.log("Erro no servidor");
-    });
+        $.post(
+            $form.attr("action"),
+            $form.serialize()
+        )
+        .done(function(result) {
+            if(result == "success") {
+                // Se correu bem, recarrega a página
+                $('#login-modal').modal('hide');
+                location.reload();
+            } else {
+                // Se a pass estiver errada, o Controller devolveu o formulário com erro.
+                // Nós metemos esse formulário novo dentro do modal.
+                $('.modal-body').html(result);
+            }
+        })
+        .fail(function() {
+            console.log("Erro no servidor");
+        });
 
-    return false; // Impede o recarregamento normal da página
-});
-JS;
-$this->registerJs($script);
-?>
+        return false; // Impede a mudança de página
+
+        });
+</script>

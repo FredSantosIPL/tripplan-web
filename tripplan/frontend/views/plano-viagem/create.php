@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\PlanoViagem $model */
 
-$this->title = 'Create Plano Viagem';
+$this->title = 'Criar Plano da Viagem';
 $this->params['breadcrumbs'][] = ['label' => 'Plano Viagems', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

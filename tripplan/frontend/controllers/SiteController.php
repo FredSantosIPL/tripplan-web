@@ -93,7 +93,7 @@ class SiteController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             if (Yii::$app->request->isAjax) {
-                return 'success';
+                return 'sucesso';
             }
             return $this->goBack();
         }else{
@@ -111,7 +111,7 @@ class SiteController extends Controller
             ]);
         }
 
-        // 4. Acesso direto pela url (sem modal)
+
         $model->password = '';
         return $this->render('login', [
             'model' => $model,

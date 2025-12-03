@@ -6,11 +6,12 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
+
 /** @var yii\web\View $this */
 /** @var common\models\PlanoViagemSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Plano Viagems';
+$this->title = 'Planear a  sua Viagem';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="plano-viagem-index">
@@ -18,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Plano Viagem', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Plano da Viagem', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,8 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'user_id',
+
             'nome_viagem',
             'data_inicio',
             'data_fim',
