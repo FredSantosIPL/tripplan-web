@@ -32,7 +32,7 @@ class Despesa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['destino_id', 'descricao', 'valor'], 'required'],
+            [['destino_id'], 'required'],
             [['destino_id'], 'integer'],
             [['valor'], 'number'],
             [['descricao'], 'string', 'max' => 200],
@@ -49,7 +49,7 @@ class Despesa extends \yii\db\ActiveRecord
             'id' => 'ID',
             'destino_id' => 'Destino ID',
             'descricao' => 'Descricao',
-            'valor' => 'Valor',
+            'valor' => 'Valor (€)',
         ];
     }
 

@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use common\models\PlanoViagem;
 use common\models\PlanoViagemSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -68,6 +69,8 @@ class PlanoViagemController extends Controller
     public function actionCreate()
     {
         $model = new PlanoViagem();
+
+        $model->user_id = Yii::$app->user->id;
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
