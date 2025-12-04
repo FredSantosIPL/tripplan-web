@@ -66,13 +66,19 @@ class PlanoDestinoController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionCreate($plano_id = null)
     {
         $model = new PlanoDestino();
 
+        // Se viemos da página do Plano de Viagem, já trazemos o ID
+        if ($plano_id) {
+            $model->plano_id = $plano_id;
+        }
+
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'plano_id' => $model->plano_id, 'destino_id' => $model->destino_id]);
+                // Redireciona de volta para o Plano de Viagem Principal para continuar a editar
+                return $this->redirect(['plano-viagem/view', 'id' => $model->plano_id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -116,7 +122,7 @@ class PlanoDestinoController extends Controller
     {
         $this->findModel($plano_id, $destino_id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['plano-viagem/view', 'id' => $plano_id]);
     }
 
     /**

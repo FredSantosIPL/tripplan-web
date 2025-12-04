@@ -26,6 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
+    <p>
+        <!-- Botão Útil: Voltar ao Plano de Viagem Principal -->
+        <?= Html::a('Voltar ao Plano', ['plano-viagem/view', 'id' => $model->plano_id], ['class' => 'btn btn-secondary']) ?>
+    </p>
+
     <div class="card">
         <div class="card-body">
             <?= DetailView::widget([
@@ -48,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                     [
                         'label' => 'Data Chegada Prevista',
-                        'value' => $model->destino->data_chegada ?? 'N/A',
+                        'value' => $model->destino->data_chegada,
                         'format' => 'date',
                     ],
                 ],

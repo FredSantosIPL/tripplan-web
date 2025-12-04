@@ -39,6 +39,7 @@
                 'items' => [
                     ['label' => 'Manage Users', 'icon' => 'users', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
                     ['label' => 'Manage Trips', 'icon' => 'list', 'url' => ['/plano-viagem/index']],
+                    ['label' => 'Manage Trip Destinations', 'icon' => 'list', 'url' => ['/plano-destino/index']],
 
                     ['label' => 'Yii2 PROVIDED', 'header' => true],
                     ['label' => 'Login', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],
