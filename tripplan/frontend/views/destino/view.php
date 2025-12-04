@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'agente_viagem_id',
             'nome_cidade',
             'pais',
-            'data_chegada',
+            'data_chegada:date',
         ],
     ]) ?>
 

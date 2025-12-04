@@ -1,9 +1,9 @@
 <?php
-use yii\helpers\Html; // **ADICIONADO:** Necessário para o formulário de Logout
+use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
-use frontend\assets\AppAsset; // Certifique-se que o AppAsset está a ser usado
+use frontend\assets\AppAsset;
 
 AppAsset::register($this);
 ?>
@@ -66,7 +66,7 @@ AppAsset::register($this);
                     <a href="<?= Url::to(['/destino/index']) ?>" class="nav-item nav-link ">Destino</a>
                         <a href="<?= Url::to(['/estadia/index']) ?>" class="nav-item nav-link ">Estadia</a>
                         <a href="<?= Url::to(['/atividade/index']) ?>" class="nav-item nav-link ">Actividades</a>
-
+                        <a href="<?= Url::to(['/transporte/index']) ?>" class="nav-item nav-link ">Transporte</a>
 
 
                     <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contactos</a>

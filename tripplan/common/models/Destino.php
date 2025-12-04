@@ -37,7 +37,7 @@ class Destino extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['agente_viagem_id', 'nome_cidade', 'pais', 'data_chegada'], 'required'],
+            [['agente_viagem_id', 'nome_cidade', 'pais', 'data_chegada'], 'required', 'message' => 'Este campo é obrigatório.'],
             [['agente_viagem_id'], 'integer'],
             [['data_chegada'], 'safe'],
             [['nome_cidade', 'pais'], 'string', 'max' => 50],

@@ -17,21 +17,29 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Insere o Destino', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <p></p>
+    <p></p>
+
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+
+        'layout' => "{items}\n<div class='p-3'>{pager}</div>",
+
+        'tableOptions' => [
+            'class' => 'table table-hover table-striped mb-0', // Remove bordas feias
+        ],
+        
+
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
             'nome_cidade',
             'pais',
-            'data_chegada',
+            'data_chegada:date',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Destino $model, $key, $index, $column) {
@@ -40,6 +48,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
+
+    <p>
+        <?= Html::a('Insere o Destino', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
 
 </div>

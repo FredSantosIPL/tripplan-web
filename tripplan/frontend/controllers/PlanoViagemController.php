@@ -84,6 +84,7 @@ class PlanoViagemController extends Controller
     {
         $model = new PlanoViagem();
 
+        $model->user_id = \Yii::$app->user->id;
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {

@@ -27,13 +27,18 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+
+        'layout' => "{items}\n<div class='p-3'>{pager}</div>", //remover a frase Showwing...
+
+
+
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
 
             'nome_viagem',
-            'data_inicio',
-            'data_fim',
+            'data_inicio:date',
+            'data_fim:date',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, PlanoViagem $model, $key, $index, $column) {

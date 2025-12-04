@@ -35,7 +35,7 @@ class PlanoViagem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'nome_viagem', 'data_inicio', 'data_fim'], 'required'],
+            [['user_id', 'nome_viagem', 'data_inicio', 'data_fim'], 'required', 'message' => 'Este campo é obrigatório.'],
             [['user_id'], 'integer'],
             [['data_inicio', 'data_fim'], 'safe'],
             [['nome_viagem'], 'string', 'max' => 70],

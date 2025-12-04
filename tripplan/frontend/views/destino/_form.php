@@ -13,15 +13,19 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
 
-
     <?= $form->field($model, 'nome_cidade')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'pais')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_chegada')->textInput() ?>
+    <?= $form->field($model, 'data_chegada')->textInput([
+        'placeholder' => 'DD-MM-AAAA',
+        'type' => 'date'
+    ]) ?>
+
+
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
