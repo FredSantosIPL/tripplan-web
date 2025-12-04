@@ -2,17 +2,16 @@
 
 namespace backend\controllers;
 
-use common\models\Despesa;
-use common\models\DespesaSearch;
-use Yii;
+use common\models\PlanoDestino;
+use common\models\PlanoDestinoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DespesaController implements the CRUD actions for Despesa model.
+ * PlanoDestinoController implements the CRUD actions for PlanoDestino model.
  */
-class DespesaController extends Controller
+class PlanoDestinoController extends Controller
 {
     /**
      * @inheritDoc
@@ -33,13 +32,13 @@ class DespesaController extends Controller
     }
 
     /**
-     * Lists all Despesa models.
+     * Lists all PlanoDestino models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new DespesaSearch();
+        $searchModel = new PlanoDestinoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -49,32 +48,37 @@ class DespesaController extends Controller
     }
 
     /**
-     * Displays a single Despesa model.
-     * @param int $id ID
+     * Displays a single PlanoDestino model.
+     * @param int $plano_id Plano ID
+     * @param int $destino_id Destino ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($plano_id, $destino_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($plano_id, $destino_id),
         ]);
     }
 
     /**
-     * Creates a new Despesa model.
+     * Creates a new PlanoDestino model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionCreate($plano_id = null)
     {
-        $model = new Despesa();
+        $model = new PlanoDestino();
 
-
+        // Se viemos da página do Plano de Viagem, já trazemos o ID
+        if ($plano_id) {
+            $model->plano_id = $plano_id;
+        }
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+                // Redireciona de volta para o Plano de Viagem Principal para continuar a editar
+                return $this->redirect(['plano-viagem/view', 'id' => $model->plano_id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -86,18 +90,19 @@ class DespesaController extends Controller
     }
 
     /**
-     * Updates an existing Despesa model.
+     * Updates an existing PlanoDestino model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id ID
+     * @param int $plano_id Plano ID
+     * @param int $destino_id Destino ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdate($plano_id, $destino_id)
     {
-        $model = $this->findModel($id);
+        $model = $this->findModel($plano_id, $destino_id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'plano_id' => $model->plano_id, 'destino_id' => $model->destino_id]);
         }
 
         return $this->render('update', [
@@ -106,29 +111,31 @@ class DespesaController extends Controller
     }
 
     /**
-     * Deletes an existing Despesa model.
+     * Deletes an existing PlanoDestino model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id ID
+     * @param int $plano_id Plano ID
+     * @param int $destino_id Destino ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
+    public function actionDelete($plano_id, $destino_id)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($plano_id, $destino_id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['plano-viagem/view', 'id' => $plano_id]);
     }
 
     /**
-     * Finds the Despesa model based on its primary key value.
+     * Finds the PlanoDestino model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id ID
-     * @return Despesa the loaded model
+     * @param int $plano_id Plano ID
+     * @param int $destino_id Destino ID
+     * @return PlanoDestino the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel($plano_id, $destino_id)
     {
-        if (($model = Despesa::findOne(['id' => $id])) !== null) {
+        if (($model = PlanoDestino::findOne(['plano_id' => $plano_id, 'destino_id' => $destino_id])) !== null) {
             return $model;
         }
 

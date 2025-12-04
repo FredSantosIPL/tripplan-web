@@ -12,13 +12,16 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
-
     <?= $form->field($model, 'nome_viagem')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_inicio')->textInput() ?>
-
-    <?= $form->field($model, 'data_fim')->textInput() ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'data_inicio')->textInput(['type' => 'date']) ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'data_fim')->textInput(['type' => 'date']) ?>
+        </div>
+    </div>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
