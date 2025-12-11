@@ -101,3 +101,31 @@ a.desc:after {
 {
     text-decoration: none;
 }
+
+
+/* Remover sombra preta do Carousel do Bootstrap */
+.carousel-item::after,
+.carousel-item::before {
+    background: transparent !important;
+    background-image: none !important;
+    content: none !important; /* Desativa o elemento sombra */
+}
+
+
+.carousel-caption {
+    background: transparent !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.navbar {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+    border: none !important;
+    z-index: 1000;
+}
+
+.wrap > .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+

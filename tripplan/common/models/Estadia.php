@@ -33,7 +33,7 @@ class Estadia extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['destino_id', 'nome_alojamento', 'tipo', 'data_checkin'], 'required'],
+            [['destino_id', 'nome_alojamento', 'tipo', 'data_checkin'],'required', 'message' => 'Este campo é obrigatório.'],
             [['destino_id'], 'integer'],
             [['data_checkin'], 'safe'],
             [['nome_alojamento'], 'string', 'max' => 80],

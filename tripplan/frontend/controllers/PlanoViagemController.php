@@ -8,6 +8,10 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\Destino;
+use common\models\PlanoDestino;
+
+use Yii;
 
 /**
  * PlanoViagemController implements the CRUD actions for PlanoViagem model.
@@ -88,17 +92,34 @@ class PlanoViagemController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
+                $destinosEscolhidos = $this->request->post('PlanoViagem')['destinos_id'];
+
+                if (!empty($destinosEscolhidos)) {
+                    foreach ($destinosEscolhidos as $destinoId) {
+                        $ligacao = new PlanoDestino();
+                        $ligacao->plano_id = $model->id;       // O ID do plano que acabámos de criar
+                        $ligacao->destino_id = $destinoId;     // O ID do destino escolhido
+                        $ligacao->save();
+                    }
+                }
+
+
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
-            if ($model->hasErrors()) {
-                var_dump($model->getErrors());
-                die();
-            }
+            $model->loadDefaultValues();
+            //if ($model->hasErrors()) {
+            //    var_dump($model->getErrors());
+          //      die();
+              //}
+
         }
+
+        $listaDestinos = \common\models\Destino::find()->select(['nome_cidade', 'id'])->indexBy('id')->column();
 
         return $this->render('create', [
             'model' => $model,
+            'listaDestinos' => $listaDestinos,
         ]);
     }
 

@@ -30,9 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'layout' => "{items}\n<div class='p-3'>{pager}</div>",
 
         'tableOptions' => [
-            'class' => 'table table-hover table-striped mb-0', // Remove bordas feias
+            'class' => 'table table-hover table-striped mb-0',
         ],
-        
 
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
@@ -44,7 +43,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Destino $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                 },
+
+
             ],
         ],
     ]); ?>

@@ -20,6 +20,7 @@ use Yii;
 class PlanoViagem extends \yii\db\ActiveRecord
 {
 
+    public $destino_id;
 
     /**
      * {@inheritdoc}
@@ -40,6 +41,8 @@ class PlanoViagem extends \yii\db\ActiveRecord
             [['data_inicio', 'data_fim'], 'safe'],
             [['nome_viagem'], 'string', 'max' => 70],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
+
+            [['destino_id'], 'safe'], //seguro receber a tabela
         ];
     }
 

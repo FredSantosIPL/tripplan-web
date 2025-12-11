@@ -7,7 +7,9 @@ use common\models\Destino;
 use common\models\DestinoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+
 
 /**
  * DestinoController implements the CRUD actions for Destino model.
@@ -22,8 +24,21 @@ class DestinoController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['index','view', 'create', 'update', 'delete'], // Ações protegidas com login
+                    'rules' => [
+                        [
+                            'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                            'allow' => true,
+                            'roles' => ['@'], // '@' só para utilizadores com login feito
+                        ]
+                    ],
+                ],
+
                 'verbs' => [
-                    'class' => VerbFilter::className(),
+                    'class' =>  \yii\filters\VerbFilter::class,
                     'actions' => [
                         'delete' => ['POST'],
                     ],

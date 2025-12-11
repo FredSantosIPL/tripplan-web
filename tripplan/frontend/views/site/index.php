@@ -1,8 +1,8 @@
 <?php
 
 /** @var yii\web\View $this */
-$this->title = 'TripPlan Home'; // Define o título da página
-$baseUrl = Yii::$app->request->baseUrl; // Atalho para os caminhos
+$this->title = 'TripPlan Home'; //titulo da página
+$baseUrl = Yii::$app->request->baseUrl;
 use yii\helpers\Url;
 ?>
 

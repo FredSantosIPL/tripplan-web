@@ -12,16 +12,18 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'destino_id')->textInput() ?>
 
     <?= $form->field($model, 'nome_alojamento')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'tipo')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_checkin')->textInput() ?>
+    <?= $form->field($model, 'data_checkin')->textInput([
+         'placeholder' => 'DD-MM-AAAA',
+        'type' => 'date'
+    ])?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
