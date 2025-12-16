@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\models\Estadia;
 use common\models\EstadiaSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -21,6 +22,18 @@ class EstadiaController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'only' => ['index','view', 'create', 'update', 'delete'], // Ações protegidas com login
+                    'rules' => [
+                        [
+                            'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                            'allow' => true,
+                            'roles' => ['@'], // '@' só para utilizadores com login feito
+                        ]
+                    ],
+                ],
+
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
@@ -69,12 +82,14 @@ class EstadiaController extends Controller
     {
         $model = new Estadia();
 
+
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
+
         }
 
         return $this->render('create', [

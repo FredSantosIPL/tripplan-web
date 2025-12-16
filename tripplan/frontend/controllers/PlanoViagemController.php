@@ -88,17 +88,18 @@ class PlanoViagemController extends Controller
     {
         $model = new PlanoViagem();
 
-        $model->user_id = \Yii::$app->user->id;
+        if ($model->load($this->request->post())) {
+            $model->user_id = \Yii::$app->user->id;
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                $destinosEscolhidos = $this->request->post('PlanoViagem')['destinos_id'];
+            if ($model->save()) {
+                $postData = $this->request->post('PlanoViagem');
+                $destinosEscolhidos = $postData['destinos_id'] ?? [];
 
                 if (!empty($destinosEscolhidos)) {
                     foreach ($destinosEscolhidos as $destinoId) {
                         $ligacao = new PlanoDestino();
-                        $ligacao->plano_id = $model->id;       // O ID do plano que acabámos de criar
-                        $ligacao->destino_id = $destinoId;     // O ID do destino escolhido
+                        $ligacao->plano_id = $model->id;
+                        $ligacao->destino_id = $destinoId;
                         $ligacao->save();
                     }
                 }
@@ -166,10 +167,16 @@ class PlanoViagemController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = PlanoViagem::findOne(['id' => $id])) !== null) {
+        // Tenta encontrar um plano que tenha AQUELE id E que pertença ao UTILIZADOR logado
+        $model = \common\models\Planoviagem::findOne([
+            'id' => $id,
+            'user_id' => Yii::$app->user->id
+        ]);
+
+        if ($model !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('Página não encontrada ou sem permissão.');
     }
 }

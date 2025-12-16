@@ -43,6 +43,12 @@ class PlanoViagemSearch extends PlanoViagem
     {
         $query = PlanoViagem::find();
 
+        if (!\Yii::$app->user->isGuest) {
+            $query->andWhere(['user_id' => \Yii::$app->user->id]);
+        } else {
+            // Se não estiver logado, esconde tudo (segurança)
+            $query->where('0=1');
+        }
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Estadia', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Estadia', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'nome_alojamento',
             'tipo',
-            'data_checkin',
+            'data_checkin:date',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Estadia $model, $key, $index, $column) {

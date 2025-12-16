@@ -18,9 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Criar Plano da Viagem', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -30,11 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
         'layout' => "{items}\n<div class='p-3'>{pager}</div>", //remover a frase Showwing...
 
-
-
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
-
 
             'nome_viagem',
             'data_inicio:date',
@@ -48,5 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
+    <p>
+        <?= Html::a('Criar Plano da Viagem', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
 </div>

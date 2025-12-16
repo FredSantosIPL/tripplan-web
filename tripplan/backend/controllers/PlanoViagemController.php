@@ -3,7 +3,7 @@
 namespace backend\controllers;
 
 use common\models\PlanoViagem;
-use frontend\models\PlanoViagemSearch;
+use common\models\PlanoViagemSearch;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

@@ -37,7 +37,8 @@ class Estadia extends \yii\db\ActiveRecord
             [['destino_id'], 'integer'],
             [['data_checkin'], 'safe'],
             [['nome_alojamento'], 'string', 'max' => 80],
-            [['tipo'], 'string', 'max' => 50],
+            [['tipo'], 'string'],
+
             [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
         ];
     }
@@ -49,7 +50,7 @@ class Estadia extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'destino_id' => 'Destino ID',
+            'destino_id' => 'Destino ',
             'nome_alojamento' => 'Nome Alojamento',
             'tipo' => 'Tipo',
             'data_checkin' => 'Data Checkin',
