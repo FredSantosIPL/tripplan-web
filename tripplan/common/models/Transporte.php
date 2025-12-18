@@ -34,7 +34,7 @@ class Transporte extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['plano_viagem_id', 'tipo', 'origem', 'destino', 'data_partida'], 'required'],
+            [['plano_viagem_id', 'tipo', 'origem', 'destino', 'data_partida'], 'required', 'message' => 'Este campo é obrigatório.'],
             [['plano_viagem_id'], 'integer'],
             [['data_partida'], 'safe'],
             [['tipo'], 'string', 'max' => 30],
@@ -51,10 +51,10 @@ class Transporte extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'plano_viagem_id' => 'Plano Viagem ID',
-            'tipo' => 'Tipo',
-            'origem' => 'Origem',
-            'destino' => 'Destino',
-            'data_partida' => 'Data Partida',
+            'tipo' => 'Meio de Transporte',
+            'origem' => 'Local de Partida',
+            'destino' => 'Destino Final',
+            'data_partida' => 'Data e Hora da Partida',
         ];
     }
 

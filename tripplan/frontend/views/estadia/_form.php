@@ -20,7 +20,6 @@ use common\models\Destino;
     $destinos = Destino::find()->all();
 
     // Transforma em lista.
-    // ATENÇÃO: Troque 'nome' pelo nome exato da coluna na sua tabela (ex: 'name', 'designacao')
     $listaDestinos = ArrayHelper::map($destinos, 'id', 'nome_cidade');
     ?>
 

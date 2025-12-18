@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'agente_viagem_id',
+
+
             'nome_cidade',
             'pais',
             'data_chegada:date',

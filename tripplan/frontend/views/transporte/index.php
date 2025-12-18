@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Transporte', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar meio Transporte', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,14 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'plano_viagem_id',
+
             'tipo',
             'origem',
             'destino',
-            //'data_partida',
+            'data_partida',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Transporte $model, $key, $index, $column) {
