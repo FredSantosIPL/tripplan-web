@@ -67,11 +67,26 @@ class TransporteController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Transporte();
+        // Certifique-se que está a usar o caminho correto (common ou app)
+        $model = new \common\models\Transporte();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+
+                // --- CORREÇÃO 1: Remover o "T" da data para o MySQL aceitar ---
+                $model->data_partida = str_replace('T', ' ', $model->data_partida);
+
+                // Tenta guardar
+                if ($model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    // --- CORREÇÃO 2: Se falhar, MOSTRA O ERRO no ecrã ---
+                    // Isto impede que a página apenas recarregue sem dizer nada
+                    echo "<pre>";
+                    var_dump($model->getErrors());
+                    echo "</pre>";
+                    die();
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -81,7 +96,6 @@ class TransporteController extends Controller
             'model' => $model,
         ]);
     }
-
     /**
      * Updates an existing Transporte model.
      * If update is successful, the browser will be redirected to the 'view' page.

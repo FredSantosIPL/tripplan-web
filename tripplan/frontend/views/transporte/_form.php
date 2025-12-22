@@ -69,9 +69,16 @@ $listaPlanos = ArrayHelper::map($planos, 'id', 'nome_viagem');
 
                     <?= $form->field($model, 'data_partida')->input('datetime-local') ?>
 
+
+                    <?= $form->field($model, 'plano_viagem_id')->dropDownList(
+                        $listaPlanos,
+                        ['prompt' => 'Selecione a viagem...']
+                    ) ?>
+
                     <div class="form-group mt-4 d-grid">
                         <?= Html::submitButton('Guardar Transporte', ['class' => 'btn btn-primary btn-lg']) ?>
                     </div>
+
 
                     <?php ActiveForm::end(); ?>
 

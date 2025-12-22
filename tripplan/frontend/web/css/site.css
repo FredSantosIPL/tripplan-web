@@ -201,6 +201,8 @@ a.desc:after {
     overflow: hidden;
 }
 
+
+
 /* --- LADO ESQUERDO (VISUAL) --- */
 .visual-side {
     flex: 1;
@@ -335,3 +337,4 @@ a.desc:after {
     .visual-side { min-height: 200px; padding: 20px; }
     .info-side { padding: 30px; }
 }
+

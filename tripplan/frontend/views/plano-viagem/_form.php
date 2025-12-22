@@ -75,7 +75,7 @@ try {
 
             <div class="travel-card">
 
-                <h3 class="text-center mb-4">✈️ Planear Nova Viagem</h3>
+                <h3 class="text-center mb-4">Vamos Planear Nova Viagem</h3>
 
                 <?php $form = ActiveForm::begin(); ?>
 
@@ -83,8 +83,8 @@ try {
 
                 <?= $form->field($model, 'nome_viagem')->textInput([
                     'class' => 'form-control form-control-lg',
-                    'placeholder' => 'Ex: Férias em Paris'
-                ])->label('Nome da Aventura') ?>
+                    'placeholder' => 'Ex: Férias em Portugal'
+                ])->label('Nome da viagem') ?>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -95,34 +95,8 @@ try {
                     </div>
                 </div>
 
-                <br>
-
-                <div class="section-title">📍 Escolha os Destinos</div>
-
-                <div class="destination-selector">
-                    <?php if (!empty($listaDestinos)): ?>
-                        <?= $form->field($model, 'destinos_id')->checkboxList($listaDestinos, [
-                            'item' => function($index, $label, $name, $checked, $value) {
-                                $checkState = $checked ? 'checked' : '';
-                                return "
-                                    <div class='checkbox'>
-                                        <input type='checkbox' name='{$name}' value='{$value}' id='dest_{$index}' {$checkState}>
-                                        <label for='dest_{$index}'>{$label}</label>
-                                    </div>
-                                ";
-                            }
-                        ])->label(false) ?>
-                    <?php else: ?>
-                        <div class="alert alert-warning">
-                            ⚠️ Não há destinos criados. Adicione destinos na base de dados primeiro.
-                        </div>
-                    <?php endif; ?>
-                </div>
-
-                <hr class="mt-4 mb-4">
-
                 <div class="form-group text-center">
-                    <?= Html::submitButton('🚀 Guardar Plano', ['class' => 'btn btn-primary btn-lg px-5 rounded-pill']) ?>
+                    <?= Html::submitButton('Guardar Plano', ['class' => 'btn btn-success']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>
