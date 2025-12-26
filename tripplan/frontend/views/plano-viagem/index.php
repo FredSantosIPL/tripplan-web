@@ -12,7 +12,7 @@ use yii\widgets\ListView;
 /** @var common\models\PlanoViagemSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Planear a  sua Viagem';
+$this->title = 'As minhas Viagens';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="plano-viagem-index">
@@ -43,11 +43,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="d-flex justify-content-between align-items-center mb-3 mt-3 ">
         <h1 class="display-6 fw-bold text-dark">
             <?= Html::encode($this->title) ?>
+            <p>
+                <?= Html::a('<i class="fas fa-plus"></i> Nova Viagem', ['create'], [
+                'class' => 'btn btn-primary btn-lg shadow-sm rounded-pill px-4'
+                ]) ?>
+            </p>
         </h1>
 
-        <?= Html::a('<i class="fas fa-plus"></i> Nova Viagem', ['create'], [
-            'class' => 'btn btn-primary btn-lg shadow-sm rounded-pill px-4'
-        ]) ?>
+
+
+
     </div>
 
     <?= ListView::widget([
@@ -60,8 +65,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-    <p>
-        <?= Html::a('Criar Plano da Viagem', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+
 
 </div>

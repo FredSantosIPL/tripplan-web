@@ -72,6 +72,7 @@ class DestinoController extends Controller
      */
     public function actionView($id)
     {
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -79,12 +80,17 @@ class DestinoController extends Controller
 
     /**
      * Creates a new Destino model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
+
+
+     * @param int|null $plano_viagem_id (Opcional)
      */
-    public function actionCreate()
+    public function actionCreate($plano_viagem_id = null)
     {
         $model = new Destino();
+
+        if ($plano_viagem_id) {
+            $model->plano_viagem_id = $plano_viagem_id;
+        }
 
         $model->agente_viagem_id = Yii::$app->user->identity->id;
 
@@ -130,9 +136,13 @@ class DestinoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
 
-        return $this->redirect(['index']);
+        $plano_id = $model->plano_viagem_id;
+
+        $model->delete();
+
+        return $this->redirect(['plano-viagem/view', 'id' => $plano_id]);
     }
 
     /**

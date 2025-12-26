@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\Destino;
 use common\models\PlanoDestino;
+use yii\data\ActiveDataProvider;
 
 use Yii;
 
@@ -74,8 +75,15 @@ class PlanoViagemController extends Controller
      */
     public function actionView($id)
     {
+
+        $destinosProvider = new ActiveDataProvider([
+            'query' => Destino::find()->where(['plano_viagem_id' => $id]),
+
+        ]);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'destinosProvider' => $destinosProvider,
         ]);
     }
 
