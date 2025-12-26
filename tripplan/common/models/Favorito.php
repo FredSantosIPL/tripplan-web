@@ -13,11 +13,10 @@ use Yii;
  * @property string $created_at
  *
  * @property User $user
+ * @property Destino $destino
  */
 class Favorito extends \yii\db\ActiveRecord
 {
-
-
     /**
      * {@inheritdoc}
      */
@@ -35,7 +34,15 @@ class Favorito extends \yii\db\ActiveRecord
             [['user_id', 'destino_id'], 'required'],
             [['user_id', 'destino_id'], 'integer'],
             [['created_at'], 'safe'],
+
+            // Garante que não se pode adicionar o mesmo favorito duas vezes
+            [['user_id', 'destino_id'], 'unique', 'targetAttribute' => ['user_id', 'destino_id']],
+
+            // Valida se o utilizador existe
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
+
+            // Valida se o destino existe (CRUCIAL)
+            [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
         ];
     }
 
@@ -54,7 +61,6 @@ class Favorito extends \yii\db\ActiveRecord
 
     /**
      * Gets query for [[User]].
-     *
      * @return \yii\db\ActiveQuery
      */
     public function getUser()
@@ -62,4 +68,19 @@ class Favorito extends \yii\db\ActiveRecord
         return $this->hasOne(User::class, ['id' => 'user_id']);
     }
 
+    // --- ADICIONADO: Alias para manter compatibilidade se usar $favorito->utilizador noutro lugar ---
+    public function getUtilizador()
+    {
+        return $this->getUser();
+    }
+
+    /**
+     * Gets query for [[Destino]].
+     * CORREÇÃO DO ERRO: Permite aceder a $favorito->destino
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDestino()
+    {
+        return $this->hasOne(Destino::class, ['id' => 'destino_id']);
+    }
 }

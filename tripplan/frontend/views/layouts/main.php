@@ -67,6 +67,7 @@ AppAsset::register($this);
                         <a href="<?= Url::to(['/estadia/index']) ?>" class="nav-item nav-link ">Estadia</a>
                         <a href="<?= Url::to(['/atividade/index']) ?>" class="nav-item nav-link ">Actividades</a>
                         <a href="<?= Url::to(['/transporte/index']) ?>" class="nav-item nav-link ">Transporte</a>
+                    <a href="<?= Url::to(['/favorito/index']) ?>" class="nav-item nav-link ">Favoritos</a>
 
 
                     <a href="<?= Url::to(['/site/contact']) ?>" class="nav-item nav-link">Contactos</a>

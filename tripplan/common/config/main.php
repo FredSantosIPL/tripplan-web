@@ -4,6 +4,11 @@ return [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'api' => [
+            'class' => 'app\modules\api\Module',
+        ],
+    ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'authManager' => [
@@ -13,5 +18,16 @@ return [
         'cache' => [
             'class' => \yii\caching\FileCache::class,
         ],
+//        'urlManager' => [
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => false, // Ocultar o index.php
+//            'enableStrictParsing' => false,
+//            'rules' => [
+//                // Regras para a API REST
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/trip'],
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/activity'],
+//            ],
+//        ],
     ],
+
 ];
