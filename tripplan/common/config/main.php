@@ -19,7 +19,7 @@ return [
             'class' => \yii\caching\FileCache::class,
         ],
         'urlManager' => [
-            //'enablePrettyUrl' => true,
+            'enablePrettyUrl' => true,
             'showScriptName' => false, // Ocultar o index.php
             'enableStrictParsing' => false,
             'rules' => [

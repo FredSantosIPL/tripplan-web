@@ -12,6 +12,7 @@ AppAsset::register($this);
 <html lang="en">
 
 <head>
+    <base href="<?= \yii\helpers\Url::to('@web/', true) ?>">
     <meta charset="utf-8">
     <title>TripPlan - Travel Manager</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
