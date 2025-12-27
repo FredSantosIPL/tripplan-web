@@ -75,15 +75,21 @@ class PlanoViagemController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
 
-        $destinosProvider = new ActiveDataProvider([
-            'query' => Destino::find()->where(['plano_viagem_id' => $id]),
+        $destinosProvider = new \yii\data\ActiveDataProvider([
+            'query' => \common\models\Destino::find()->where(['plano_viagem_id' => $id]),
+        ]);
 
+        // Criar o DataProvider para as Estadias deste plano
+        $estadiasProvider = new \yii\data\ActiveDataProvider([
+            'query' => \common\models\Estadia::find()->where(['plano_viagem_id' => $id]),
         ]);
 
         return $this->render('view', [
-            'model' => $this->findModel($id),
-            'destinosProvider' => $destinosProvider,
+            'model' => $model,
+            'destinosProvider' => $destinosProvider, // O que já tinhas
+            'estadiasProvider' => $estadiasProvider, // Adiciona esta linha
         ]);
     }
 

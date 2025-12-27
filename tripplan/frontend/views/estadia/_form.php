@@ -48,6 +48,8 @@ use common\models\Destino;
         'type' => 'date'
     ])?>
 
+
+
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>

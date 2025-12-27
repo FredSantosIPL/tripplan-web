@@ -25,6 +25,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'data_checkin') ?>
 
+    <?= $form->field($model, 'data_checkout') ?>
+
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>

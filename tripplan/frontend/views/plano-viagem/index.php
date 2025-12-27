@@ -49,10 +49,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]) ?>
             </p>
         </h1>
-
-
-
-
     </div>
 
     <?= ListView::widget([
@@ -62,9 +58,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'options' => ['class' => 'row'], // Para usar a grid do Bootstrap
         'itemOptions' => ['class' => 'col-md-4 mb-4 mx-3'], // 3 cartões por linha
     ]); ?>
-
-
-
 
 
 </div>

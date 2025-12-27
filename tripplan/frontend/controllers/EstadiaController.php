@@ -78,18 +78,15 @@ class EstadiaController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionCreate($plano_id)
     {
         $model = new Estadia();
 
+        $model->plano_viagem_id = $plano_id;
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        } else {
-            $model->loadDefaultValues();
-
+        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
+            // Depois de guardar, volta para a página da viagem (view)
+            return $this->redirect(['plano-viagem/view', 'id' => $plano_id]);
         }
 
         return $this->render('create', [
