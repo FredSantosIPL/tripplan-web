@@ -18,16 +18,16 @@ return [
         'cache' => [
             'class' => \yii\caching\FileCache::class,
         ],
-//        'urlManager' => [
-//            'enablePrettyUrl' => true,
-//            'showScriptName' => false, // Ocultar o index.php
-//            'enableStrictParsing' => false,
-//            'rules' => [
-//                // Regras para a API REST
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/trip'],
-//                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/activity'],
-//            ],
-//        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false, // Ocultar o index.php
+            'enableStrictParsing' => false,
+            'rules' => [
+                // Regras para a API REST
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/trip'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/activity'],
+            ],
+        ],
     ],
 
 ];
