@@ -5,86 +5,133 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use Yii; // Importante para aceder ao authManager
+use Yii;
 
 /** @var yii\web\View $this */
 /** @var common\models\UserSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Users';
+$this->title = 'Utilizadores'; // Traduzi para PT
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <!-- Card Container: Estilo Dashboard Profissional -->
+    <div class="card shadow-sm border-0">
 
-    <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+        <!-- Cabeçalho do Card -->
+        <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
+            <h4 class="card-title m-0 text-primary font-weight-bold">
+                <i class="fas fa-users mr-2"></i> <?= Html::encode($this->title) ?>
+            </h4>
+            <?= Html::a('<i class="fas fa-user-plus"></i> Criar Utilizador', ['create'], ['class' => 'btn btn-success shadow-sm']) ?>
+        </div>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+        <!-- Corpo do Card com a Tabela -->
+        <div class="card-body p-0">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'tableOptions' => ['class' => 'table table-striped table-hover mb-0'], // Estilo Zebra e Hover
+                'layout' => "{items}\n<div class='p-3 d-flex justify-content-between align-items-center'>{summary}{pager}</div>",
+                'columns' => [
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            //['class' => 'yii\grid\SerialColumn'],
+                    // Username em Negrito
+                    [
+                        'attribute' => 'username',
+                        'format' => 'raw',
+                        'value' => function ($model) {
+                            return '<span class="font-weight-bold text-dark">' . Html::encode($model->username) . '</span>';
+                        },
+                        'contentOptions' => ['style' => 'vertical-align:middle;'],
+                    ],
 
-            'id',
-            'username',
-            // 'auth_key', // Comentei isto, geralmente não se deve mostrar keys de segurança
-            // 'password_hash', // Também não deves mostrar a hash da password
-            'email:email', // Descomentei o email, é útil veres
+                    // Email com Ícone
+                    [
+                        'attribute' => 'email',
+                        'format' => 'email',
+                        'label' => 'Email',
+                        'contentOptions' => ['style' => 'vertical-align:middle;'],
+                    ],
 
-            // Coluna Status personalizada (Opcional, para veres texto em vez de números)
-            [
-                'attribute' => 'status',
-                'value' => function($model) {
-                    return $model->status == 10 ? 'Ativo' : 'Inativo';
-                }
-            ],
+                    // Coluna Status com Badge Colorido (Visual muito melhor)
+                    [
+                        'attribute' => 'status',
+                        'format' => 'raw',
+                        'filter' => [10 => 'Ativo', 9 => 'Inativo'], // Filtro dropdown
+                        'value' => function($model) {
+                            if ($model->status == 10) {
+                                return '<span class="badge badge-success px-2 py-1">Ativo</span>';
+                            } else {
+                                return '<span class="badge badge-secondary px-2 py-1">Inativo</span>';
+                            }
+                        },
+                        'contentOptions' => ['style' => 'text-align:center; vertical-align:middle;'],
+                    ],
 
-            [
-                'class' => ActionColumn::className(),
-                // 1. Adicionamos o {promote} ao template
-                'template' => '{view} {update} {delete} {promote}',
+                    // Ações Personalizadas
+                    [
+                        'class' => ActionColumn::className(),
+                        'header' => 'Ações',
+                        'headerOptions' => ['style' => 'width:180px; text-align:center;'],
+                        'contentOptions' => ['style' => 'text-align:center; vertical-align:middle;'],
+                        'template' => '{view} {update} {delete} {promote}',
 
-                // 2. O teu urlCreator original mantém-se para as ações padrão
-                'urlCreator' => function ($action, User $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                },
+                        'urlCreator' => function ($action, User $model, $key, $index, $column) {
+                            return Url::toRoute([$action, 'id' => $model->id]);
+                        },
 
-                // 3. Configuração dos botões personalizados
-                'buttons' => [
-                    'promote' => function ($url, $model, $key) {
-                        // Obter o AuthManager
-                        $auth = Yii::$app->authManager;
+                        'buttons' => [
+                            // Botão Ver
+                            'view' => function ($url, $model) {
+                                return Html::a('<i class="fas fa-eye"></i>', $url, [
+                                    'class' => 'btn btn-info btn-sm text-white mr-1',
+                                    'title' => 'Ver Detalhes',
+                                    'data-toggle' => 'tooltip',
+                                ]);
+                            },
+                            // Botão Editar
+                            'update' => function ($url, $model) {
+                                return Html::a('<i class="fas fa-pencil-alt"></i>', $url, [
+                                    'class' => 'btn btn-primary btn-sm mr-1',
+                                    'title' => 'Editar',
+                                    'data-toggle' => 'tooltip',
+                                ]);
+                            },
+                            // Botão Apagar
+                            'delete' => function ($url, $model) {
+                                return Html::a('<i class="fas fa-trash"></i>', $url, [
+                                    'class' => 'btn btn-danger btn-sm mr-1',
+                                    'title' => 'Apagar',
+                                    'data-confirm' => 'Tem a certeza que deseja apagar este utilizador?',
+                                    'data-method' => 'post',
+                                    'data-toggle' => 'tooltip',
+                                ]);
+                            },
+                            // Botão PROMOVER (A tua lógica personalizada)
+                            'promote' => function ($url, $model, $key) {
+                                $auth = Yii::$app->authManager;
+                                $isAgent = $auth->getAssignment('agente', $model->id);
+                                $isAdmin = $auth->getAssignment('admin', $model->id);
 
-                        // Verificar se já é Agente OU Admin
-                        $isAgent = $auth->getAssignment('agente', $model->id);
-                        $isAdmin = $auth->getAssignment('admin', $model->id);
+                                if ($isAgent || $isAdmin) {
+                                    return ''; // Não mostra nada se já tiver cargo
+                                }
 
-                        // Se já tiver cargo elevado, não mostra o botão
-                        if ($isAgent || $isAdmin) {
-                            return '';
-                        }
-
-                        // Se for Cliente normal, mostra o botão de promover
-                        // Nota: Usei 'fa-briefcase' (mala), mas podes usar 'fa-user-plus'
-                        return Html::a('<span class="fas fa-briefcase"></span>', ['promote', 'id' => $model->id], [
-                            'title' => 'Promover a Agente',
-                            'aria-label' => 'Promover a Agente',
-                            'class' => 'btn btn-sm btn-primary', // Estilo botão azul pequeno
-                            'style' => 'margin-left: 5px;', // Espaçamento
-                            'data' => [
-                                'confirm' => 'Tens a certeza que queres promover este utilizador a Agente?',
-                                'method' => 'post',
-                            ],
-                        ]);
-                    },
+                                return Html::a('<i class="fas fa-briefcase"></i>', ['promote', 'id' => $model->id], [
+                                    'class' => 'btn btn-warning btn-sm text-dark', // Mudei para amarelo (warning) para destacar
+                                    'title' => 'Promover a Agente',
+                                    'data-toggle' => 'tooltip',
+                                    'data' => [
+                                        'confirm' => 'Promover este utilizador a Agente?',
+                                        'method' => 'post',
+                                    ],
+                                ]);
+                            },
+                        ],
+                    ],
                 ],
-            ],
-        ],
-    ]); ?>
-
+            ]); ?>
+        </div>
+    </div>
 </div>
