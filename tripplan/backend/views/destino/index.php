@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'tableOptions' => ['class' => 'table table-striped table-hover mb-0'],
                 'layout' => "{items}\n<div class='p-3 d-flex justify-content-between align-items-center'>{summary}{pager}</div>",
                 'columns' => [
-                    
+
 
                     // Agente de Viagem (Podes adicionar lógica para mostrar o nome se tiveres a relação)
                     [

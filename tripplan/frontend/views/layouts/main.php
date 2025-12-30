@@ -59,9 +59,7 @@ AppAsset::register($this);
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
 
-                    <a href="<?= Url::to(['/user/favorites']) ?>" class="nav-item nav-link">
-                        <i class="fa fa-heart"></i>
-                    </a>
+                    
 
                         <a href="<?= Url::to(['/plano-viagem/index']) ?>" class="nav-item nav-link ">Viagem</a>
                     <a href="<?= Url::to(['/destino/index']) ?>" class="nav-item nav-link ">Destino</a>
