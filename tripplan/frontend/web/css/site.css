@@ -338,3 +338,42 @@ a.desc:after {
     .info-side { padding: 30px; }
 }
 
+/* PÁGINA DO PLANO VIAGEM
+
+
+/* 1. CONFIGURAÇÃO DE LAYOUT E FUNDO
+   Define uma cor de fundo suave para destacar os cartões brancos */
+body {
+    background-color: #f0f4f8 !important;
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+}
+
+/* --- 3. Cartões (A estética da sugestão) --- */
+.trip-card {
+    background: #ffffff !important;
+    border-radius: 15px !important;
+    padding: 25px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    margin-bottom: 25px !important;
+    border: none !important;
+}
+
+/* --- 4. Tabelas e Ações --- */
+.grid-view table { border: none !important; }
+.grid-view thead th {
+    background-color: #f8fafc !important;
+    color: #64748b !important;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 12px !important;
+    border-bottom: 2px solid #f1f5f9 !important;
+}
+
+.btn-action {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    text-decoration: none !important;
+}

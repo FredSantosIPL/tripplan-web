@@ -9774,3 +9774,44 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+
+/* Forçar o fundo cinza em toda a página */
+body {
+  background-color: #f0f4f8 !important;
+  padding-bottom: 50px;
+}
+
+/* Criar o efeito de Cartão Branco (o segredo da imagem) */
+.trip-card {
+  background-color: #ffffff !important;
+  border-radius: 15px !important;
+  padding: 30px !important;
+  margin-bottom: 30px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+}
+
+/* Estilo para as tabelas dentro dos cartões */
+.grid-view table {
+  border: none !important;
+  margin-top: 15px;
+}
+
+.grid-view thead th {
+  background-color: #f8fafc !important;
+  border-bottom: 2px solid #edf2f7 !important;
+  color: #64748b !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 12px !important;
+}
+
+/* Botões de Ação (Lápis e Lixo) */
+.btn-action {
+  background-color: #f1f5f9 !important;
+  padding: 8px 12px !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  display: inline-block;
+  transition: 0.3s;
+}

@@ -14,119 +14,112 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="plano-viagem-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="trip-card shadow-sm">
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
+        <h1><?= Html::encode($this->title) ?></h1>
 
-            'nome_viagem',
-            'data_inicio:date',
-            'data_fim:date',
-        ],
-    ]) ?>
+        <?= DetailView::widget([
+            'model' => $model,
+            'options' => ['class' => 'table table-borderless'],
+            'attributes' => [
 
-    <p>
-        <?= Html::a('Editar Viagem', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                'nome_viagem',
+                'data_inicio:date',
+                'data_fim:date',
+            ],
+        ]) ?>
+
+        <div class="mt-3">
+
+        <?= Html::a('Editar Viagem', ['update', 'id' => $model->id], ['class' => 'btn btn-primary rounded-pill btn-sm']) ?>
         <?= Html::a('Apagar Viagem', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-danger rounded-pill btn-sm',
             'data' => [
                 'confirm' => 'Tem a certeza que quer apagar este item?',
                 'method' => 'post',
             ],
         ]) ?>
-    </p>
-</div>
 
-<div class="destino-view">
-
-    <div class="mt-4 d-flex gap-2">
-        <h3>Gerir Viagem</h3>
-        <p class="text-muted">Adiciona detalhes ao teu plano:</p>
-
-        <?= Html::a('Inserir Destino',
-            ['destino/create', 'plano_viagem_id' => $model->id],
-            ['class' => 'btn btn-success ']
-        ) ?>
-
-        <?= Html::a('Inserir Estadia',
-            ['estadia/create', 'plano_id' => $model->id],
-            ['class' => 'btn btn-primary ']
-        ) ?>
-
-
+        </div>
 
     </div>
 
+    <div class="mt-5 mb-3">
+        <h2>Gerir Viagem</h2>
+        <p class="text-muted">Personaliza os detalhes do teu plano:</p>
+    </div>
 
-    <?php if (isset($destinosProvider) && $destinosProvider->count > 0): ?>
+    <div class="trip-card shadow-sm">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="m-0">Destinos</h3>
+            <?= Html::a('Inserir Destino',
+                ['destino/create', 'plano_viagem_id' => $model->id],
+                ['class' => 'btn btn-success rounded-pill']
+            ) ?>
+        </div>
 
-        <h3 class="mt-5 border-bottom pb-2">Destino</h3>
-
-        <?= GridView::widget([
-            'dataProvider' => $destinosProvider,
-            'summary' => '',
-            'tableOptions' => ['class' => 'table table-hover shadow-sm bg-white rounded'],
-            'columns' => [
-                // Coluna 1: Nome da Cidade (como está na tua base de dados)
-                [
-                    'attribute' => 'nome_cidade',
-                    'label' => 'Destino', // O título que aparece no topo da coluna
+        <?php if (isset($destinosProvider) && $destinosProvider->count > 0): ?>
+            <?= GridView::widget([
+                'dataProvider' => $destinosProvider,
+                'summary' => '',
+                'tableOptions' => ['class' => 'table table-hover'],
+                'columns' => [
+                    ['attribute' => 'nome_cidade', 'label' => 'Cidade'],
+                    ['attribute' => 'pais', 'label' => 'País'],
+                    [
+                        'class' => 'yii\grid\ActionColumn',
+                        'controller' => 'destino',
+                        'template' => '{update} {delete}',
+                        'header' => 'Ações',
+                        'buttons' => [
+                            'update' => function ($url) { return Html::a('✏️', $url, ['class' => 'btn-action']); },
+                            'delete' => function ($url) { return Html::a('🗑️', $url, ['class' => 'btn-action text-danger', 'data-method' => 'post']); },
+                        ],
+                    ],
                 ],
+            ]); ?>
+        <?php else: ?>
+            <div class="alert alert-light border">Ainda não tens destinos. Clica no botão acima!</div>
+        <?php endif; ?>
+    </div>
 
-                // Coluna 2: País
-                [
-                    'attribute' => 'pais',
-                    'label' => 'País',
+    <div class="trip-card shadow-sm mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="m-0"> Estadias</h3>
+            <?= Html::a('Inserir Estadia',
+                ['estadia/create', 'plano_id' => $model->id],
+                ['class' => 'btn btn-primary rounded-pill']
+            ) ?>
+        </div>
+
+        <?php if (isset($estadiasProvider) && $estadiasProvider->count > 0): ?>
+            <?= GridView::widget([
+                'dataProvider' => $estadiasProvider,
+                'summary' => '',
+                'tableOptions' => ['class' => 'table table-hover'],
+                'columns' => [
+                    ['attribute' => 'nome_alojamento', 'label' => 'Alojamento'],
+                    ['attribute' => 'data_checkin', 'label' => 'Check-in', 'format' => ['date', 'php:d/m/Y']],
+                    [
+                        'class' => 'yii\grid\ActionColumn',
+                        'controller' => 'estadia',
+                        'template' => '{update} {delete}',
+                        'header' => 'Ações',
+                        'buttons' => [
+                            'update' => function ($url) { return Html::a('✏️', $url, ['class' => 'btn-action']); },
+                            'delete' => function ($url) { return Html::a('🗑️', $url, ['class' => 'btn-action text-danger', 'data-method' => 'post']); },
+                        ],
+                    ],
                 ],
-
-                // Coluna 3: Botões (Apagar/Editar)
-                [
-                    'class' => 'yii\grid\ActionColumn',
-                    'controller' => 'destino',
-                    'template' => '{update} {delete}', // Botão de editar e apagar
-                    'header' => 'Ações',
-                ],
-            ],
-        ]); ?>
-
-
-
-    <?php endif; ?>
-
-
-    <?php if (isset($estadiasProvider) && $estadiasProvider->count > 0): ?>
-
-        <h3 class="mt-5 border-bottom pb-2">Estadia</h3>
-
-        <?= GridView::widget([
-            'dataProvider' => $estadiasProvider,
-            'summary' => '',
-            'tableOptions' => ['class' => 'table table-hover shadow-sm bg-white rounded'],
-            'columns' => [
-                [
-                    'attribute' => 'nome_alojamento', // Verifica se o nome no teu BD é este
-                    'label' => 'Alojamento',
-                ],
-                [
-                    'attribute' => 'data_checkin',
-                    'label' => 'Check-in',
-                    'format' => ['date', 'php:d/m/Y'],
-                ],
-
-                [
-                    'class' => 'yii\grid\ActionColumn',
-                    'controller' => 'estadia', // Garante que tens um EstadiaController
-                    'template' => '{update} {delete}',
-                    'header' => 'Ações',
-                ],
-            ],
-        ]); ?>
-
-
-    <?php endif; ?>
+            ]); ?>
+        <?php else: ?>
+            <div class="alert alert-light border">Nenhuma estadia registada. Adiciona a primeira!</div>
+        <?php endif; ?>
+    </div>
 
 </div>
+
+
 
 
 
