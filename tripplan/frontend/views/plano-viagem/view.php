@@ -29,20 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
 
-        <div class="mt-3">
-
-        <?= Html::a('Editar Viagem', ['update', 'id' => $model->id], ['class' => 'btn btn-primary rounded-pill btn-sm']) ?>
-        <?= Html::a('Apagar Viagem', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger rounded-pill btn-sm',
-            'data' => [
-                'confirm' => 'Tem a certeza que quer apagar este item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-
-        </div>
-
     </div>
+
+
 
     <div class="mt-5 mb-3">
         <h2>Gerir Viagem</h2>
@@ -92,6 +81,8 @@ $this->params['breadcrumbs'][] = $this->title;
             ) ?>
         </div>
 
+
+
         <?php if (isset($estadiasProvider) && $estadiasProvider->count > 0): ?>
             <?= GridView::widget([
                 'dataProvider' => $estadiasProvider,
@@ -113,7 +104,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ]); ?>
         <?php else: ?>
-            <div class="alert alert-light border">Nenhuma estadia registada. Adiciona a primeira!</div>
+            <div class="alert alert-light border">Nenhuma estadia registada.</div>
         <?php endif; ?>
     </div>
 

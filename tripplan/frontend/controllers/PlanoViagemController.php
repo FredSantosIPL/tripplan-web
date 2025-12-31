@@ -102,35 +102,54 @@ class PlanoViagemController extends Controller
     {
         $model = new PlanoViagem();
 
+        // Se receber dados do formulário (POST)
         if ($model->load($this->request->post())) {
+
             $model->user_id = \Yii::$app->user->id;
 
+            // Tenta gravar a Viagem principal
             if ($model->save()) {
+
+                // --- INÍCIO DA GRAVAÇÃO DOS DESTINOS ---
                 $postData = $this->request->post('PlanoViagem');
+
+                // O operador ?? [] evita erro se não vier nada
                 $destinosEscolhidos = $postData['destinos_id'] ?? [];
+
+                // CORREÇÃO: Garante que é sempre uma lista, mesmo que seja só 1
+                if (!empty($destinosEscolhidos) && !is_array($destinosEscolhidos)) {
+                    $destinosEscolhidos = [$destinosEscolhidos];
+                }
 
                 if (!empty($destinosEscolhidos)) {
                     foreach ($destinosEscolhidos as $destinoId) {
-                        $ligacao = new PlanoDestino();
+                        $ligacao = new \common\models\PlanoDestino();
                         $ligacao->plano_id = $model->id;
                         $ligacao->destino_id = $destinoId;
                         $ligacao->save();
                     }
                 }
-
+                // --- FIM DA GRAVAÇÃO DOS DESTINOS ---
 
                 return $this->redirect(['view', 'id' => $model->id]);
+
+            } else {
+                // DEBUG: Se falhar ao gravar, mostra o erro no ecrã para tu veres
+                // Podes apagar isto depois de estar a funcionar
+                echo "<pre>";
+                print_r($model->getErrors());
+                echo "</pre>";
+                die();
             }
         } else {
             $model->loadDefaultValues();
-            //if ($model->hasErrors()) {
-            //    var_dump($model->getErrors());
-          //      die();
-              //}
-
         }
 
-        $listaDestinos = \common\models\Destino::find()->select(['nome_cidade', 'id'])->indexBy('id')->column();
+        // Prepara a lista para o dropdown
+        $listaDestinos = \common\models\Destino::find()
+            ->select(['nome_cidade', 'id'])
+            ->indexBy('id')
+            ->column();
 
         return $this->render('create', [
             'model' => $model,

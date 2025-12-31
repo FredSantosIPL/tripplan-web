@@ -12,7 +12,7 @@ use common\models\Destino;
 // Tenta carregar destinos. Se a tabela não existir, usa uma lista vazia para não dar erro.
 try {
     $todosDestinos = Destino::find()->all();
-    $listaDestinos = ArrayHelper::map($todosDestinos, 'id', 'nome');
+    $listaDestinos = ArrayHelper::map($todosDestinos, 'id', 'nome_cidade');
 } catch (\Exception $e) {
     $listaDestinos = []; // Lista vazia se houver erro na BD
 }

@@ -43,28 +43,25 @@ class PlanoViagemSearch extends PlanoViagem
     {
         $query = PlanoViagem::find();
 
-        if (!\Yii::$app->user->isGuest) {
-            $query->andWhere(['user_id' => \Yii::$app->user->id]);
-        } else {
-            // Se não estiver logado, esconde tudo (segurança)
-            $query->where('0=1');
-        }
-        // add conditions that should always apply here
-
+//        if (!\Yii::$app->user->isGuest) {
+//            $query->andWhere(['user_id' => \Yii::$app->user->id]);
+//        } else {
+//            // Se não estiver logado, esconde tudo (segurança)
+//            $query->where('0=1');
+//        }
+//        // add conditions that should always apply here
+//
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
 
-        $this->load($params, $formName);
+        $this->load($params);
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
         }
-
-
-
 
         // grid filtering conditions
         $query->andFilterWhere([

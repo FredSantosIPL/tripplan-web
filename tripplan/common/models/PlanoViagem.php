@@ -4,7 +4,8 @@ namespace common\models;
 
 use Yii;
 use yii\db\ActiveRecord;
-
+use common\models\PlanoDestino;
+use common\models\Destino;
 /**
  * This is the model class for table "plano_viagem".
  *
@@ -89,6 +90,42 @@ class PlanoViagem extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::class, ['id' => 'user_id']);
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        // Executa o comportamento padrão primeiro
+        parent::afterSave($insert, $changedAttributes);
+
+        // Se o utilizador selecionou um destino no formulário
+        if (!empty($this->destino_id)) {
+
+            // Passo 1: Se estivermos a editar, apagamos o destino antigo para não duplicar
+            PlanoDestino::deleteAll(['plano_id' => $this->id]);
+
+            // Passo 2: Criamos a nova ligação
+            $novaLigacao = new PlanoDestino();
+            $novaLigacao->plano_id = $this->id; // ID desta viagem
+            $novaLigacao->destino_id = $this->destino_id; // ID do destino escolhido
+            $novaLigacao->save();
+        }
+    }
+
+
+    public function getPlanoDestinos()
+    {
+        // Certifica-te que tens o ficheiro common/models/PlanoDestino.php criado!
+        return $this->hasMany(PlanoDestino::class, ['plano_id' => 'id']);
+    }
+
+    /**
+     * Passo 2: Ligar aos Destinos finais.
+     * O "via" diz para usar a relação de cima para chegar aos destinos.
+     */
+    public function getDestinos()
+    {
+        return $this->hasMany(Destino::class, ['id' => 'destino_id'])
+            ->via('planoDestinos');
     }
 
 }

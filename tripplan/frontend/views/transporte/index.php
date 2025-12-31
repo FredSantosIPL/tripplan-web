@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'contentOptions' => ['style' => 'vertical-align:middle;'],
                     ],
 
-                    // Data Partida (Formatada com horas)
+                    // Data Partida
                     [
                         'attribute' => 'data_partida',
                         'label' => 'Partida',
@@ -64,7 +64,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         'contentOptions' => ['class' => 'text-muted', 'style' => 'vertical-align:middle;'],
                     ],
 
-                    // Ações (Botões apenas com Texto, sem ícones)
                     [
                         'class' => ActionColumn::className(),
                         'header' => 'Ações',
