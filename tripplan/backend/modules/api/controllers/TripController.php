@@ -32,12 +32,15 @@ class TripController extends ActiveController
      */
     public function actionDetails($id)
     {
-        // 1. Procura o plano pelo ID
-        // 2. "with('transportes')" faz o Eager Loading da relação definida no teu model (getTransportes)
+        // Carrega a Viagem com TODAS as relações
         $plano = PlanoViagem::find()
             ->where(['id' => $id])
-            ->with('transportes') // Usa a relação que tens no model
-            // ->with('fotosMemorias') // Podes descomentar isto se quiseres trazer as fotos também
+            ->with([
+                'transportes',     // Relação getTransportes()
+                'destinos',        // Relação getDestinos()
+                'atividades',      // Relação getAtividades()
+                'fotosMemorias'    // Relação getFotosMemorias()
+            ])
             ->asArray()
             ->one();
 

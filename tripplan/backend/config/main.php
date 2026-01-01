@@ -44,14 +44,20 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/trip'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/transporte'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/destino'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/atividade'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/fotos-memorias'],
+
+                'POST api/auth/login' => 'api/auth/login',
             ],
         ],
-        */
     ], // <-- ARRAY DE COMPONENTES FECHA AQUI
     'params' => $params,
 ];
