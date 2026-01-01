@@ -19,40 +19,29 @@
             </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <!-- href be escaped -->
-        <!-- <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
-                </div>
-            </div>
-        </div> -->
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <?php
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
-                    ['label' => 'Manage Users', 'icon' => 'users', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
-                    ['label' => 'Manage Trips', 'icon' => 'list', 'url' => ['/plano-viagem/index']],
-                    ['label' => 'Manage Trip Destinations', 'icon' => 'list', 'url' => ['/plano-destino/index']],
+                    // Secção de Administração
+                    ['label' => 'Gerir Utilizadores', 'icon' => 'users', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
 
-                    ['label' => 'Yii2 PROVIDED', 'header' => true],
-                    ['label' => 'Login', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],
-                    ['label' => 'Gii',  'icon' => 'file-code', 'url' => ['/gii'], 'target' => '_blank'],
-                    ['label' => 'Debug', 'icon' => 'bug', 'url' => ['/debug'], 'target' => '_blank'],
+                    // Secção Principal (Viagens)
+                    ['label' => 'Gestão de Viagens', 'header' => true],
+                    ['label' => 'Planos de Viagem', 'icon' => 'map-marked-alt', 'url' => ['/plano-viagem/index']],
+                    ['label' => 'Destinos da Viagem', 'icon' => 'map-marker-alt', 'url' => ['/plano-destino/index']],
 
-                    ['label' => 'Manage the various planning stuff', 'header' => true],
-                    ['label' => 'Destinations', 'icon' => 'plane', 'url' => ['/destino/index']],
-                    ['label' => 'Stays', 'icon' => 'home', 'url' => ['/estadia/index']],
-                    ['label' => 'Activities', 'icon' => 'list', 'url' => ['/atividade/index']],
-                    ['label' => 'Costs', 'icon' => 'money-bill', 'url' => ['/despesa/index']],
-                    ['label' => 'Transport', 'icon' => 'bus', 'url' => ['/transporte/index']]
+                    // Login (Só aparece se não estiver logado, o que no backend é raro, mas fica o código)
+                    ['label' => 'Entrar', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],
 
+                    // Secção de Recursos (Tabelas de Apoio)
+                    ['label' => 'Recursos de Planeamento', 'header' => true],
+                    ['label' => 'Destinos (Catálogo)', 'icon' => 'globe', 'url' => ['/destino/index']],
+                    ['label' => 'Estadias / Alojamento', 'icon' => 'hotel', 'url' => ['/estadia/index']], // Mudei icon 'home' para 'hotel'
+                    ['label' => 'Atividades', 'icon' => 'hiking', 'url' => ['/atividade/index']], // Mudei icon 'list' para 'hiking' (caminhada/atividade)
+                    //['label' => 'Despesas', 'icon' => 'money-bill', 'url' => ['/despesa/index']],
+                    ['label' => 'Transportes', 'icon' => 'bus', 'url' => ['/transporte/index']]
                 ],
             ]);
             ?>
