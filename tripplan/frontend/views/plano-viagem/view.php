@@ -29,10 +29,9 @@ $dias = $diferenca->days + 1;
                     </h1>
                     <p class="text-muted mt-2 mb-0">
                         <i class="far fa-calendar-alt"></i>
-                        <?= Yii::$app->formatter->asDate($model->data_inicio, 'long') ?>
+                        <?= date('d/m/Y', strtotime($model->data_inicio)) ?>
                         até
-                        <?= Yii::$app->formatter->asDate($model->data_fim, 'long') ?>
-                    </p>
+                        <?= date('d/m/Y', strtotime($model->data_fim)) ?>
                 </div>
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">
                     <div class="badge bg-info text-dark p-3 rounded-pill fs-6 shadow-sm">
@@ -79,7 +78,7 @@ $dias = $diferenca->days + 1;
                                 <i class="fas fa-globe-europe"></i> <?= Html::encode($destino->pais) ?>
                             </h6>
                             <p class="card-text text-secondary">
-                                <small>Chegada: <?= Yii::$app->formatter->asDate($destino->data_chegada, 'php:d M, Y') ?></small>
+                                <small>Chegada: <?= date('d/m/Y', strtotime($destino->data_chegada)) ?></small>
                             </p>
                         </div>
                         <div class="card-footer bg-white border-top-0 d-flex gap-2 pb-3">
@@ -121,7 +120,7 @@ $dias = $diferenca->days + 1;
                             <p class="card-text mt-3">
                                 <i class="fas fa-calendar-check text-success"></i>
                                 <strong>Check-in:</strong> <br>
-                                <?= Yii::$app->formatter->asDate($estadia->data_checkin, 'php:d M, Y') ?>
+                                <?= date('d/m/Y', strtotime($estadia->data_checkin)) ?>
                             </p>
                         </div>
                         <div class="card-footer bg-white border-top-0 d-flex gap-2 pb-3">

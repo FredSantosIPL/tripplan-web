@@ -15,6 +15,10 @@ use common\models\Destino;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?php // --- ADICIONE ESTA LINHA AQUI --- ?>
+    <?= $form->field($model, 'plano_viagem_id')->hiddenInput()->label(false) ?>
+    <?php ?>
+
     <?php
     // Vamos buscar os dados e ver se existem
     $destinos = Destino::find()->all();
@@ -44,11 +48,11 @@ use common\models\Destino;
 
 
     <?= $form->field($model, 'data_checkin')->textInput([
-         'placeholder' => 'DD-MM-AAAA',
-        'type' => 'date'
-    ])?>
-
-
+        'type' => 'date',
+        // O TRUQUE FINAL:
+        // Garante que a data entra na caixa no formato que o navegador exige (Ano-Mês-Dia)
+        'value' => $model->data_checkin ? date('Y-m-d', strtotime($model->data_checkin)) : '',
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
