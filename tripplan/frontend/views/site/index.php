@@ -65,7 +65,7 @@ $baseUrl = Yii::$app->request->baseUrl;
                             <img class="img-fluid rounded shadow-sm" src="<?= $baseUrl ?>/img/about-2.jpg" alt="">
                         </div>
                     </div>
-                    <a href="<?= Url::to(['/site/about']) ?>" class="btn btn-primary mt-1">Saber Mais</a>
+                    <a href="<?= Url::to(['/site/contact']) ?>" class="btn btn-primary mt-1">Saber Mais</a>
                 </div>
             </div>
         </div>
@@ -75,18 +75,8 @@ $baseUrl = Yii::$app->request->baseUrl;
 <div class="container-fluid pb-5">
     <div class="container pb-5">
         <div class="row">
-            <div class="col-md-4">
-                <div class="d-flex mb-4 mb-lg-0 card-service p-4 shadow-sm rounded bg-white">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3 rounded-circle" style="height: 100px; width: 100px;">
-                        <i class="fa fa-2x fa-money-check-alt text-white"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <h5 class="">Preços Competitivos</h5>
-                        <p class="m-0 text-muted">Garantimos a melhor relação qualidade-preço do mercado.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
+
+            <div class="col-md-6">
                 <div class="d-flex mb-4 mb-lg-0 card-service p-4 shadow-sm rounded bg-white">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3 rounded-circle" style="height: 100px; width: 100px;">
                         <i class="fa fa-2x fa-award text-white"></i>
@@ -97,7 +87,7 @@ $baseUrl = Yii::$app->request->baseUrl;
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="d-flex mb-4 mb-lg-0 card-service p-4 shadow-sm rounded bg-white">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3 rounded-circle" style="height: 100px; width: 100px;">
                         <i class="fa fa-2x fa-globe text-white"></i>
@@ -145,37 +135,6 @@ $baseUrl = Yii::$app->request->baseUrl;
     </div>
 </div>
 
-<div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
-        <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Serviços</h6>
-            <h1>Serviços de Viagens e Turismo</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center mb-2 py-5 px-4 shadow-sm rounded hover-effect">
-                    <i class="fa fa-2x fa-route mx-auto mb-4 text-primary"></i>
-                    <h5 class="mb-2">Guias de Viagem</h5>
-                    <p class="m-0 text-muted">Descobre os segredos locais com os nossos guias experientes.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center mb-2 py-5 px-4 shadow-sm rounded hover-effect">
-                    <i class="fa fa-2x fa-ticket-alt mx-auto mb-4 text-primary"></i>
-                    <h5 class="mb-2">Reserva de Bilhetes</h5>
-                    <p class="m-0 text-muted">Voos, comboios e atrações ao melhor preço garantido.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="service-item bg-white text-center mb-2 py-5 px-4 shadow-sm rounded hover-effect">
-                    <i class="fa fa-2x fa-hotel mx-auto mb-4 text-primary"></i>
-                    <h5 class="mb-2">Reserva de Hotéis</h5>
-                    <p class="m-0 text-muted">Desde hotéis de luxo a hostels acolhedores.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <style>
     /* Pequenos ajustes CSS para dar vida à página */
