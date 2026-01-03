@@ -88,17 +88,11 @@ class DestinoController extends Controller
     {
         $model = new Destino();
 
-        // Se recebermos o ID da viagem pela URL, guardamos logo no modelo
+        // Se vier ID pelo URL, guarda
         if ($plano_viagem_id) {
             $model->plano_viagem_id = $plano_viagem_id;
         }
 
-        // --- ADICIONE ESTA LINHA AQUI ---
-        // Preenche automaticamente o ID do agente logado
-        $model->agente_viagem_id = Yii::$app->user->id;
-        // --------------------------------
-
-        // Buscar lista de cidades
         $cidadesDisponiveis = Destino::find()
             ->select(['nome_cidade'])
             ->distinct()
@@ -106,20 +100,37 @@ class DestinoController extends Controller
             ->column();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post())) {
+            // Define a variável que estava em falta
+            $postData = $this->request->post();
 
+            if ($model->load($postData)) {
 
-                if ($plano_viagem_id) {
-                    $model->plano_viagem_id = $plano_viagem_id;
+                // 1. Agente
+                $model->agente_viagem_id = Yii::$app->user->id;
+
+                // 2. Data
+                $data = \DateTime::createFromFormat('d/m/Y', $model->data_chegada);
+                if ($data) {
+                    $model->data_chegada = $data->format('Y-m-d');
                 }
 
-                $model->agente_viagem_id = Yii::$app->user->id;
+                // 3. Força o ID da viagem (A tal "Martelada")
+                if (empty($model->plano_viagem_id) && $plano_viagem_id) {
+                    $model->plano_viagem_id = $plano_viagem_id;
+                }
+                // Se ainda estiver vazio, tenta ir buscar diretamente aos dados enviados
+                if (empty($model->plano_viagem_id) && isset($postData['Destino']['plano_viagem_id'])) {
+                    $model->plano_viagem_id = $postData['Destino']['plano_viagem_id'];
+                }
 
                 if ($model->save()) {
                     return $this->redirect(['plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                } else {
+                    var_dump($model->getErrors());
+                    die();
                 }
-                // Se falhar agora, provavelmente é a data, mas vamos tentar primeiro resolver o ID do agente.
             }
+
         } else {
             $model->loadDefaultValues();
         }
@@ -131,17 +142,34 @@ class DestinoController extends Controller
     }
     public function actionUpdate($id)
     {
+        // 1. Vai buscar a data como está na BD (ex: '2026-06-04')
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        // 2. Busca as cidades (para não dar aquele erro da lista)
+        $cidadesDisponiveis = Destino::find()
+            ->select(['nome_cidade'])
+            ->distinct()
+            ->orderBy('nome_cidade')
+            ->column();
+
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            $data = \DateTime::createFromFormat('d/m/Y', $model->data_chegada);
+            if ($data) {
+
+                $model->data_chegada = $data->format('Y-m-d');
+            }
+
+            if ($model->save()) {
+                return $this->redirect(['plano-viagem/view', 'id' => $model->plano_viagem_id]);
+            }
         }
 
         return $this->render('update', [
             'model' => $model,
+            'cidadesDisponiveis' => $cidadesDisponiveis,
         ]);
     }
-
     /**
      * Deletes an existing Destino model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

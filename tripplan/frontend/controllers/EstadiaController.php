@@ -101,12 +101,32 @@ class EstadiaController extends Controller
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        // --- NÃO FAZEMOS CONVERSÃO AQUI ---
+        // Deixamos a data ir como '2026-06-04' para o formulário.
+        // O navegador vai perceber e mostrar automaticamente como '04/06/2026'.
+
+        if ($this->request->isPost) {
+            $postData = $this->request->post();
+
+            if ($model->load($postData)) {
+
+                // --- TESTE DE SEGURANÇA ---
+                // Se o navegador enviar a data já certa (Y-m-d), não fazemos nada.
+                // Se enviar em PT (d/m/Y), convertemos.
+                $dataTeste = \DateTime::createFromFormat('d/m/Y', $model->data_checkin);
+                if ($dataTeste) {
+                    $model->data_checkin = $dataTeste->format('Y-m-d');
+                }
+
+                if ($model->save()) {
+                    return $this->redirect(['plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                }
+            }
         }
 
         return $this->render('update', [
@@ -123,9 +143,14 @@ class EstadiaController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
 
-        return $this->redirect(['index']);
+        $planoId = $model->plano_viagem_id;
+
+        // 3. Apaga o destino
+        $model->delete();
+
+        return $this->redirect(['plano-viagem/view', 'id' => $planoId]);
     }
 
     /**

@@ -125,7 +125,13 @@ class PlanoViagem extends \yii\db\ActiveRecord
      */
     public function getDestinos()
     {
-        return $this->hasMany(Destino::class, ['plano_viagem_id' => 'destino_id']);
+        return $this->hasMany(Destino::class, ['plano_viagem_id' => 'id']);
+    }
+
+    public function getEstadias()
+    {
+        // Certifique-se que a tabela se chama 'estadia' e a chave 'plano_viagem_id'
+        return $this->hasMany(\common\models\Estadia::class, ['plano_viagem_id' => 'id']);
     }
 
 }

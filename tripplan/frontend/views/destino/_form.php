@@ -5,12 +5,19 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\Destino */
 /* @var $form yii\widgets\ActiveForm */
+
+if (!isset($cidadesDisponiveis)) {
+    $cidadesDisponiveis = [];
+}
+// ---------------------
 ?>
+
 
 <div class="destino-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'plano_viagem_id')->hiddenInput()->label(false) ?>
 
     <?= $form->field($model, 'nome_cidade')->textInput([
         'maxlength' => true,
@@ -31,8 +38,9 @@ use yii\widgets\ActiveForm;
         'class' => 'form-control'
     ]) ?>
 
-    <?= $form->field($model, 'data_chegada')->input('date', [
-        'class' => 'form-control'
+    <?= $form->field($model, 'data_chegada')->textInput([
+        'type' => 'date',
+        'value' => $model->data_chegada ? date('Y-m-d', strtotime($model->data_chegada)) : '',
     ]) ?>
 
     <div class="form-group mt-4 d-grid gap-2">
