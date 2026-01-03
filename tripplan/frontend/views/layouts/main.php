@@ -77,23 +77,27 @@ AppAsset::register($this);
                         </a>
                         <div class="dropdown-menu border-0 m-0">
 
+                            <?php if (Yii::$app->user->isGuest): ?>
+                                <a href="<?= Url::to(['/site/signup']) ?>" class="nav-item nav-link">Signup</a>
+                                <a href="<?= Url::to(['/site/login']) ?>" class="dropdown-item" data-toggle="modal" data-target="#login-modal">Login</a>
+                            <?php else: ?>
 
+                                <span class="navbar-text text-dark" style="margin-right: 10px; font-weight: bold;">
+                                    <?= Yii::$app->user->identity->username ?>
+                                </span>
 
-                    <?php if (Yii::$app->user->isGuest): ?>
-                        <a href="<?= Url::to(['/site/signup']) ?>" class="nav-item nav-link">Signup</a>
-                        <a href="<?= Url::to(['/site/login']) ?>" class="dropdown-item" data-toggle="modal"
-                           data-target="#login-modal">Login</a>
-                        <a href="<?= Url::to(['/']) ?>" class="nav-item nav-link">Perfil</a>
-                    <?php else: ?>
-                        <?php
-                        echo Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline m-0'])
-                            . Html::submitButton(
-                                'Logout',
-                                ['class' => 'nav-item nav-link btn btn-link logout p-0']
-                            )
-                            . Html::endForm();
-                        ?>
-                    <?php endif; ?>
+                                <?php
+                                echo Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
+                                    . Html::submitButton(
+                                        'Logout',
+                                        ['class' => 'btn btn-link nav-link logout',
+                                            'style' => 'padding: 0; text-decoration: none; border: none; outline: none; box-shadow: none;']
+                                    )
+                                    . Html::endForm();
+                                ?>
+
+                            <?php endif; ?>
+                        </div>
                 </div>
             </div>
         </nav>

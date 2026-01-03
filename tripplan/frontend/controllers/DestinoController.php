@@ -33,7 +33,7 @@ class DestinoController extends Controller
                         [
                             'actions' => ['index', 'view', 'create', 'update', 'delete'],
                             'allow' => true,
-                            'roles' => ['@'], // '@' só para utilizadores com login feito
+                            'roles' => ['@'], 
                         ]
                     ],
                 ],
@@ -88,15 +88,37 @@ class DestinoController extends Controller
     {
         $model = new Destino();
 
+        // Se recebermos o ID da viagem pela URL, guardamos logo no modelo
         if ($plano_viagem_id) {
             $model->plano_viagem_id = $plano_viagem_id;
         }
 
-        $model->agente_viagem_id = Yii::$app->user->identity->id;
+        // --- ADICIONE ESTA LINHA AQUI ---
+        // Preenche automaticamente o ID do agente logado
+        $model->agente_viagem_id = Yii::$app->user->id;
+        // --------------------------------
+
+        // Buscar lista de cidades
+        $cidadesDisponiveis = Destino::find()
+            ->select(['nome_cidade'])
+            ->distinct()
+            ->orderBy('nome_cidade')
+            ->column();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+
+
+                if ($plano_viagem_id) {
+                    $model->plano_viagem_id = $plano_viagem_id;
+                }
+
+                $model->agente_viagem_id = Yii::$app->user->id;
+
+                if ($model->save()) {
+                    return $this->redirect(['plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                }
+                // Se falhar agora, provavelmente é a data, mas vamos tentar primeiro resolver o ID do agente.
             }
         } else {
             $model->loadDefaultValues();
@@ -104,16 +126,9 @@ class DestinoController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'cidadesDisponiveis' => $cidadesDisponiveis,
         ]);
     }
-
-    /**
-     * Updates an existing Destino model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);

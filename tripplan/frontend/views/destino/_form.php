@@ -1,11 +1,10 @@
 <?php
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/** @var yii\web\View $this */
-/** @var common\models\Destino $model */
-/** @var yii\widgets\ActiveForm $form */
+/* @var $this yii\web\View */
+/* @var $model common\models\Destino */
+/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="destino-form">
@@ -13,19 +12,31 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
 
-    <?= $form->field($model, 'nome_cidade')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'nome_cidade')->textInput([
+        'maxlength' => true,
+        'placeholder' => 'Começa a escrever para ver sugestões...',
+        'class' => 'form-control form-control-lg',
+        'list' => 'lista-cidades' // Isto liga o input à lista abaixo
+    ])->label('Cidade') ?>
 
-    <?= $form->field($model, 'pais')->textInput(['maxlength' => true]) ?>
+    <datalist id="lista-cidades">
+        <?php foreach ($cidadesDisponiveis as $cidade): ?>
+        <option value="<?= \yii\helpers\Html::encode($cidade) ?>">
+            <?php endforeach; ?>
+    </datalist>
 
-    <?= $form->field($model, 'data_chegada')->textInput([
-        'placeholder' => 'DD-MM-AAAA',
-        'type' => 'date'
+    <?= $form->field($model, 'pais')->textInput([
+        'maxlength' => true,
+        'placeholder' => 'Ex: França',
+        'class' => 'form-control'
     ]) ?>
 
+    <?= $form->field($model, 'data_chegada')->input('date', [
+        'class' => 'form-control'
+    ]) ?>
 
-
-    <div class="form-group">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+    <div class="form-group mt-4 d-grid gap-2">
+        <?= Html::submitButton('Guardar Destino', ['class' => 'btn btn-success btn-lg btn-block']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
