@@ -2,14 +2,14 @@
 
 namespace backend\controllers;
 
-use common\models\transporte;
+use common\models\Transporte;
 use common\models\TransporteSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TransporteController implements the CRUD actions for transporte model.
+ * TransporteController implements the CRUD actions for Transporte model.
  */
 class TransporteController extends Controller
 {
@@ -32,7 +32,7 @@ class TransporteController extends Controller
     }
 
     /**
-     * Lists all transporte models.
+     * Lists all Transporte models.
      *
      * @return string
      */
@@ -48,7 +48,7 @@ class TransporteController extends Controller
     }
 
     /**
-     * Displays a single transporte model.
+     * Displays a single Transporte model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,16 +61,30 @@ class TransporteController extends Controller
     }
 
     /**
-     * Creates a new transporte model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * Creates a new Transporte model.
+     * MODIFICADO: Aceita o ID do plano para pré-preenchimento
+     * @param int|null $plano_viagem_id
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionCreate($plano_viagem_id = null)
     {
-        $model = new transporte();
+        $model = new Transporte();
+
+        // 1. Se vier o ID no URL (clicou em "Adicionar" na viagem), preenche logo
+        if ($plano_viagem_id) {
+            $model->plano_viagem_id = $plano_viagem_id;
+        }
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
+
+                // 2. Redirecionamento Inteligente:
+                // Se tem plano associado, volta para a dashboard da viagem
+                if ($model->plano_viagem_id) {
+                    return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                }
+
+                // Senão, vai para a view do transporte (comportamento padrão)
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -83,8 +97,7 @@ class TransporteController extends Controller
     }
 
     /**
-     * Updates an existing transporte model.
-     * If update is successful, the browser will be redirected to the 'view' page.
+     * Updates an existing Transporte model.
      * @param int $id ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
@@ -94,6 +107,12 @@ class TransporteController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+
+            // Redirecionamento Inteligente após editar
+            if ($model->plano_viagem_id) {
+                return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -103,29 +122,38 @@ class TransporteController extends Controller
     }
 
     /**
-     * Deletes an existing transporte model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * Deletes an existing Transporte model.
      * @param int $id ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        // Guarda o ID do plano antes de apagar
+        $planoId = $model->plano_viagem_id;
+
+        $model->delete();
+
+        // Se pertencia a um plano, volta para lá
+        if ($planoId) {
+            return $this->redirect(['/plano-viagem/view', 'id' => $planoId]);
+        }
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the transporte model based on its primary key value.
+     * Finds the Transporte model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return transporte the loaded model
+     * @return Transporte the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = transporte::findOne(['id' => $id])) !== null) {
+        if (($model = Transporte::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

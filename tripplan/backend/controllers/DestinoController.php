@@ -63,17 +63,31 @@ class DestinoController extends Controller
 
     /**
      * Creates a new Destino model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * MODIFICADO: Aceita plano_viagem_id opcional para pré-preencher
+     * @param int|null $plano_viagem_id
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionCreate($plano_viagem_id = null)
     {
         $model = new Destino();
 
+        // A tua lógica original (mantida)
         $model->agente_viagem_id = Yii::$app->user->identity->id;
+
+        // NOVA LÓGICA: Se vier do botão "Adicionar" no Plano de Viagem
+        if ($plano_viagem_id) {
+            $model->plano_viagem_id = $plano_viagem_id;
+        }
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
+
+                // Redirecionamento inteligente:
+                // Se pertence a um plano, volta para o plano. Senão, vai para a view do destino.
+                if ($model->plano_viagem_id) {
+                    return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                }
+
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
@@ -97,6 +111,12 @@ class DestinoController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+
+            // Redirecionamento inteligente após editar
+            if ($model->plano_viagem_id) {
+                return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -114,7 +134,17 @@ class DestinoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+
+        // Guarda o ID do plano antes de apagar para poder voltar atrás
+        $planoId = $model->plano_viagem_id;
+
+        $model->delete();
+
+        // Se tinha plano associado, volta para o plano
+        if ($planoId) {
+            return $this->redirect(['/plano-viagem/view', 'id' => $planoId]);
+        }
 
         return $this->redirect(['index']);
     }

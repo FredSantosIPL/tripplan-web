@@ -2,16 +2,17 @@
 
 namespace backend\controllers;
 
-use common\models\Atividade;
-use common\models\AtividadeSearch;
+use common\models\FotosMemorias;
+use common\models\FotosMemoriasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
- * AtividadeController implements the CRUD actions for Atividade model.
+ * FotosMemoriasController implements the CRUD actions for FotosMemorias model.
  */
-class AtividadeController extends Controller
+class FotosMemoriasController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +33,13 @@ class AtividadeController extends Controller
     }
 
     /**
-     * Lists all Atividade models.
+     * Lists all FotosMemorias models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new AtividadeSearch();
+        $searchModel = new FotosMemoriasSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,7 +49,7 @@ class AtividadeController extends Controller
     }
 
     /**
-     * Displays a single Atividade model.
+     * Displays a single FotosMemorias model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,29 +62,36 @@ class AtividadeController extends Controller
     }
 
     /**
-     * Creates a new Atividade model.
-     * MODIFICADO: Aceita plano_viagem_id opcional para pré-preencher
+     * Creates a new FotosMemorias model.
+     * MODIFICADO: Aceita plano_viagem_id e gere upload
      * @param int|null $plano_viagem_id
      * @return string|\yii\web\Response
      */
     public function actionCreate($plano_viagem_id = null)
     {
-        $model = new Atividade();
+        $model = new FotosMemorias();
 
-        // 1. Se recebermos o ID pelo URL, preenchemos logo
+        // 1. Pré-preencher ID da viagem se vier no URL
         if ($plano_viagem_id) {
             $model->plano_viagem_id = $plano_viagem_id;
         }
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post())) {
 
-                // 2. Se veio de uma viagem específica, volta para lá. Senão vai para a view da atividade.
-                if ($model->plano_viagem_id) {
-                    return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                // 2. Capturar o ficheiro de imagem
+                $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+                // 3. Tentar fazer upload (a função upload() deve estar no Model)
+                // Se o upload correr bem, grava na BD. 'save(false)' salta validações repetidas.
+                if ($model->upload() && $model->save(false)) {
+
+                    // 4. Redirecionamento Inteligente
+                    if ($model->plano_viagem_id) {
+                        return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                    }
+                    return $this->redirect(['view', 'id' => $model->id]);
                 }
-
-                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -95,8 +103,7 @@ class AtividadeController extends Controller
     }
 
     /**
-     * Updates an existing Atividade model.
-     * If update is successful, the browser will be redirected to the 'view' page.
+     * Updates an existing FotosMemorias model.
      * @param int $id ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
@@ -105,14 +112,23 @@ class AtividadeController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        if ($this->request->isPost && $model->load($this->request->post())) {
 
-            // Redirecionamento inteligente após editar
-            if ($model->plano_viagem_id) {
-                return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+            // Lógica de substituição de imagem
+            $novoFicheiro = UploadedFile::getInstance($model, 'imageFile');
+            if ($novoFicheiro) {
+                $model->imageFile = $novoFicheiro;
+                // O método upload() encarrega-se de atualizar a propriedade 'foto' com o novo caminho
+                $model->upload();
             }
 
-            return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->save(false)) {
+                // Redirecionamento Inteligente
+                if ($model->plano_viagem_id) {
+                    return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+                }
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
 
         return $this->render('update', [
@@ -121,8 +137,7 @@ class AtividadeController extends Controller
     }
 
     /**
-     * Deletes an existing Atividade model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * Deletes an existing FotosMemorias model.
      * @param int $id ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
@@ -130,13 +145,13 @@ class AtividadeController extends Controller
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
+        $planoId = $model->plano_viagem_id; // Guardar ID antes de apagar
 
-        // Guarda o ID do plano antes de apagar para poder voltar atrás
-        $planoId = $model->plano_viagem_id;
+        // Opcional: Apagar ficheiro físico (unlink) se quiseres limpar o disco
+        // if (file_exists(Yii::getAlias('@frontend/web/') . $model->foto)) { ... }
 
         $model->delete();
 
-        // Se tinha plano associado, volta para o plano
         if ($planoId) {
             return $this->redirect(['/plano-viagem/view', 'id' => $planoId]);
         }
@@ -145,15 +160,15 @@ class AtividadeController extends Controller
     }
 
     /**
-     * Finds the Atividade model based on its primary key value.
+     * Finds the FotosMemorias model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Atividade the loaded model
+     * @return FotosMemorias the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Atividade::findOne(['id' => $id])) !== null) {
+        if (($model = FotosMemorias::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

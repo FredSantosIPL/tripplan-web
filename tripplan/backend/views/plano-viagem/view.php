@@ -85,7 +85,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="card-body p-0">
                     <?php
-                    // IMPORTANTE: Criar a relação getDestinos() no modelo PlanoViagem
                     $destinosProvider = new ArrayDataProvider([
                         'allModels' => $model->destinos ?? [],
                         'pagination' => ['pageSize' => 5],
@@ -97,12 +96,32 @@ $this->params['breadcrumbs'][] = $this->title;
                         'emptyText' => '<div class="p-3 text-muted text-center">Sem destinos definidos.</div>',
                         'tableOptions' => ['class' => 'table table-sm table-striped mb-0'],
                         'columns' => [
-                            'cidade', // Ajusta conforme os campos da tua tabela 'destino'
+                            'nome_cidade',
                             'pais',
+                            'data_chegada:date',
                             [
                                 'class' => 'yii\grid\ActionColumn',
-                                'controller' => 'destino',
-                                'template' => '{view} {delete}',
+                                'header' => 'Ações',
+                                'template' => '{view} {update} {delete}', // Adicionei update
+                                'buttons' => [
+                                    'view' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-eye"></i>', $url, ['class' => 'text-info mr-1']);
+                                    },
+                                    'update' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-pencil-alt"></i>', $url, ['class' => 'text-primary mr-1']);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-trash"></i>', $url, [
+                                            'class' => 'text-danger',
+                                            'data-confirm' => 'Apagar este destino?',
+                                            'data-method' => 'post',
+                                        ]);
+                                    },
+                                ],
+                                // CORREÇÃO: Forçar a rota absoluta para /destino/...
+                                'urlCreator' => function ($action, $model, $key, $index) {
+                                    return Url::to(['/destino/' . $action, 'id' => $model->id]);
+                                }
                             ],
                         ],
                     ]); ?>
@@ -122,7 +141,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="card-body p-0">
                     <?php
-                    // IMPORTANTE: Criar a relação getAtividades() no modelo PlanoViagem
                     $atividadesProvider = new ArrayDataProvider([
                         'allModels' => $model->atividades ?? [],
                         'pagination' => ['pageSize' => 5],
@@ -134,17 +152,31 @@ $this->params['breadcrumbs'][] = $this->title;
                         'emptyText' => '<div class="p-3 text-muted text-center">Sem atividades planeadas.</div>',
                         'tableOptions' => ['class' => 'table table-sm table-striped mb-0'],
                         'columns' => [
-                            'nome', // Ajusta conforme os campos da tua tabela 'atividade'
-                            [
-                                'attribute' => 'custo',
-                                'value' => function($data) {
-                                    return isset($data->custo) ? $data->custo . '€' : '-';
-                                }
-                            ],
+                            'nome_atividade',
+                            'tipo',
                             [
                                 'class' => 'yii\grid\ActionColumn',
-                                'controller' => 'atividade',
-                                'template' => '{view} {delete}',
+                                'header' => 'Ações',
+                                'template' => '{view} {update} {delete}',
+                                'buttons' => [
+                                    'view' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-eye"></i>', $url, ['class' => 'text-info mr-1']);
+                                    },
+                                    'update' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-pencil-alt"></i>', $url, ['class' => 'text-primary mr-1']);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-trash"></i>', $url, [
+                                            'class' => 'text-danger',
+                                            'data-confirm' => 'Apagar esta atividade?',
+                                            'data-method' => 'post',
+                                        ]);
+                                    },
+                                ],
+                                // CORREÇÃO: Forçar a rota absoluta para /atividade/...
+                                'urlCreator' => function ($action, $model, $key, $index) {
+                                    return Url::to(['/atividade/' . $action, 'id' => $model->id]);
+                                }
                             ],
                         ],
                     ]); ?>
@@ -159,7 +191,6 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="card shadow-sm card-outline card-info">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title m-0 text-info"><i class="fas fa-plane"></i> Transportes / Deslocações</h5>
-                    <!-- O link envia o ID do plano atual para o create do transporte -->
                     <?= Html::a('<i class="fas fa-plus"></i> Adicionar Transporte',
                         ['transporte/create', 'plano_viagem_id' => $model->id],
                         ['class' => 'btn btn-sm btn-info shadow-sm']
@@ -167,9 +198,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="card-body p-0">
                     <?php
-                    // DataProvider para Transportes
                     $transporteProvider = new ArrayDataProvider([
-                        'allModels' => $model->transportes ?? [], // Usa a relação getTransportes()
+                        'allModels' => $model->transportes ?? [],
                         'pagination' => ['pageSize' => 5],
                         'sort' => [
                             'attributes' => ['data_partida', 'tipo'],
@@ -187,7 +217,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             [
                                 'attribute' => 'tipo',
                                 'value' => function($data) {
-                                    // Podes adicionar lógica de ícones aqui
                                     return ucfirst($data->tipo);
                                 }
                             ],
@@ -200,7 +229,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             ],
                             [
                                 'class' => 'yii\grid\ActionColumn',
-                                'controller' => 'transporte', // Aponta para o TransporteController
                                 'header' => 'Ações',
                                 'template' => '{view} {update} {delete}',
                                 'buttons' => [
@@ -218,6 +246,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                         ]);
                                     },
                                 ],
+                                // CORREÇÃO: Forçar a rota absoluta para /transporte/...
+                                'urlCreator' => function ($action, $model, $key, $index) {
+                                    return Url::to(['/transporte/' . $action, 'id' => $model->id]);
+                                }
                             ],
                         ],
                     ]); ?>
@@ -232,7 +264,6 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="card shadow-sm card-outline card-warning">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title m-0 text-warning"><i class="fas fa-camera-retro"></i> Fotos e Memórias</h5>
-                    <!-- Link para criar foto, enviando o ID do plano -->
                     <?= Html::a('<i class="fas fa-plus"></i> Adicionar Foto',
                         ['fotos-memorias/create', 'plano_viagem_id' => $model->id],
                         ['class' => 'btn btn-sm btn-warning shadow-sm text-white']
@@ -240,9 +271,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="card-body p-0">
                     <?php
-                    // DataProvider para FotosMemorias
                     $fotosProvider = new ArrayDataProvider([
-                        'allModels' => $model->fotosMemorias ?? [], // Usa a relação getFotosMemorias()
+                        'allModels' => $model->fotosMemorias ?? [],
                         'pagination' => ['pageSize' => 5],
                     ]);
                     ?>
@@ -255,23 +285,53 @@ $this->params['breadcrumbs'][] = $this->title;
                         'columns' => [
                             ['class' => 'yii\grid\SerialColumn'],
 
-                            // Exemplo: Se tiveres um campo 'caminho_foto', podes mostrar uma miniatura
-                            /*
+                            // COLUNA 1: FOTO (Miniatura)
                             [
                                 'label' => 'Foto',
-                                'format' => 'html',
+                                'format' => 'raw',
+                                'headerOptions' => ['style' => 'width:120px;'],
                                 'value' => function($data) {
-                                    return Html::img($data->caminho_foto, ['width' => '50px']);
+                                    if ($data->foto && file_exists(Yii::getAlias('@frontend/web/') . $data->foto)) {
+                                        return Html::img(Url::to('../../frontend/web/') . $data->foto, [
+                                            'width' => '100px',
+                                            'class' => 'img-thumbnail rounded'
+                                        ]);
+                                    }
+                                    return '<span class="text-muted small">Sem imagem</span>';
                                 }
                             ],
-                            */
-                            'descricao', // Substitui pelos campos reais da tabela fotos_memorias
+
+                            // COLUNA 2: Comentário
+                            [
+                                'attribute' => 'comentario',
+                                'label' => 'Memória / Comentário',
+                                'contentOptions' => ['style' => 'vertical-align:middle;'],
+                            ],
 
                             [
                                 'class' => 'yii\grid\ActionColumn',
-                                'controller' => 'fotos-memorias', // Confirma o nome do teu controller
                                 'header' => 'Ações',
                                 'template' => '{view} {update} {delete}',
+                                'contentOptions' => ['style' => 'vertical-align:middle;'],
+                                'buttons' => [
+                                    'view' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-eye"></i>', $url, ['class' => 'text-info mr-2']);
+                                    },
+                                    'update' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-pencil-alt"></i>', $url, ['class' => 'text-primary mr-2']);
+                                    },
+                                    'delete' => function ($url, $model) {
+                                        return Html::a('<i class="fas fa-trash"></i>', $url, [
+                                            'class' => 'text-danger',
+                                            'data-confirm' => 'Apagar esta foto?',
+                                            'data-method' => 'post',
+                                        ]);
+                                    },
+                                ],
+                                // CORREÇÃO: Forçar a rota absoluta para /fotos-memorias/...
+                                'urlCreator' => function ($action, $model, $key, $index) {
+                                    return Url::to(['/fotos-memorias/' . $action, 'id' => $model->id]);
+                                }
                             ],
                         ],
                     ]); ?>

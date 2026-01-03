@@ -3,9 +3,12 @@
 namespace common\models;
 
 use Yii;
-use yii\db\ActiveRecord;
-use common\models\PlanoDestino;
 use common\models\Destino;
+use common\models\Transporte;
+use common\models\FotosMemorias;
+use common\models\User;
+use common\models\Atividade;
+
 /**
  * This is the model class for table "plano_viagem".
  *
@@ -18,10 +21,12 @@ use common\models\Destino;
  * @property FotosMemorias[] $fotosMemorias
  * @property Transporte[] $transportes
  * @property User $user
+ * @property Destino[] $destinos
+ * @property Atividade[] $atividades
  */
 class PlanoViagem extends \yii\db\ActiveRecord
 {
-
+    // Variável auxiliar (opcional, dependendo do uso)
     public $destino_id;
 
     /**
@@ -44,7 +49,7 @@ class PlanoViagem extends \yii\db\ActiveRecord
             [['nome_viagem'], 'string', 'max' => 70],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
 
-            [['destino_id'], 'safe'], //seguro receber a tabela
+            // Validação de datas: data_fim deve ser maior ou igual a data_inicio
             ['data_fim', 'compare', 'compareAttribute' => 'data_inicio', 'operator' => '>=', 'message' => 'A data de fim não pode ser anterior à data de início.'],
         ];
     }
@@ -56,17 +61,15 @@ class PlanoViagem extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => 'User ID',
-            'nome_viagem' => 'Nome Viagem',
-            'data_inicio' => 'Data Inicio',
-            'data_fim' => 'Data Fim',
+            'user_id' => 'Utilizador',
+            'nome_viagem' => 'Nome da Viagem',
+            'data_inicio' => 'Data de Início',
+            'data_fim' => 'Data de Fim',
         ];
     }
 
     /**
-     * Gets query for [[FotosMemorias]].
-     *
-     * @return \yii\db\ActiveQuery
+     * Relação: Uma Viagem tem Muitas Fotos
      */
     public function getFotosMemorias()
     {
@@ -74,9 +77,7 @@ class PlanoViagem extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Transportes]].
-     *
-     * @return \yii\db\ActiveQuery
+     * Relação: Uma Viagem tem Muitos Transportes
      */
     public function getTransportes()
     {
@@ -84,48 +85,28 @@ class PlanoViagem extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[User]].
-     *
-     * @return \yii\db\ActiveQuery
+     * Relação: Uma Viagem pertence a um User
      */
     public function getUser()
     {
         return $this->hasOne(User::class, ['id' => 'user_id']);
     }
 
-    public function afterSave($insert, $changedAttributes)
-    {
-        // Executa o comportamento padrão primeiro
-        parent::afterSave($insert, $changedAttributes);
-
-        // Se o utilizador selecionou um destino no formulário
-        if (!empty($this->destino_id)) {
-
-            // Passo 1: Se estivermos a editar, apagamos o destino antigo para não duplicar
-            PlanoDestino::deleteAll(['plano_id' => $this->id]);
-
-            // Passo 2: Criamos a nova ligação
-            $novaLigacao = new PlanoDestino();
-            $novaLigacao->plano_id = $this->id; // ID desta viagem
-            $novaLigacao->destino_id = $this->destino_id; // ID do destino escolhido
-            $novaLigacao->save();
-        }
-    }
-
-
-    public function getPlanoDestinos()
-    {
-        // Certifica-te que tens o ficheiro common/models/PlanoDestino.php criado!
-        return $this->hasMany(PlanoDestino::class, ['plano_id' => 'id']);
-    }
-
     /**
-     * Passo 2: Ligar aos Destinos finais.
-     * O "via" diz para usar a relação de cima para chegar aos destinos.
+     * Relação: Uma Viagem tem Muitos Destinos
      */
     public function getDestinos()
     {
-        return $this->hasMany(Destino::class, ['plano_viagem_id' => 'destino_id']);
+        return $this->hasMany(Destino::class, ['plano_viagem_id' => 'id']);
     }
 
+    /**
+     * Relação: Uma Viagem tem Muitas Atividades (Indiretas)
+     * Como a atividade está ligada ao DESTINO e não à viagem, usamos via('destinos')
+     */
+    public function getAtividades()
+    {
+        return $this->hasMany(Atividade::class, ['destino_id' => 'id'])
+            ->via('destinos');
+    }
 }

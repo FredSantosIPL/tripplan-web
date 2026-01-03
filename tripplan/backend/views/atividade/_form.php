@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use common\models\Destino;
+use common\models\PlanoViagem;
 
 /** @var yii\web\View $this */
 /** @var common\models\Atividade $model */
@@ -14,24 +15,65 @@ use common\models\Destino;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <!-- Lógica do Plano de Viagem -->
+    <?php if ($model->plano_viagem_id): ?>
+        <?= $form->field($model, 'plano_viagem_id')->hiddenInput()->label(false) ?>
+        <div class="alert alert-info shadow-sm">
+            <i class="fas fa-hiking mr-1"></i> A adicionar atividade ao plano de viagem <b>#<?= $model->plano_viagem_id ?></b>
+        </div>
 
+        <?php
+        // Se temos o plano, carregamos apenas os destinos desse plano para o dropdown ficar filtrado
+        $destinos = Destino::find()->where(['plano_viagem_id' => $model->plano_viagem_id])->all();
+        $listaDestinos = ArrayHelper::map($destinos, 'id', 'nome_cidade');
+        ?>
+    <?php else: ?>
+        <?= $form->field($model, 'plano_viagem_id')->dropDownList(
+            ArrayHelper::map(PlanoViagem::find()->all(), 'id', 'nome_viagem'),
+            ['prompt' => 'Selecione o Plano de Viagem', 'class' => 'form-control shadow-sm']
+        ) ?>
 
-    <?php
-    $destinos = \common\models\Destino::find()->all();
-    $listaDestinos = \yii\helpers\ArrayHelper::map($destinos, 'id', 'nome_cidade');
-    ?>
+        <?php
+        // Fallback: carrega todos se não houver plano selecionado
+        $destinos = Destino::find()->all();
+        $listaDestinos = ArrayHelper::map($destinos, 'id', 'nome_cidade');
+        ?>
+    <?php endif; ?>
 
-    <?= $form->field($model, 'destino_id')->dropDownList(
-            $listaDestinos,
-        ['prompt' => 'Selecione o Destino...']
-    ) ?>
+    <div class="card bg-light mb-3 shadow-sm border-0">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($model, 'destino_id')->dropDownList(
+                        $listaDestinos,
+                        ['prompt' => 'Selecione a cidade (Destino)...', 'class' => 'form-control shadow-sm']
+                    )->label('<i class="fas fa-map-marker-alt"></i> Localização (Cidade)') ?>
+                </div>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'tipo')->dropDownList([
+                        'Cultura' => 'Cultura',
+                        'Lazer' => 'Lazer',
+                        'Gastronomia' => 'Gastronomia',
+                        'Desporto' => 'Desporto',
+                        'Natureza' => 'Natureza'
+                    ], ['prompt' => 'Selecione o Tipo...', 'class' => 'form-control shadow-sm']) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'nome_atividade')->textInput(['maxlength' => true]) ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <?= $form->field($model, 'nome_atividade', [
+                        'template' => '{label}<div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-ticket-alt"></i></span></div>{input}</div>{error}{hint}'
+                    ])->textInput(['maxlength' => true, 'placeholder' => 'Ex: Visita ao Museu, Jantar, Surf...']) ?>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'tipo')->textInput() ?>
+            <!-- Se tiveres campos extra como Custo ou Data, podes adicionar aqui dentro do card -->
+        </div>
+    </div>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    <div class="form-group mt-3">
+        <?= Html::submitButton('<i class="fas fa-save"></i> Guardar Atividade', ['class' => 'btn btn-success shadow-sm']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

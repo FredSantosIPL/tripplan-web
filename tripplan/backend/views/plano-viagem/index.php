@@ -15,7 +15,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="plano-viagem-index">
 
-    <!-- Card Container: Dá um aspeto de painel profissional -->
     <div class="card shadow-sm border-0">
 
         <!-- Cabeçalho do Card -->
