@@ -45,6 +45,7 @@ class PlanoViagem extends \yii\db\ActiveRecord
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
 
             [['destino_id'], 'safe'], //seguro receber a tabela
+            ['data_fim', 'compare', 'compareAttribute' => 'data_inicio', 'operator' => '>=', 'message' => 'A data de fim não pode ser anterior à data de início.'],
         ];
     }
 
@@ -124,8 +125,7 @@ class PlanoViagem extends \yii\db\ActiveRecord
      */
     public function getDestinos()
     {
-        return $this->hasMany(Destino::class, ['id' => 'destino_id'])
-            ->via('planoDestinos');
+        return $this->hasMany(Destino::class, ['plano_viagem_id' => 'destino_id']);
     }
 
 }
