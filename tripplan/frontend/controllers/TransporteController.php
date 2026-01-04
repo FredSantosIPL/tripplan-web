@@ -65,28 +65,32 @@ class TransporteController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    // 1. Receber o ID do plano como argumento (vem da URL)
+    public function actionCreate($plano_viagem_id)
     {
-        // Certifique-se que está a usar o caminho correto (common ou app)
         $model = new \common\models\Transporte();
 
+        // 2. Definir o ID logo no início
+        $model->plano_viagem_id = $plano_viagem_id;
+
         if ($this->request->isPost) {
+            // Carrega os dados do formulário, mas NÃO salva ainda
             if ($model->load($this->request->post())) {
 
-                // --- CORREÇÃO 1: Remover o "T" da data para o MySQL aceitar ---
+                // 3. CORREÇÃO DA DATA: Feita ANTES de salvar/validar
+                // O input datetime-local envia "YYYY-MM-DDTHH:MM", o MySQL quer "YYYY-MM-DD HH:MM:SS"
                 $model->data_partida = str_replace('T', ' ', $model->data_partida);
 
-                // Tenta guardar
+                // Opcional: Se precisar de garantir os segundos
+                // if (strlen($model->data_partida) == 16) { $model->data_partida .= ':00'; }
+
+                // 4. Agora sim, tenta salvar
                 if ($model->save()) {
-                    return $this->redirect(['view', 'id' => $model->id]);
-                } else {
-                    // --- CORREÇÃO 2: Se falhar, MOSTRA O ERRO no ecrã ---
-                    // Isto impede que a página apenas recarregue sem dizer nada
-                    echo "<pre>";
-                    var_dump($model->getErrors());
-                    echo "</pre>";
-                    die();
+                    // Sucesso: Volta para a página da Viagem Geral (não para o transporte sozinho)
+                    return $this->redirect(['/plano-viagem/view', 'id' => $plano_viagem_id]);
                 }
+
+                // Se falhar (else), o código continua para baixo e mostra o formulário com os erros pintados de vermelho automaticamente.
             }
         } else {
             $model->loadDefaultValues();
@@ -108,7 +112,11 @@ class TransporteController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+            // --- MUDANÇA AQUI ---
+            // Em vez de ir para a view do transporte ['view', 'id' => $model->id]
+            // Redireciona para o Plano de Viagem usando o ID que está guardado no transporte
+            return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
         }
 
         return $this->render('update', [
@@ -125,9 +133,14 @@ class TransporteController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        $model = $this->findModel($id);
+
+        $plano_id = $model->plano_viagem_id;
+
+        $model->delete();
+
+        return $this->redirect(['/plano-viagem/view', 'id' => $plano_id]);
     }
 
     /**

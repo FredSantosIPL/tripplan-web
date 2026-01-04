@@ -42,6 +42,7 @@ use common\models\Destino;
         'Pousada' => 'Pousada',
         'Resort' => 'Resort',
         'Hostel' => 'Hostel',
+            'Casa Alugada' => 'Casa Alugada',
         ],
         ['prompt' => 'Selecione o Tipo de Alojamento']
     ) ?>

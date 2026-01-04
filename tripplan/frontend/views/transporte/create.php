@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\Transporte $model */
 
-$this->title = 'Create Transporte';
+
 $this->params['breadcrumbs'][] = ['label' => 'Transportes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

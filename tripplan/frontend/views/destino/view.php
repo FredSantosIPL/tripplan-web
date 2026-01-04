@@ -20,7 +20,6 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
 
 <div class="destino-view">
 
-    <!-- CABEÇALHO DO DESTINO -->
     <div class="row mb-4 align-items-center">
         <div class="col-md-7">
             <h1 class="display-4 text-primary font-weight-bold mb-0">
@@ -31,7 +30,6 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
             </p>
         </div>
         <div class="col-md-5 text-md-right mt-3 mt-md-0">
-            <!-- Botão de Favoritos -->
             <?php if (!Yii::$app->user->isGuest): ?>
                 <?= Html::a(
                     $isFavorito ? '<i class="fas fa-heart"></i> Remover Favorito' : '<i class="far fa-heart"></i> Guardar Destino',
@@ -57,22 +55,18 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
                         'method' => 'post',
                     ],
                 ]) ?>
+                <?= Html::a('<i class="fas fa-reply"></i> Plano', ['plano-viagem/view', 'id' => $model->plano_viagem_id], ['class' => 'btn btn-secondary', 'title' => 'Voltar ao Plano']) ?>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <!-- COLUNA ÚNICA: DETALHES E REVIEWS -->
         <div class="col-12">
-            <!-- Cartão de Informações -->
-            <div class="card shadow-sm border-0 mb-4">
+
+            <div class="card shadow-sm border-0 mb-5">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start">
                         <h4 class="text-dark mb-4"><i class="fas fa-info-circle text-primary mr-2"></i> Detalhes da Viagem</h4>
-                        <!-- Botão Mapa (Mantido de forma discreta) -->
-                        <a href="https://www.google.com/maps/search/?api=1&query=<?= urlencode($model->nome_cidade . ',' . $model->pais) ?>" target="_blank" class="btn btn-sm btn-outline-info rounded-pill">
-                            <i class="fas fa-map-marked-alt mr-1"></i> Ver no Mapa
-                        </a>
                     </div>
 
                     <div class="row">
@@ -88,20 +82,96 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
-            <!-- SECÇÃO DE REVIEWS (AVALIAÇÕES) -->
-            <div class="card shadow-sm border-0">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="text-dark m-0"><i class="fas fa-bed text-info mr-2"></i> Estadias</h4>
+                <?= Html::a('<i class="fas fa-plus"></i> Adicionar Estadia',
+                    ['estadia/create', 'destino_id' => $model->id],
+                    ['class' => 'btn btn-info text-white btn-sm rounded-pill shadow-sm']
+                ) ?>
+            </div>
+
+            <div class="row mb-5">
+                <?php if (empty($model->estadias)): ?>
+                    <div class="col-12">
+                        <div class="alert alert-light border text-center p-3">
+                            <p class="text-muted mb-0">Ainda não definiste onde vais dormir.</p>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($model->estadias as $estadia): ?>
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="fw-bold text-info"><?= Html::encode($estadia->nome_alojamento) ?></h5>
+                                    <p class="small text-muted mb-0">
+                                        <i class="fas fa-calendar-check mr-1"></i> Check-in: <?= date('d/m/Y', strtotime($estadia->data_checkin)) ?>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-white border-top-0 d-flex gap-2">
+                                    <?= Html::a('<i class="fas fa-edit"></i>', ['estadia/update', 'id' => $estadia->id], ['class' => 'btn btn-light btn-sm']) ?>
+                                    <?= Html::a('<i class="fas fa-trash"></i>', ['estadia/delete', 'id' => $estadia->id], [
+                                        'class' => 'btn btn-light text-danger btn-sm',
+                                        'data' => ['confirm' => 'Apagar?', 'method' => 'post']
+                                    ]) ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="text-dark m-0"><i class="fas fa-ticket-alt text-warning mr-2"></i> Atividades</h4>
+                <?= Html::a('<i class="fas fa-plus"></i> Adicionar Atividade',
+                    ['atividade/create', 'destino_id' => $model->id],
+                    ['class' => 'btn btn-warning text-dark btn-sm rounded-pill shadow-sm']
+                ) ?>
+            </div>
+
+            <div class="row mb-5">
+                <?php if (empty($model->atividades)): ?>
+                    <div class="col-12">
+                        <div class="alert alert-light border text-center p-4">
+                            <p class="text-muted mb-0">Nenhuma atividade planeada aqui.</p>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($model->atividades as $atividade): ?>
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h6 class="card-title font-weight-bold text-dark m-0">
+                                            <?= Html::encode($atividade->nome_atividade) ?>
+                                        </h6>
+                                        <span class="badge badge-warning text-dark">
+                                            <?= Html::encode($atividade->tipo) ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white border-top-0 d-flex gap-2">
+                                    <?= Html::a('<i class="fas fa-edit"></i>', ['atividade/update', 'id' => $atividade->id], ['class' => 'btn btn-light btn-sm']) ?>
+                                    <?= Html::a('<i class="fas fa-trash"></i>', ['atividade/delete', 'id' => $atividade->id], [
+                                        'class' => 'btn btn-light text-danger btn-sm',
+                                        'data' => ['confirm' => 'Apagar?', 'method' => 'post']
+                                    ]) ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+
+            <div class="card shadow-sm border-0 mb-5">
                 <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
                     <h4 class="m-0 text-dark"><i class="fas fa-star text-warning mr-2"></i> Avaliações e Notas</h4>
                     <?= Html::a('Escrever Avaliação', ['review/create', 'destino_id' => $model->id], ['class' => 'btn btn-primary btn-sm rounded-pill']) ?>
                 </div>
                 <div class="card-body">
 
-                    <!-- LISTA DE COMENTÁRIOS -->
                     <?php
                     $reviews = $model->reviews;
 
@@ -110,7 +180,6 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
                             <div class="media mb-4 border-bottom pb-3">
                                 <div class="mr-3">
                                     <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                        <!-- Mostra a inicial do username -->
                                         <span class="font-weight-bold text-primary">
                                             <?= isset($review->user) ? substr($review->user->username, 0, 1) : '?' ?>
                                         </span>
@@ -124,7 +193,6 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
                                         <small class="text-muted">Avaliação recente</small>
                                     </div>
                                     <div class="text-warning mb-2">
-                                        <!-- Loop para mostrar estrelas baseado na classificacao -->
                                         <?php for($i=1; $i<=5; $i++): ?>
                                             <i class="<?= $i <= $review->classificacao ? 'fas' : 'far' ?> fa-star"></i>
                                         <?php endfor; ?>

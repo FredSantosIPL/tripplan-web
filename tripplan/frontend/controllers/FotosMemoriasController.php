@@ -7,6 +7,7 @@ use common\models\FotosMmemoriasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * FotosMemoriasController implements the CRUD actions for FotosMemorias model.
@@ -65,13 +66,36 @@ class FotosMemoriasController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+
+
+    public function actionCreate($plano_id)
     {
         $model = new FotosMemorias();
+        $model->plano_viagem_id = $plano_id;
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load($this->request->post())) {
+
+                // --- A CORREÇÃO ESTÁ AQUI ---
+                // Forçamos o ID do utilizador AGORA, para garantir que não vem vazio do formulário
+                $model->user_id = \Yii::$app->user->id;
+
+                // Captura o ficheiro
+                $imagem = UploadedFile::getInstance($model, 'foto');
+
+                if ($imagem) {
+                    $nomeFicheiro = 'memoria_' . time() . '_' . rand(100, 999) . '.' . $imagem->extension;
+                    $caminho = \Yii::getAlias('@frontend/web/uploads/') . $nomeFicheiro;
+
+                    if ($imagem->saveAs($caminho)) {
+                        $model->foto = $nomeFicheiro;
+                    }
+                }
+
+                // Tenta salvar e redirecionar
+                if ($model->save()) {
+                    return $this->redirect(['/plano-viagem/view', 'id' => $plano_id]);
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -93,8 +117,31 @@ class FotosMemoriasController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        // Guardar o nome da foto antiga caso o user não carregue uma nova
+        $fotoAntiga = $model->foto;
+
+        if ($this->request->isPost && $model->load($this->request->post())) {
+
+            // Verifica se foi carregada uma NOVA foto
+            $imagem = \yii\web\UploadedFile::getInstance($model, 'foto');
+
+            if ($imagem) {
+                // Se sim, faz o upload da nova
+                $nomeFicheiro = 'memoria_' . time() . '_' . rand(100, 999) . '.' . $imagem->extension;
+                $caminho = \Yii::getAlias('@frontend/web/uploads/') . $nomeFicheiro;
+
+                if ($imagem->saveAs($caminho)) {
+                    $model->foto = $nomeFicheiro;
+                }
+            } else {
+                // Se não, mantém a foto que já lá estava
+                $model->foto = $fotoAntiga;
+            }
+
+            if ($model->save()) {
+                // AQUI ESTÁ O REDIRECIONAMENTO QUE QUERES:
+                return $this->redirect(['/plano-viagem/view', 'id' => $model->plano_viagem_id]);
+            }
         }
 
         return $this->render('update', [
@@ -111,9 +158,17 @@ class FotosMemoriasController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        $model = $this->findModel($id);
+
+        // 2. Guardar o ID do plano (O "Pai") ANTES de apagar
+        $plano_id = $model->plano_viagem_id;
+
+        // 3. Apagar a foto da Base de Dados
+        $model->delete();
+
+        // 4. Redirecionar para a página da Viagem
+        return $this->redirect(['/plano-viagem/view', 'id' => $plano_id]);
     }
 
     /**

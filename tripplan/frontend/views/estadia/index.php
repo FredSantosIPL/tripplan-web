@@ -20,9 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
             <h1 class="text-primary"><?= Html::encode($this->title) ?></h1>
             <p class="text-muted">Lista dos alojamentos reservados para as tuas viagens.</p>
         </div>
-        <div class="col-md-4 text-right d-flex align-items-center justify-content-end">
-            <?= Html::a('Criar Estadia', ['create'], ['class' => 'btn btn-success shadow-sm btn-lg']) ?>
-        </div>
+<!--        <div class="col-md-4 text-right d-flex align-items-center justify-content-end">-->
+<!--            --><?php //= Html::a('Criar Estadia', ['create'], ['class' => 'btn btn-success shadow-sm btn-lg']) ?>
+<!--        </div>-->
     </div>
 
     <!-- Card Container -->

@@ -1,102 +1,57 @@
 <?php
 
-use common\models\Destino;
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\grid\ActionColumn;
-use yii\grid\GridView;
+use yii\widgets\ListView;
 
 /** @var yii\web\View $this */
 /** @var common\models\DestinoSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Os Meus Destinos';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="destino-index">
 
-    <div class="row mb-3">
-        <div class="col-md-8">
-            <h1 class="text-primary"><i class="fas mr-2"></i> <?= Html::encode($this->title) ?></h1>
-            <p class="text-muted">Gere aqui os locais que vais visitar nas tuas viagens.</p>
+<div class="destino-index container-fluid py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h1 class="display-5 fw-bold text-primary mb-0">
+                <i class="fas me-2"></i>Meus Destinos
+            </h1>
+            <p class="text-muted lead">Gere aqui os locais da tua próxima aventura.</p>
         </div>
-        <div class="col-md-4 text-right d-flex align-items-center justify-content-end pr-5">
-            <?= Html::a('<i class="fas fa-plus"></i> Inserir Novo Destino', ['create'], ['class' => 'btn btn-success shadow-sm btn-lg']) ?>
-        </div>
+
+        <?= Html::a('<i class="fas fa-plus me-2"></i>Novo Destino', ['create'], ['class' => 'btn btn-primary btn-lg rounded-pill shadow px-4']) ?>
     </div>
 
-    <!-- Card Container -->
-    <div class="card shadow-sm border-0">
-        <div class="card-body p-0">
-            <?= GridView::widget([
-                'dataProvider' => $dataProvider,
-                'filterModel' => $searchModel,
-                'layout' => "{items}\n<div class='p-3 d-flex justify-content-center'>{pager}</div>",
-                'tableOptions' => ['class' => 'table table-hover table-striped mb-0'],
-                'columns' => [
-                    // Coluna Cidade
-                    [
-                        'attribute' => 'nome_cidade',
-                        'format' => 'raw',
-                        'value' => function ($model) {
-                            return '<span class="font-weight-bold text-dark"><i class="fas text-primary mr-2"></i>' . Html::encode($model->nome_cidade) . '</span>';
-                        },
-                        'contentOptions' => ['style' => 'vertical-align:middle;'],
-                    ],
-
-                    // Coluna País
-                    [
-                        'attribute' => 'pais',
-                        'format' => 'raw',
-                        'value' => function ($model) {
-                            return '<i class="fas text-muted mr-1"></i> ' . Html::encode($model->pais);
-                        },
-                        'contentOptions' => ['style' => 'vertical-align:middle;'],
-                    ],
-
-                    // Data Chegada
-                    [
-                        'attribute' => 'data_chegada',
-                        'label' => 'Chegada',
-                        'format' => ['date', 'php:d/m/Y'],
-                        'contentOptions' => ['class' => 'text-muted', 'style' => 'vertical-align:middle;'],
-                    ],
-
-                    // Ações
-                    [
-                        'class' => ActionColumn::className(),
-                        'header' => 'Ações',
-                        'headerOptions' => ['style' => 'width:150px; text-align:center'],
-                        'contentOptions' => ['style' => 'text-align:center; vertical-align:middle;'],
-                        'urlCreator' => function ($action, Destino $model, $key, $index, $column) {
-                            return Url::toRoute([$action, 'id' => $model->id]);
-                        },
-                        'buttons' => [
-                            'view' => function ($url, $model) {
-                                return Html::a('<i class="fas fa-eye"></i>', $url, [
-                                    'class' => 'btn btn-outline-info btn-sm mr-1',
-                                    'title' => 'Ver',
-                                ]);
-                            },
-                            'update' => function ($url, $model) {
-                                return Html::a('<i class="fas fa-pencil-alt"></i>', $url, [
-                                    'class' => 'btn btn-outline-primary btn-sm mr-1',
-                                    'title' => 'Editar',
-                                ]);
-                            },
-                            'delete' => function ($url, $model) {
-                                return Html::a('<i class="fas fa-trash"></i>', $url, [
-                                    'class' => 'btn btn-outline-danger btn-sm',
-                                    'title' => 'Apagar',
-                                    'data-confirm' => 'Tens a certeza?',
-                                    'data-method' => 'post',
-                                ]);
-                            },
-                        ],
-                    ],
-                ],
-            ]); ?>
-        </div>
+    <div class="row">
+        <?= ListView::widget([
+            'dataProvider' => $dataProvider,
+            'itemView' => '_destino_card', // Chama o ficheiro que criámos acima
+            'layout' => "{items}\n<div class='d-flex justify-content-center mt-4'>{pager}</div>",
+            'itemOptions' => [
+                'tag' => false, // Remove a div extra que o ListView cria
+            ],
+            'emptyText' => '
+                <div class="col-12 text-center py-5">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7486/7486744.png" width="120" class="mb-3 opacity-50">
+                    <h3 class="text-muted">Ainda não tens destinos!</h3>
+                    <p>Começa por adicionar a primeira cidade da tua viagem.</p>
+                </div>
+            ',
+        ]) ?>
     </div>
 
 </div>
+
+<style>
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .hover-lift:hover img {
+        transform: scale(1.05); /* Zoom suave na imagem */
+    }
+</style>

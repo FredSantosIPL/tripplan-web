@@ -17,8 +17,8 @@ use Yii;
  */
 class Atividade extends \yii\db\ActiveRecord
 {
-    // ADICIONADO: Propriedade virtual para lidar com o ID do plano no formulário
-    public $plano_viagem_id;
+
+    public $cidade_aux;
 
     /**
      * {@inheritdoc}

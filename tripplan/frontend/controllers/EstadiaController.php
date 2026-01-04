@@ -78,15 +78,19 @@ class EstadiaController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate($plano_id)
+    public function actionCreate($destino_id)
     {
         $model = new Estadia();
 
-        $model->plano_viagem_id = $plano_id;
+        $model->destino_id = $destino_id;
 
-        if ($model->load(\Yii::$app->request->post()) && $model->save()) {
-            // Depois de guardar, volta para a página da viagem (view)
-            return $this->redirect(['plano-viagem/view', 'id' => $plano_id]);
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+
+                return $this->redirect(['destino/view', 'id' => $model->destino_id]);
+            }
+        } else {
+            $model->loadDefaultValues();
         }
 
         return $this->render('create', [
@@ -143,14 +147,15 @@ class EstadiaController extends Controller
      */
     public function actionDelete($id)
     {
+        // 1. Buscar o modelo para saber quem é o "Pai" (Destino) antes de apagar
         $model = $this->findModel($id);
+        $destino_id = $model->destino_id;
 
-        $planoId = $model->plano_viagem_id;
-
-        // 3. Apaga o destino
+        // 2. Apagar
         $model->delete();
 
-        return $this->redirect(['plano-viagem/view', 'id' => $planoId]);
+        // 3. Voltar para a página do Destino
+        return $this->redirect(['destino/view', 'id' => $destino_id]);
     }
 
     /**

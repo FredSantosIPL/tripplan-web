@@ -142,21 +142,20 @@ class DestinoController extends Controller
     }
     public function actionUpdate($id)
     {
-        // 1. Vai buscar a data como está na BD (ex: '2026-06-04')
+        // Vai buscar a data como está na BD (ex: '2026-06-04')
         $model = $this->findModel($id);
 
-        // 2. Busca as cidades (para não dar aquele erro da lista)
+        //  lista    as cidades
         $cidadesDisponiveis = Destino::find()
             ->select(['nome_cidade'])
             ->distinct()
             ->orderBy('nome_cidade')
             ->column();
 
-        if ($this->request->isPost && $model->load($this->request->post())) {
+        if ($this->request->isPost && $model->load($this->request->post())&& $model->save()) {
 
             $data = \DateTime::createFromFormat('d/m/Y', $model->data_chegada);
             if ($data) {
-
                 $model->data_chegada = $data->format('Y-m-d');
             }
 
@@ -181,11 +180,18 @@ class DestinoController extends Controller
     {
         $model = $this->findModel($id);
 
-        $plano_id = $model->plano_viagem_id;
+        // 1. Guarda o ID da viagem para saber para onde voltar
+        $planoId = $model->plano_viagem_id;
 
+        // 2. O TRUQUE: Apaga os hotéis deste destino primeiro!
+        // Assim a "âncora" solta-se e já podes apagar o destino.
+        \common\models\Estadia::deleteAll(['destino_id' => $id]);
+
+        // 3. Apaga o destino
         $model->delete();
 
-        return $this->redirect(['plano-viagem/view', 'id' => $plano_id]);
+        // 4. Volta para a viagem correta
+        return $this->redirect(['plano-viagem/view', 'id' => $planoId]);
     }
 
     /**

@@ -65,13 +65,20 @@ class AtividadeController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+    public function actionCreate($plano_viagem_id = null)
     {
-        $model = new Atividade();
+        $model = new \common\models\Atividade();
+
+        // Se o ID vier na barra de endereço, preenchemos o modelo
+        if ($plano_viagem_id) {
+            $model->plano_viagem_id = $plano_viagem_id;
+        }
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+
+
+                return $this->redirect(['destino/view', 'id' => $model->destino_id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -94,7 +101,7 @@ class AtividadeController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
@@ -111,9 +118,11 @@ class AtividadeController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $destino_id = $model->destino_id;
+        $model->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['destino/view', 'id' => $destino_id]);
     }
 
     /**

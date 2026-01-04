@@ -2,90 +2,76 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use yii\helpers\ArrayHelper;
 use common\models\PlanoViagem;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
-/** @var common\models\Transporte $model */
+/** @var common\models\transporte $model */
 /** @var yii\widgets\ActiveForm $form */
-
-
-
-// --- LISTA DE OPÇÕES DE TRANSPORTE ---
-$tiposTransporte = [
-    'Avião' => ' Avião',
-    'Comboio' => ' Comboio',
-    'Autocarro' => 'Autocarro',
-    'Carro' => 'Carro Alugado/Próprio',
-    'Barco' => 'Barco',
-
-];
-
-$planos = PlanoViagem::find()->all();
-$listaPlanos = ArrayHelper::map($planos, 'id', 'nome_viagem');
-
 ?>
-
 
 <div class="transporte-form">
 
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <?php $form = ActiveForm::begin(); ?>
 
-            <div class="card shadow-sm border-0 rounded-3">
-                <div class="card-body p-4">
-
-                    <h3 class="mb-4 text-primary">Detalhes da Viagem</h3>
-
-                    <?php $form = ActiveForm::begin([
-                        'options' => ['class' => 'needs-validation'],
-                        'fieldConfig' => [
-                            'template' => "<div class='mb-3'>{label}\n{input}\n{error}</div>",
-                            'labelOptions' => ['class' => 'form-label fw-bold text-secondary'],
-                            'inputOptions' => ['class' => 'form-control form-control-lg'],
-                            'errorOptions' => ['class' => 'invalid-feedback d-block'],
-                        ],
-                    ]); ?>
-
-                    <?= $form->field($model, 'tipo')->dropDownList(
-                        $tiposTransporte,
-                        ['prompt' => 'Selecione o meio de transporte...']
-                    ) ?>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <?= $form->field($model, 'origem')->textInput([
-                                'placeholder' => 'Ex: Lisboa',
-                                'maxlength' => true
-                            ]) ?>
-                        </div>
-                        <div class="col-md-6">
-                            <?= $form->field($model, 'destino')->textInput([
-                                'placeholder' => 'Ex: Paris',
-                                'maxlength' => true
-                            ]) ?>
-                        </div>
-                    </div>
-
-                    <?= $form->field($model, 'data_partida')->input('datetime-local') ?>
+    <?php if ($model->plano_viagem_id): ?>
+        <?= $form->field($model, 'plano_viagem_id')->hiddenInput()->label(false) ?>
 
 
-                    <?= $form->field($model, 'plano_viagem_id')->dropDownList(
-                        $listaPlanos,
-                        ['prompt' => 'Selecione a viagem...']
-                    ) ?>
+    <?php else: ?>
+        <?php
 
-                    <div class="form-group mt-4 d-grid">
-                        <?= Html::submitButton('Guardar Transporte', ['class' => 'btn btn-primary btn-lg']) ?>
-                    </div>
+        $planos = PlanoViagem::find()->all();
+        $listaPlanos = ArrayHelper::map($planos, 'id', 'nome_viagem');
+        ?>
+        <?= $form->field($model, 'plano_viagem_id')->dropDownList(
+            $listaPlanos,
+            ['prompt' => 'Selecione o Plano de Viagem...', 'class' => 'form-control shadow-sm']
+        )->label('<i class="fas fa-map-marked-alt"></i> Plano de Viagem') ?>
+    <?php endif; ?>
 
-
-                    <?php ActiveForm::end(); ?>
-
+    <div class="card bg-light mb-3 shadow-sm border-0">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Dropdown para o Tipo é melhor que texto livre -->
+                    <?= $form->field($model, 'tipo')->dropDownList([
+                        'Avião' => 'Avião',
+                        'Comboio' => 'Comboio',
+                        'Autocarro' => 'Autocarro',
+                        'Carro Alugado' => 'Carro Alugado',
+                        'Barco' => 'Barco'
+                    ], ['prompt' => 'Selecione o tipo de transporte...', 'class' => 'form-control shadow-sm']) ?>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($model, 'origem', [
+                        'template' => '{label}<div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span></div>{input}</div>{error}{hint}'
+                    ])->textInput(['maxlength' => true, 'placeholder' => 'De onde parte?']) ?>
+                </div>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'destino', [
+                        'template' => '{label}<div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-flag-checkered"></i></span></div>{input}</div>{error}{hint}'
+                    ])->textInput(['maxlength' => true, 'placeholder' => 'Para onde vai?']) ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($model, 'data_partida', [
+                        'template' => '{label}<div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-clock"></i></span></div>{input}</div>{error}{hint}'
+                    ])->textInput(['type' => 'datetime-local']) ?>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="form-group mt-3">
+        <?= Html::submitButton('Guardar Transporte', ['class' => 'btn btn-success shadow-sm']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
 
 </div>
