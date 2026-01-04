@@ -14,10 +14,7 @@ use yii\helpers\Url;
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="<?=$assetDir?>/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex"
             <div class="info">
                 <a href="#" class="d-block">
                     <?= Yii::$app->user->identity->username ?>
@@ -36,7 +33,6 @@ use yii\helpers\Url;
                     // Secção Principal (Viagens)
                     ['label' => 'Gestão de Viagens', 'header' => true],
                     ['label' => 'Planos de Viagem', 'icon' => 'map-marked-alt', 'url' => ['/plano-viagem/index']],
-                    ['label' => 'Destinos da Viagem', 'icon' => 'map-marker-alt', 'url' => ['/plano-destino/index']],
 
                     // Login (Só aparece se não estiver logado, o que no backend é raro, mas fica o código)
                     ['label' => 'Entrar', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],

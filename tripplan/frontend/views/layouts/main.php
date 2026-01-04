@@ -91,7 +91,6 @@ AppAsset::register($this);
                                     <i class="fa fa-user-circle mr-1 text-primary"></i> <?= Html::encode(Yii::$app->user->identity->username) ?>
                                 </a>
                                 <div class="dropdown-menu border-0 m-0 shadow-sm rounded">
-                                    <a href="<?= Url::to(['/user/view', 'id' => Yii::$app->user->id]) ?>" class="dropdown-item"><i class="fa fa-user mr-2 text-muted"></i> Perfil</a>
                                     <div class="dropdown-divider"></div>
                                     <?php
                                     echo Html::beginForm(['/site/logout'], 'post', ['class' => 'm-0'])
@@ -133,10 +132,8 @@ AppAsset::register($this);
             <div class="col-lg-4 col-md-6 mb-5 footer-links">
                 <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Links Úteis</h5>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white-50 mb-2" href="<?= Url::to(['/site/about']) ?>"><i class="fa fa-angle-right mr-2"></i>Sobre Nós</a>
+
                     <a class="text-white-50 mb-2" href="<?= Url::to(['/site/contact']) ?>"><i class="fa fa-angle-right mr-2"></i>Contactos</a>
-                    <a class="text-white-50 mb-2" href="<?= Url::to(['/site/signup']) ?>"><i class="fa fa-angle-right mr-2"></i>Registo</a>
-                    <a class="text-white-50 mb-2" href="<?= Url::to(['/site/login']) ?>"><i class="fa fa-angle-right mr-2"></i>Login</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 footer-links">

@@ -18,7 +18,8 @@ use common\models\PlanoViagem;
     <!-- Lógica do Plano de Viagem -->
     <?php if ($model->plano_viagem_id): ?>
         <?= $form->field($model, 'plano_viagem_id')->hiddenInput()->label(false) ?>
-        <div class="alert alert-info shadow-sm">
+
+        <div class="alert alert-info shadow-sm mb-4">
             <i class="fas fa-hiking mr-1"></i> A adicionar atividade ao plano de viagem <b>#<?= $model->plano_viagem_id ?></b>
         </div>
 
@@ -28,19 +29,26 @@ use common\models\PlanoViagem;
         $listaDestinos = ArrayHelper::map($destinos, 'id', 'nome_cidade');
         ?>
     <?php else: ?>
-        <?= $form->field($model, 'plano_viagem_id')->dropDownList(
-            ArrayHelper::map(PlanoViagem::find()->all(), 'id', 'nome_viagem'),
-            ['prompt' => 'Selecione o Plano de Viagem', 'class' => 'form-control shadow-sm']
-        ) ?>
-
         <?php
         // Fallback: carrega todos se não houver plano selecionado
         $destinos = Destino::find()->all();
         $listaDestinos = ArrayHelper::map($destinos, 'id', 'nome_cidade');
         ?>
+
+        <div class="mb-4">
+            <?= $form->field($model, 'plano_viagem_id')->dropDownList(
+                ArrayHelper::map(PlanoViagem::find()->all(), 'id', 'nome_viagem'),
+                ['prompt' => 'Selecione o Plano de Viagem...', 'class' => 'form-control shadow-sm']
+            )->label('<i class="fas fa-map-marked-alt"></i> Plano de Viagem') ?>
+        </div>
     <?php endif; ?>
 
-    <div class="card bg-light mb-3 shadow-sm border-0">
+    <!-- Card Container -->
+    <div class="card shadow-sm border-0 bg-light">
+        <div class="card-header bg-white py-3">
+            <h5 class="card-title m-0 text-primary"><i class="fas fa-hiking mr-1"></i> Detalhes da Atividade</h5>
+        </div>
+
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
@@ -50,7 +58,9 @@ use common\models\PlanoViagem;
                     )->label('<i class="fas fa-map-marker-alt"></i> Localização (Cidade)') ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'tipo')->dropDownList([
+                    <?= $form->field($model, 'tipo', [
+                        'template' => '{label}<div class="input-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-tag"></i></span></div>{input}</div>{error}{hint}'
+                    ])->dropDownList([
                         'Cultura' => 'Cultura',
                         'Lazer' => 'Lazer',
                         'Gastronomia' => 'Gastronomia',
@@ -73,7 +83,7 @@ use common\models\PlanoViagem;
     </div>
 
     <div class="form-group mt-3">
-        <?= Html::submitButton('<i class="fas fa-save"></i> Guardar Atividade', ['class' => 'btn btn-success shadow-sm']) ?>
+        <?= Html::submitButton('<i class="fas fa-save"></i> Guardar Atividade', ['class' => 'btn btn-success shadow-sm px-4']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

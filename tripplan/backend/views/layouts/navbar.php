@@ -37,7 +37,6 @@ use yii\helpers\Url;
         <!-- User Dropdown Menu -->
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="<?=$assetDir?>/img/user2-160x160.jpg" class="user-image img-circle elevation-1" alt="User Image">
                 <span class="d-none d-md-inline font-weight-bold">
                     <?= !Yii::$app->user->isGuest ? Yii::$app->user->identity->username : 'Visitante' ?>
                 </span>
@@ -45,9 +44,9 @@ use yii\helpers\Url;
 
             <!-- Adicionei shadow e removi borda do dropdown -->
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right shadow border-0">
-                <!-- User image -->
+
                 <li class="user-header bg-gradient-primary"> <!-- Gradiente para visual mais moderno -->
-                    <img src="<?=$assetDir?>/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+
 
                     <p>
                         <?= !Yii::$app->user->isGuest ? Yii::$app->user->identity->username : 'Visitante' ?>
@@ -67,13 +66,10 @@ use yii\helpers\Url;
 
                 <!-- Menu Footer-->
                 <li class="user-footer bg-light">
-                    <a href="#" class="btn btn-default btn-flat shadow-sm rounded">
-                        <i class="fas fa-user-circle mr-1 text-muted"></i> Meu Perfil
-                    </a>
 
                     <?= Html::a('<i class="fas fa-sign-out-alt mr-1"></i> Sair', ['/site/logout'], [
                         'data-method' => 'post',
-                        'class' => 'btn btn-default btn-flat float-right shadow-sm rounded text-danger'
+                        'class' => 'btn btn-default btn-flat float-m shadow-sm rounded text-danger'
                     ]) ?>
                 </li>
             </ul>
