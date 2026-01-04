@@ -45,7 +45,7 @@ use yii\helpers\ArrayHelper;
 
             <div class="row mt-3">
                 <div class="col-md-12">
-                    <!-- 4. Comentário (Substitui 'descricao') -->
+                    <!-- 4. Comentário -->
                     <?= $form->field($model, 'comentario')->textarea([
                         'rows' => 4,
                         'placeholder' => 'Escreva uma memória ou comentário sobre esta foto...'

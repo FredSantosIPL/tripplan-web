@@ -18,8 +18,6 @@ use Yii;
  */
 class Review extends \yii\db\ActiveRecord
 {
-
-
     /**
      * {@inheritdoc}
      */
@@ -34,11 +32,15 @@ class Review extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'utilizador_id', 'destino_id', 'classificacao', 'comentario'], 'required'],
-            [['id', 'utilizador_id', 'destino_id', 'classificacao'], 'integer'],
+            [['utilizador_id', 'destino_id', 'classificacao', 'comentario'], 'required', 'message' => 'Este campo é obrigatório.'],
+            [['utilizador_id', 'destino_id', 'classificacao'], 'integer'],
             [['comentario'], 'string'],
-            [['utilizador_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['utilizador_id' => 'id']],
+
+            // Validação da Classificação (1 a 5)
+            ['classificacao', 'in', 'range' => [1, 2, 3, 4, 5], 'message' => 'A classificação deve ser entre 1 e 5 estrelas.'],
+
             [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
+            [['utilizador_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['utilizador_id' => 'id']],
         ];
     }
 
@@ -49,17 +51,15 @@ class Review extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'utilizador_id' => 'Utilizador ID',
-            'destino_id' => 'Destino ID',
-            'classificacao' => 'Classificacao',
-            'comentario' => 'Comentario',
+            'utilizador_id' => 'Utilizador',
+            'destino_id' => 'Destino',
+            'classificacao' => 'Classificação',
+            'comentario' => 'Comentário',
         ];
     }
 
     /**
-     * Gets query for [[Destino]].
-     *
-     * @return \yii\db\ActiveQuery
+     * Relação com Destino
      */
     public function getDestino()
     {
@@ -67,13 +67,10 @@ class Review extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Utilizador]].
-     *
-     * @return \yii\db\ActiveQuery
+     * Relação com User (Alterado para usar utilizador_id)
      */
-    public function getUtilizador()
+    public function getUser()
     {
         return $this->hasOne(User::class, ['id' => 'utilizador_id']);
     }
-
 }

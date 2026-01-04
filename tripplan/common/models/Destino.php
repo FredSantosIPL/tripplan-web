@@ -109,5 +109,4 @@ class Destino extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Review::class, ['destino_id' => 'id']);
     }
-
 }
