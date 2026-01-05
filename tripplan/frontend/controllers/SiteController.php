@@ -83,36 +83,35 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
-        $model = new \common\models\LoginForm();
+        // CORREÇÃO 1: Faltava o 'new' aqui
+        $model = new LoginForm();
 
+        // Lógica de submissão do formulário
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             if (Yii::$app->request->isAjax) {
-                return 'sucesso';
+                // Retorna algo simples para o JS saber que correu bem
+                return $this->asJson(['success' => true]);
             }
             return $this->goBack();
-        }else{
-            if (Yii::$app->request->isAjax) {
-                return $this->renderPartial('_loginForm', [
-                    'model' => $model,
-                ]);
-            }
         }
 
+        $model->password = '';
 
+        // CORREÇÃO 2: Usa 'renderAjax' em vez de 'renderPartial'
+        // O renderAjax garante que o JS do yiiActiveForm é enviado para o browser
         if (Yii::$app->request->isAjax) {
-            return $this->renderPartial('_loginForm', [
+            return $this->renderAjax('_loginForm', [
                 'model' => $model,
             ]);
         }
 
-
-        $model->password = '';
         return $this->render('login', [
             'model' => $model,
         ]);

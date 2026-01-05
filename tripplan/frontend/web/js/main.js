@@ -65,6 +65,17 @@
             }
         }
     });
+
+    $(function(){
+        // Quando clicares num botão com a classe 'showModalButton'
+        $('.showModalButton').click(function(e){
+            e.preventDefault(); // Impede o link de abrir a página normal
+
+            $('#modal').modal('show') // Abre o Modal
+                .find('#modalContent')
+                .load($(this).attr('href')); // Carrega o form de login lá dentro
+        });
+    });
     
 })(jQuery);
 

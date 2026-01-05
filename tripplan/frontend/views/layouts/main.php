@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use frontend\assets\AppAsset;
+use yii\bootstrap4\Modal;
 
 AppAsset::register($this);
 ?>
@@ -82,7 +83,11 @@ AppAsset::register($this);
                         <!-- Área de Utilizador -->
                         <?php if (Yii::$app->user->isGuest): ?>
                             <div class="ml-3 d-flex">
-                                <a href="<?= Url::to(['/site/login']) ?>" class="btn btn-outline-primary btn-pill mr-2">Login</a>
+<!--                                <a href="--><?php //= Url::to(['/site/login']) ?><!--" class="btn btn-outline-primary btn-pill mr-2">Login</a>-->
+                                <a href="<?= Url::to(['/site/login']) ?>"
+                                   value="<?= Url::to(['/site/login']) ?>"
+                                   class="btn btn-outline-primary btn-pill mr-2 showModalButton"> Login
+                                </a>
                                 <a href="<?= Url::to(['/site/signup']) ?>" class="btn btn-primary btn-pill text-white">Registar</a>
                             </div>
                         <?php else: ?>
@@ -141,26 +146,27 @@ AppAsset::register($this);
             </div>
         </div>
     </div>
-<!--    <div class="container-fluid bg-dark text-white- border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">-->
-<!--                <p class="m-0 text-white-50">Copyright &copy; --><?php //= date('Y') ?><!-- <a href="#">TripPlan</a>. Todos os direitos reservados.-->
-<!--                </p>-->
-<!--            </div>-->
-<!--<!--            <div class="col-lg-6 text-center text-md-right">-->-->
-<!--<!--                <p class="m-0 text-white-50">Designed for <a href="https://www.ipleiria.pt">IPL Project</a></p>-->-->
-<!--<!--            </div>-->-->
-<!--        </div>-->
-<!--    </div>-->
-    <!-- Footer End -->
 
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+    <?php
+
+    Modal::begin([
+        'title' => '<h4>Login</h4>',
+        'id' => 'modal',
+        'size' => 'modal-lg',
+    ]);
+
+    echo "<div id='modalContent'></div>";
+
+    Modal::end();
+    ?>
+
     <?php $this->endBody() ?>
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
