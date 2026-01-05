@@ -21,16 +21,21 @@ class AtividadeController extends Controller
         return array_merge(
             parent::behaviors(),
             [
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                        'delete' => ['POST'],
+                'access' => [
+                    'class' => \yii\filters\AccessControl::class,
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'roles' => ['@'], // Só permite utilizadores logados (@)
+                        ],
                     ],
+                    'denyCallback' => function ($rule, $action) {
+                        return $this->redirect(['/site/login']); // Manda para o login se não estiver logado
+                    },
                 ],
             ]
         );
     }
-
     /**
      * Lists all Atividade models.
      *
@@ -40,6 +45,10 @@ class AtividadeController extends Controller
     {
         $searchModel = new AtividadeSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+
+        $dataProvider->query->joinWith('planoViagem');
+
+        $dataProvider->query->andWhere(['plano_viagem.user_id' => \Yii::$app->user->id]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

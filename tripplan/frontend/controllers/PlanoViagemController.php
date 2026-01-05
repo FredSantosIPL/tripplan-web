@@ -59,7 +59,11 @@ class PlanoViagemController extends Controller
     public function actionIndex()
     {
         $searchModel = new PlanoViagemSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $queryParams = $this->request->queryParams;
+
+        $queryParams['PlanoViagemSearch']['user_id'] = \Yii::$app->user->id;
+
+        $dataProvider = $searchModel->search($queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -129,23 +133,15 @@ class PlanoViagemController extends Controller
                         $ligacao->save();
                     }
                 }
-                // --- FIM DA GRAVAÇÃO DOS DESTINOS ---
 
                 return $this->redirect(['view', 'id' => $model->id]);
 
-            } else {
-                // DEBUG: Se falhar ao gravar, mostra o erro no ecrã para tu veres
-                // Podes apagar isto depois de estar a funcionar
-                echo "<pre>";
-                print_r($model->getErrors());
-                echo "</pre>";
-                die();
             }
         } else {
             $model->loadDefaultValues();
         }
 
-        // Prepara a lista para o dropdown
+
         $listaDestinos = \common\models\Destino::find()
             ->select(['nome_cidade', 'id'])
             ->indexBy('id')
@@ -200,7 +196,7 @@ class PlanoViagemController extends Controller
      */
     protected function findModel($id)
     {
-        // Tenta encontrar um plano que tenha AQUELE id E que pertença ao UTILIZADOR logado
+
         $model = \common\models\PlanoViagem::findOne([
             'id' => $id,
             'user_id' => Yii::$app->user->id

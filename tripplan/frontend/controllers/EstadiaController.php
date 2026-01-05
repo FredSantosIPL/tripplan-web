@@ -51,8 +51,12 @@ class EstadiaController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new EstadiaSearch();
+        $searchModel =new \common\models\EstadiaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+
+        $dataProvider->query->joinWith('planoViagem');
+
+        $dataProvider->query->andWhere(['plano_viagem.user_id' => \Yii::$app->user->id]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

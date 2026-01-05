@@ -67,4 +67,9 @@ class Estadia extends \yii\db\ActiveRecord
         return $this->hasOne(Destino::class, ['id' => 'destino_id']);
     }
 
+    public function getPlanoViagem()
+    {
+        return $this->hasOne(PlanoViagem::class, ['id' => 'plano_viagem_id']);
+    }
+
 }

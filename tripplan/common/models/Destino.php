@@ -82,16 +82,6 @@ class Destino extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Despesas]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDespesas()
-    {
-        return $this->hasMany(Despesa::class, ['destino_id' => 'id']);
-    }
-
-    /**
      * Gets query for [[Estadias]].
      *
      * @return \yii\db\ActiveQuery
@@ -109,5 +99,13 @@ class Destino extends \yii\db\ActiveRecord
     public function getReviews()
     {
         return $this->hasMany(Review::class, ['destino_id' => 'id']);
+    }
+
+    /**
+     * Define a relação com o Plano de Viagem
+     */
+    public function getPlanoViagem()
+    {
+        return $this->hasOne(PlanoViagem::class, ['id' => 'plano_viagem_id']);
     }
 }

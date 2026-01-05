@@ -58,6 +58,10 @@ class DestinoController extends Controller
         $searchModel = new DestinoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+        $dataProvider->query->joinWith('planoViagem');
+
+        $dataProvider->query->andWhere(['plano_viagem.user_id' => \Yii::$app->user->id]);
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

@@ -11,13 +11,13 @@ $this->params['breadcrumbs'][] = ['label' => 'Planos de Viagem', 'url' => ['inde
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 
-// 1. CÁLCULO DE DATAS
+
 $inicio = new DateTime($model->data_inicio);
 $fim = new DateTime($model->data_fim);
 $diferenca = $inicio->diff($fim);
 $dias = $diferenca->days + 1;
 
-// 2. LÓGICA DE ATIVIDADES (SEM VARIÁVEIS AUXILIARES)
+
 $todasAtividades = [];
 if (!empty($model->destinos)) {
     foreach ($model->destinos as $destino) {
@@ -29,7 +29,7 @@ if (!empty($model->destinos)) {
     }
 }
 
-// 3. LÓGICA DE ESTADIAS (CORRIGIDA - SEM VARIÁVEL AUXILIAR)
+
 $todasEstadias = [];
 if (!empty($model->destinos)) {
     foreach ($model->destinos as $destino) {
@@ -105,49 +105,9 @@ if (!empty($model->destinos)) {
                         <div class="card-footer bg-white border-top-0 d-flex gap-1 pb-3 flex-wrap">
                             <?= Html::a('Estadia', ['estadia/create', 'destino_id' => $destino->id], ['class' => 'btn btn-info btn-sm text-white fw-bold', 'title' => 'Adicionar Estadia']) ?>
                             <?= Html::a('Ativ.', ['atividade/create', 'destino_id' => $destino->id], ['class' => 'btn btn-warning btn-sm text-dark fw-bold', 'title' => 'Adicionar Atividade']) ?>
-                            <?= Html::a('<i class="fas fa-eye"></i>', ['destino/view', 'id' => $destino->id], ['class' => 'btn btn-primary btn-sm flex-grow-1', 'title' => 'Ver Detalhes']) ?>
+                            <?= Html::a('<i class="fas fa-search"></i>', ['destino/view', 'id' => $destino->id], ['class' => 'btn btn-light btn-sm ', 'title' => 'Ver Detalhes']) ?>
                             <?= Html::a('<i class="fas fa-edit"></i>', ['destino/update', 'id' => $destino->id], ['class' => 'btn btn-light btn-sm', 'title' => 'Editar']) ?>
                             <?= Html::a('<i class="fas fa-trash"></i>', ['destino/delete', 'id' => $destino->id], ['class' => 'btn btn-light text-danger btn-sm', 'data' => ['confirm' => 'Apagar?', 'method' => 'post']]) ?>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
-
-    <div class="d-flex justify-content-between align-items-center mb-4 mt-5">
-        <h3 class="fw-bold border-start border-4 border-info ps-3">Estadias</h3>
-        <small class="text-muted">Gere as estadias dentro de cada Destino</small>
-    </div>
-
-    <div class="row mb-5">
-        <?php if (empty($todasEstadias)): ?>
-            <div class="col-12">
-                <div class="alert alert-light border text-center p-4">
-                    <p class="text-muted mb-0">Ainda não tens estadias marcadas.</p>
-                </div>
-            </div>
-        <?php else: ?>
-            <?php foreach ($todasEstadias as $estadia): ?>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100 shadow-sm border-0 hover-card">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold text-info">
-                                <?= Html::encode($estadia->nome_alojamento) ?>
-                            </h5>
-
-                            <p class="card-text text-dark mb-1">
-                                <i class="fas fa-map-marker-alt me-2 text-danger"></i>
-                                <?= Html::encode($estadia->destino ? $estadia->destino->nome_cidade : 'Sem destino') ?>
-                            </p>
-
-                            <p class="card-text text-muted small">
-                                <i class="fas fa-calendar-check text-success"></i>
-                                Check-in: <?= date('d/m/Y', strtotime($estadia->data_checkin)) ?>
-                            </p>
-                        </div>
-                        <div class="card-footer bg-white border-top-0 d-flex gap-2 pb-3">
-                            <?= Html::a('<i class="fas fa-edit"></i> Editar', ['estadia/update', 'id' => $estadia->id], ['class' => 'btn btn-light btn-sm flex-grow-1']) ?>
                         </div>
                     </div>
                 </div>
