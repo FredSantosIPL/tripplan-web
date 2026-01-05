@@ -100,6 +100,8 @@
       <excludeFolder url="file://$MODULE_DIR$/tripplan/vendor/yiisoft/yii2-faker" />
       <excludeFolder url="file://$MODULE_DIR$/tripplan/vendor/yiisoft/yii2-gii" />
       <excludeFolder url="file://$MODULE_DIR$/tripplan/vendor/yiisoft/yii2-symfonymailer" />
+      <excludeFolder url="file://$MODULE_DIR$/tripplan/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/tripplan/vendor/php-mqtt/client" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

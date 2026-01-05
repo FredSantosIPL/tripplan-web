@@ -107,6 +107,8 @@
       <path value="$PROJECT_DIR$/tripplan/vendor/yiisoft/yii2-debug" />
       <path value="$PROJECT_DIR$/tripplan/vendor/yiisoft/yii2-symfonymailer" />
       <path value="$PROJECT_DIR$/tripplan/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/tripplan/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/tripplan/vendor/php-mqtt/client" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

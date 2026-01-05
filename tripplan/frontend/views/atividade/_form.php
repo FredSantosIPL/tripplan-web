@@ -18,23 +18,23 @@ use common\models\PlanoViagem;
     <div class="card shadow-sm border-0">
         <div class="card-body p-4">
 
-            <?php if ($model->plano_viagem_id): ?>
+            <?php if ($model->destino_id): ?>
                 <?= $form->field($model, 'plano_viagem_id')->hiddenInput()->label(false) ?>
 
                 <div class="alert alert-info border-0 bg-info bg-opacity-10 text-info mb-4">
                     <i class="fas fa-map-marked-alt me-2"></i>
-                    A adicionar atividade ao plano <strong>#<?= $model->plano_viagem_id ?></strong>
+                    A adicionar atividade ao plano <strong>#<?= $model->destino_id ?></strong>
                 </div>
 
                 <?php
                 // Filtra cidades apenas deste plano
-                $destinos = Destino::find()->where(['plano_viagem_id' => $model->plano_viagem_id])->all();
+                $destinos = Destino::find()->where(['destino_id' => $model->destino_id])->all();
                 $listaDestinos = ArrayHelper::map($destinos, 'id', 'nome_cidade');
                 ?>
             <?php else: ?>
                 <div class="mb-3">
                     <label class="form-label fw-bold text-secondary">Plano de Viagem</label>
-                    <?= $form->field($model, 'plano_viagem_id')->dropDownList(
+                    <?= $form->field($model, 'destino_id')->dropDownList(
                         ArrayHelper::map(PlanoViagem::find()->all(), 'id', 'nome_viagem'),
                         ['prompt' => 'Selecione o Plano de Viagem', 'class' => 'form-select']
                     )->label(false) ?>
