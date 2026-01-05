@@ -5491,3 +5491,101 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1767569691.0976
     'REQUEST_TIME' => 1767569691
 ]
+2026-01-04 23:37:53 [::1][5][o5lbi15b66g6q8him0ejmjvb77][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Atividade::plano_viagem_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('plano_viagem_id')
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\views\atividade\_form.php(21): yii\db\BaseActiveRecord->__get('plano_viagem_id')
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\t...')
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\wamp64\\www\\t...', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\t...', Array, NULL)
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\views\atividade\create.php(17): yii\base\View->render('_form', Array)
+#6 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\t...')
+#7 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\wamp64\\www\\t...', Array)
+#8 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\t...', Array, Object(frontend\controllers\AtividadeController))
+#9 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('create', Array, Object(frontend\controllers\AtividadeController))
+#10 C:\wamp64\www\tripplan-web\tripplan\frontend\controllers\AtividadeController.php(88): yii\base\Controller->render('create', Array)
+#11 [internal function]: frontend\controllers\AtividadeController->actionCreate(NULL)
+#12 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#15 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('atividade/creat...', Array)
+#16 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+2026-01-04 23:37:53 [::1][5][o5lbi15b66g6q8him0ejmjvb77][info][application] $_GET = [
+    'destino_id' => '48'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    '_identity-backend' => '0056de632f8441a62c024e0c9bb0151a886f02adf425d5dba02a7dc6230a64f2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'sidebar-collapse' => 'false'
+    '_identity-frontend' => '01aebbe17af5cf269d57ad8fa9d7b0a3e66d6e5403c26ad0936cf8e478f1a3dca:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[5,\"XtQljr3I7zzomKmcSywhu1fSRKmNTnWE\",2592000]\";}'
+    'advanced-frontend' => 'o5lbi15b66g6q8him0ejmjvb77'
+    '_csrf-frontend' => '2baa5d6f1f5b5b7ed04f94dc3487fdfca6597a2edb41ad6d94fc2deac8eddf58a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"Z0LZ5kyEoGcN18SfCHCRLULHehAGRwoG\";}'
+    '_csrf-backend' => '319b23a394cc7b30b6e103301d35670f7f5759f821af35b7846e96429d15d963a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"A_wVpiWq6w5HO4U62J4kK4ZM-YpOk18q\";}'
+    'advanced-backend' => 'ahrugmq51e4vtudc82gvib1lkn'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => -1
+    ]
+    '__id' => 5
+    '__authKey' => 'XtQljr3I7zzomKmcSywhu1fSRKmNTnWE'
+    'success' => 'Adicionado aos Favoritos'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/plano-viagem/view?id=16'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; _identity-backend=0056de632f8441a62c024e0c9bb0151a886f02adf425d5dba02a7dc6230a64f2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; sidebar-collapse=false; _identity-frontend=01aebbe17af5cf269d57ad8fa9d7b0a3e66d6e5403c26ad0936cf8e478f1a3dca%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22XtQljr3I7zzomKmcSywhu1fSRKmNTnWE%22%2C2592000%5D%22%3B%7D; advanced-frontend=o5lbi15b66g6q8him0ejmjvb77; _csrf-frontend=2baa5d6f1f5b5b7ed04f94dc3487fdfca6597a2edb41ad6d94fc2deac8eddf58a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22Z0LZ5kyEoGcN18SfCHCRLULHehAGRwoG%22%3B%7D; _csrf-backend=319b23a394cc7b30b6e103301d35670f7f5759f821af35b7846e96429d15d963a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22A_wVpiWq6w5HO4U62J4kK4ZM-YpOk18q%22%3B%7D; advanced-backend=ahrugmq51e4vtudc82gvib1lkn'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '64698'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/atividade/create'
+    'REDIRECT_QUERY_STRING' => 'destino_id=48'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'destino_id=48'
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/atividade/create?destino_id=48'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767569873.6487
+    'REQUEST_TIME' => 1767569873
+]

@@ -87,10 +87,10 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
 
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h4 class="text-dark m-0"><i class="fas fa-bed text-info mr-2"></i> Estadias</h4>
-                <?= Html::a('<i class="fas fa-plus"></i> Adicionar Estadia',
-                    ['estadia/create', 'destino_id' => $model->id],
-                    ['class' => 'btn btn-info text-white btn-sm rounded-pill shadow-sm']
-                ) ?>
+<!--                --><?php //= Html::a('<i class="fas fa-plus"></i> Adicionar Estadia',
+//                    ['estadia/create', 'destino_id' => $model->id],
+//                    ['class' => 'btn btn-info text-white btn-sm rounded-pill shadow-sm']
+//                ) ?>
             </div>
 
             <div class="row mb-5">
@@ -125,10 +125,10 @@ $isFavorito = !Yii::$app->user->isGuest && Favorito::find()
 
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h4 class="text-dark m-0"><i class="fas fa-ticket-alt text-warning mr-2"></i> Atividades</h4>
-                <?= Html::a('<i class="fas fa-plus"></i> Adicionar Atividade',
-                    ['atividade/create', 'destino_id' => $model->id],
-                    ['class' => 'btn btn-warning text-dark btn-sm rounded-pill shadow-sm']
-                ) ?>
+<!--                --><?php //= Html::a('<i class="fas fa-plus"></i> Adicionar Atividade',
+//                    ['atividade/create', 'destino_id' => $model->id],
+//                    ['class' => 'btn btn-warning text-dark btn-sm rounded-pill shadow-sm']
+//                ) ?>
             </div>
 
             <div class="row mb-5">
