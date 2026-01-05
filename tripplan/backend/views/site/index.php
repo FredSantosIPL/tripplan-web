@@ -58,20 +58,20 @@ $totalTransportes = Transporte::find()->count();
                 </div>
             <?php endif; ?>
 
-            <div class="col-lg-4 col-6">
-                <div class="small-box bg-success">
-                    <div class="inner">
-                        <h3><?= $totalAgents ?></h3>
-                        <p>Agentes de Viagem</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa fa-briefcase"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">
-                        Ver Equipa <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div>
+<!--            <div class="col-lg-4 col-6">-->
+<!--                <div class="small-box bg-success">-->
+<!--                    <div class="inner">-->
+<!--                        <h3>--><?php //= $totalAgents ?><!--</h3>-->
+<!--                        <p>Agentes de Viagem</p>-->
+<!--                    </div>-->
+<!--                    <div class="icon">-->
+<!--                        <i class="fa fa-briefcase"></i>-->
+<!--                    </div>-->
+<!--                    <a href="--><?php //= Url::to(['/user/index']) ?><!-- " class="small-box-footer">-->
+<!--                        Ver Equipa <i class="fa fa-arrow-circle-right"></i>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="col-lg-4 col-6">
                 <div class="small-box bg-warning">

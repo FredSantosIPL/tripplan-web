@@ -20,7 +20,7 @@ $this->title = 'Os Meus Destinos';
             <p class="text-muted lead">Gere aqui os locais da tua próxima aventura.</p>
         </div>
 
-        
+
     </div>
 
     <div class="row">

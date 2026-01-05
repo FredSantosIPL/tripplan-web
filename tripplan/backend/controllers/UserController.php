@@ -113,19 +113,7 @@ class UserController extends Controller
         ]);
     }
 
-    /**
-     * Deletes an existing User model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $id
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
-    }
 
     /**
      * Finds the User model based on its primary key value.
@@ -167,6 +155,21 @@ class UserController extends Controller
 
         Yii::$app->session->setFlash('success', 'Utilizador promovido a Agente com sucesso.');
 
+        return $this->redirect(['index']);
+    }
+
+    public function actionDesativar($id)
+    {
+        $model = $this->findModel($id);
+        $model->status = 0;
+
+        if ($model->save(false)) {
+            Yii::$app->session->setFlash('success', 'Utilizador desativado com sucesso.');
+        } else {
+            Yii::$app->session->setFlash('error', 'Erro ao tentar desativar.');
+        }
+
+        // Redireciona de volta para a página da lista de utilizadores
         return $this->redirect(['index']);
     }
 }

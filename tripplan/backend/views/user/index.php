@@ -75,7 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'header' => 'Ações',
                         'headerOptions' => ['style' => 'width:180px; text-align:center;'],
                         'contentOptions' => ['style' => 'text-align:center; vertical-align:middle;'],
-                        'template' => '{view} {update} {delete} {promote}',
+                        'template' => '{view} {update} {desativar} {promote}',
 
                         'urlCreator' => function ($action, User $model, $key, $index, $column) {
                             return Url::toRoute([$action, 'id' => $model->id]);
@@ -99,11 +99,27 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ]);
                             },
                             // Botão Apagar
-                            'delete' => function ($url, $model) {
-                                return Html::a('<i class="fas fa-trash"></i>', $url, [
-                                    'class' => 'btn btn-danger btn-sm mr-1',
-                                    'title' => 'Apagar',
-                                    'data-confirm' => 'Tem a certeza que deseja apagar este utilizador?',
+//                            'delete' => function ($url, $model) {
+//                                return Html::a('<i class="fas fa-trash"></i>', $url, [
+//                                    'class' => 'btn btn-danger btn-sm mr-1',
+//                                    'title' => 'Apagar',
+//                                    'data-confirm' => 'Tem a certeza que deseja apagar este utilizador?',
+//                                    'data-method' => 'post',
+//                                    'data-toggle' => 'tooltip',
+//                                ]);
+//                            },
+                            'desativar' => function ($url, $model) {
+                                // Cria a rota para a ação 'desativar' com o ID do utilizador
+                                $url = \yii\helpers\Url::to(['desativar', 'id' => $model->id]);
+
+                                // Cria o botão amarelo (btn-warning) com o ícone de bloqueio (fa-ban)
+                                return Html::a('<i class="fas fa-ban"></i>', $url, [
+                                    'class' => 'btn btn-warning btn-sm mr-1',
+                                    'title' => 'Desativar',
+                                    'aria-label' => 'Desativar',
+                                    // Adiciona a mensagem de confirmação
+                                    'data-confirm' => 'Tem a certeza que deseja desativar este utilizador?',
+                                    // Garante que o pedido é feito via POST para segurança
                                     'data-method' => 'post',
                                     'data-toggle' => 'tooltip',
                                 ]);
