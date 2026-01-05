@@ -201,7 +201,7 @@ class PlanoViagemController extends Controller
     protected function findModel($id)
     {
         // Tenta encontrar um plano que tenha AQUELE id E que pertença ao UTILIZADOR logado
-        $model = \common\models\Planoviagem::findOne([
+        $model = \common\models\PlanoViagem::findOne([
             'id' => $id,
             'user_id' => Yii::$app->user->id
         ]);
