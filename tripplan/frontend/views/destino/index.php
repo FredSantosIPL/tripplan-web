@@ -20,7 +20,7 @@ $this->title = 'Os Meus Destinos';
             <p class="text-muted lead">Gere aqui os locais da tua próxima aventura.</p>
         </div>
 
-        <?= Html::a('<i class="fas fa-plus me-2"></i>Novo Destino', ['create'], ['class' => 'btn btn-primary btn-lg rounded-pill shadow px-4']) ?>
+        
     </div>
 
     <div class="row">
