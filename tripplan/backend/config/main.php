@@ -26,6 +26,9 @@ return [
         //],
         'request' => [
             'csrfParam' => '_csrf-backend',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -51,7 +54,7 @@ return [
 
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
+            'showScriptName' => true,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'api/trip'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'api/transporte'],
