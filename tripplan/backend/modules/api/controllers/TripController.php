@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\api\controllers;
+namespace backend\modules\api\controllers;
 
 use yii\rest\ActiveController;
 use yii\web\NotFoundHttpException;
@@ -13,6 +13,10 @@ use PhpMqtt\Client\ConnectionSettings;
  */
 class TripController extends ActiveController
 {
+// Dentro da class TripController extends ActiveController { ...
+
+    public $controllerNamespace = 'backend\modules\api\controllers'; // Força o caminho certo
+
     // Define a classe do modelo para que o Yii2 crie o CRUD básico automaticamente
     public $modelClass = 'common\models\PlanoViagem';
 

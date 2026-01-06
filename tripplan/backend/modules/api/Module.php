@@ -1,16 +1,17 @@
 <?php
 
-namespace app\modules\api;
+namespace backend\modules\api;
+use yii\base\Module as BaseModule;
 
 /**
  * api module definition class
  */
-class Module extends \yii\base\Module
+class Module extends BaseModule
 {
     /**
      * {@inheritdoc}
      */
-    public $controllerNamespace = 'app\modules\api\controllers';
+    public $controllerNamespace = 'backend\modules\api\controllers';
 
     /**
      * {@inheritdoc}
