@@ -54,13 +54,19 @@ return [
 
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => true,
+            'showScriptName' => false, // Tenta mudar para false se tiveres o .htaccess configurado
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/trip'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/transporte'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/destino'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/atividade'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/fotos-memorias'],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => [
+                        'api/trip',
+                        'api/transporte',
+                        'api/destino',
+                        'api/atividade',
+                        'api/fotos-memorias'
+                    ],
+                    'pluralize' => false, // <--- ISTO OBRIGA A USAR O SINGULAR (bate certo com o Android)
+                ],
 
                 'POST api/auth/login' => 'api/auth/login',
             ],

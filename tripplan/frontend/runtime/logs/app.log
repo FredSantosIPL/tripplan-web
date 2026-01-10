@@ -11023,3 +11023,1733 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1767709121.3589
     'REQUEST_TIME' => 1767709121
 ]
+2026-01-06 22:36:31 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "login". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('login', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-06 22:36:31 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-frontend' => 'db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[5,\"XtQljr3I7zzomKmcSywhu1fSRKmNTnWE\",2592000]\";}'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-frontend=db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22XtQljr3I7zzomKmcSywhu1fSRKmNTnWE%22%2C2592000%5D%22%3B%7D; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50066'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/login'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767738990.9605
+    'REQUEST_TIME' => 1767738990
+]
+2026-01-06 22:36:33 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/favicon.ico". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('img/favicon.ico', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-06 22:36:33 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-frontend' => 'db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[5,\"XtQljr3I7zzomKmcSywhu1fSRKmNTnWE\",2592000]\";}'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '5176206ec5737ad08ff55eb4e19111f17d89a18b8d42a353f45509d4ee7a1b8aa:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"DWze9tK4ojaktIFY9Mx6hpdoGIpCdKJ7\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-frontend=db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22XtQljr3I7zzomKmcSywhu1fSRKmNTnWE%22%2C2592000%5D%22%3B%7D; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=5176206ec5737ad08ff55eb4e19111f17d89a18b8d42a353f45509d4ee7a1b8aa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22DWze9tK4ojaktIFY9Mx6hpdoGIpCdKJ7%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50068'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/img/favicon.ico'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/img/favicon.ico'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767738993.7455
+    'REQUEST_TIME' => 1767738993
+]
+2026-01-06 22:36:38 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "login". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('login', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-06 22:36:38 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-frontend' => 'db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[5,\"XtQljr3I7zzomKmcSywhu1fSRKmNTnWE\",2592000]\";}'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '5176206ec5737ad08ff55eb4e19111f17d89a18b8d42a353f45509d4ee7a1b8aa:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"DWze9tK4ojaktIFY9Mx6hpdoGIpCdKJ7\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-frontend=db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22XtQljr3I7zzomKmcSywhu1fSRKmNTnWE%22%2C2592000%5D%22%3B%7D; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=5176206ec5737ad08ff55eb4e19111f17d89a18b8d42a353f45509d4ee7a1b8aa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22DWze9tK4ojaktIFY9Mx6hpdoGIpCdKJ7%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50068'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/login'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767738998.6239
+    'REQUEST_TIME' => 1767738998
+]
+2026-01-06 22:36:39 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "login". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('login', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-06 22:36:39 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-frontend' => 'db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[5,\"XtQljr3I7zzomKmcSywhu1fSRKmNTnWE\",2592000]\";}'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '5176206ec5737ad08ff55eb4e19111f17d89a18b8d42a353f45509d4ee7a1b8aa:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"DWze9tK4ojaktIFY9Mx6hpdoGIpCdKJ7\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-frontend=db52f92b737ee3f05ce42852cd8f3a90a91892c139b4c5b955db728a9856d0f3a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22XtQljr3I7zzomKmcSywhu1fSRKmNTnWE%22%2C2592000%5D%22%3B%7D; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=5176206ec5737ad08ff55eb4e19111f17d89a18b8d42a353f45509d4ee7a1b8aa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22DWze9tK4ojaktIFY9Mx6hpdoGIpCdKJ7%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50075'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/login'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767738999.6617
+    'REQUEST_TIME' => 1767738999
+]
+2026-01-06 22:38:34 [::1][-][-][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2026-01-06 22:38:34 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"iloGMLUccaBW2iwVpouE4rNobxSApL7J\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.51.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '651a7381-6d9f-4e9e-a6f4-41bf2cfc08e4'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '55'
+    'HTTP_COOKIE' => '_csrf-frontend=e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22iloGMLUccaBW2iwVpouE4rNobxSApL7J%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50134'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767739114.515
+    'REQUEST_TIME' => 1767739114
+]
+2026-01-06 23:02:23 [::1][-][-][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2026-01-06 23:02:23 [::1][-][-][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'teste32'
+    'password' => 'testeteste'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"iloGMLUccaBW2iwVpouE4rNobxSApL7J\";}'
+]
+
+$_SERVER = [
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.51.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'd5aad448-a825-495b-9be4-1ca7692a822f'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '36'
+    'HTTP_COOKIE' => '_csrf-frontend=e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22iloGMLUccaBW2iwVpouE4rNobxSApL7J%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50895'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767740543.6494
+    'REQUEST_TIME' => 1767740543
+]
+2026-01-06 23:02:42 [::1][-][-][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2026-01-06 23:02:42 [::1][-][-][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'teste32'
+    'password' => 'testeteste'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"iloGMLUccaBW2iwVpouE4rNobxSApL7J\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.51.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '2e2adae3-61ad-4c92-88d1-8c0a02bc83a5'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '36'
+    'HTTP_COOKIE' => '_csrf-frontend=e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22iloGMLUccaBW2iwVpouE4rNobxSApL7J%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50906'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767740562.464
+    'REQUEST_TIME' => 1767740562
+]
+2026-01-06 23:03:20 [::1][-][-][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2026-01-06 23:03:20 [::1][-][-][info][application] $_GET = []
+
+$_POST = [
+    'LoginForm' => [
+        'username' => 'teste32'
+        'password' => 'testeteste'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"iloGMLUccaBW2iwVpouE4rNobxSApL7J\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.51.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '35b55886-5c7d-42ff-a1db-adfb267e4be9'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_COOKIE' => '_csrf-frontend=e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22iloGMLUccaBW2iwVpouE4rNobxSApL7J%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50922'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767740600.4397
+    'REQUEST_TIME' => 1767740600
+]
+2026-01-06 23:06:50 [::1][-][-][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2026-01-06 23:06:50 [::1][-][-][info][application] $_GET = []
+
+$_POST = [
+    'LoginForm' => [
+        'username' => 'teste32'
+        'password' => 'testeteste'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"iloGMLUccaBW2iwVpouE4rNobxSApL7J\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.51.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'cf9c38a6-46d3-48bb-9ea5-db6742924ef6'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '66'
+    'HTTP_COOKIE' => '_csrf-frontend=e5ce1917e4daba25de124e69a7b14c0b72c74c3b864b7eb6e81d35821f8c515ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22iloGMLUccaBW2iwVpouE4rNobxSApL7J%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '50983'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/site/login'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767740810.5135
+    'REQUEST_TIME' => 1767740810
+]
+2026-01-06 23:20:23 [::1][1][bv4l6k52d5388i922jn043dgal][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "mensagem/create". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('mensagem/create', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-06 23:20:23 [::1][1][bv4l6k52d5388i922jn043dgal][info][application] $_GET = []
+
+$_POST = [
+    '{
+__\"destinatario\":_\"teste\",
+__\"assunto\":_\"Teste_Postman\",
+__\"texto\":_\"Olá,_isto_é_um_teste_\"
+}' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=q2ko51fm85on4jop79r6c44m4c'
+    'HTTP_POSTMAN_TOKEN' => 'c1016b89-2997-47fb-aa3f-ecfd4f17947b'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '101'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '51592'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/mensagem/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/mensagem/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767741623.1748
+    'REQUEST_TIME' => 1767741623
+]
+2026-01-06 23:24:12 [::1][1][k51pplshkas3c39male8t7ideb][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "mensagens/create". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('mensagens/creat...', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-06 23:24:12 [::1][1][k51pplshkas3c39male8t7ideb][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'Mensagem' => [
+        'destinatario' => 'teste'
+        'texto' => 'Olá via Postman'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=bv4l6k52d5388i922jn043dgal'
+    'HTTP_POSTMAN_TOKEN' => '6f343d69-900e-412a-9f4f-5a65857d0792'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '185'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '51764'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/mensagens/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/mensagens/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767741852.4295
+    'REQUEST_TIME' => 1767741852
+]
+2026-01-06 23:52:52 [::1][1][rn1slis8qquva296e0f9n29fff][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Atividade::plano_viagem_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('plano_viagem_id')
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('plano_viagem_id')
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(common\models\Atividade), 'plano_viagem_id')
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\helpers\BaseHtml.php(1479): yii\helpers\BaseHtml::activeInput('hidden', Object(common\models\Atividade), 'plano_viagem_id', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\widgets\ActiveField.php(434): yii\helpers\BaseHtml::activeHiddenInput(Object(common\models\Atividade), 'plano_viagem_id', Array)
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\views\atividade\_form.php(22): yii\widgets\ActiveField->hiddenInput()
+#6 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\t...')
+#7 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\wamp64\\www\\t...', Array)
+#8 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\t...', Array, NULL)
+#9 C:\wamp64\www\tripplan-web\tripplan\frontend\views\atividade\create.php(17): yii\base\View->render('_form', Array)
+#10 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\t...')
+#11 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\wamp64\\www\\t...', Array)
+#12 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\t...', Array, Object(frontend\controllers\AtividadeController))
+#13 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('create', Array, Object(frontend\controllers\AtividadeController))
+#14 C:\wamp64\www\tripplan-web\tripplan\frontend\controllers\AtividadeController.php(97): yii\base\Controller->render('create', Array)
+#15 [internal function]: frontend\controllers\AtividadeController->actionCreate(NULL)
+#16 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#17 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#18 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#19 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('atividade/creat...', Array)
+#20 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#22 {main}
+2026-01-06 23:52:52 [::1][1][rn1slis8qquva296e0f9n29fff][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Atividade' => [
+        'nome_atividade' => 'Visita à Torre Eiffel'
+        'tipo' => 'Cultura'
+        'preco' => '25.50'
+        'destino_id' => '17'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=ilv29otgol4a7p8i0djtvupou4'
+    'HTTP_POSTMAN_TOKEN' => '0c78e9d6-d6cb-4974-a391-6d86ff908200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '268'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '52984'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/atividade/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/atividade/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743571.9915
+    'REQUEST_TIME' => 1767743571
+]
+2026-01-06 23:56:35 [::1][1][5h5fo4f88h87u1kin90ejbed84][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: destino_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:173
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(54): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#6 {main}
+2026-01-06 23:56:35 [::1][1][5h5fo4f88h87u1kin90ejbed84][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Estadia' => [
+        'nome_alojamento' => 'Hotel Ritz'
+        'tipo' => 'Hotel'
+        'data_checkin' => '2026-08-02'
+        'destino_id' => '52'
+        'plano_viagem_id' => '32'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=7ghfjm39iiem018jgd4v1v99c3'
+    'HTTP_POSTMAN_TOKEN' => 'f2f462e6-386e-424f-8cb6-dae425c46958'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '283'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53176'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743795.1232
+    'REQUEST_TIME' => 1767743795
+]
+2026-01-06 23:56:57 [::1][1][nhp2i6nva0c2t0n823np6k4jdp][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: destino_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:173
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(54): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#6 {main}
+2026-01-06 23:56:57 [::1][1][nhp2i6nva0c2t0n823np6k4jdp][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Estadia' => [
+        'nome_alojamento' => 'Hotel Ritz'
+        'tipo' => 'Hotel'
+        'data_checkin' => '2026-08-02'
+        'destino_id' => '52'
+        'plano_viagem_id' => '35'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=5h5fo4f88h87u1kin90ejbed84'
+    'HTTP_POSTMAN_TOKEN' => '78170759-72d3-46f7-baea-289ad8febbe3'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '283'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53202'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743817.1701
+    'REQUEST_TIME' => 1767743817
+]
+2026-01-06 23:57:03 [::1][1][hl44r793r7gh20mgfk4tpvn7au][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: destino_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:173
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(54): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#6 {main}
+2026-01-06 23:57:03 [::1][1][hl44r793r7gh20mgfk4tpvn7au][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Estadia' => [
+        'nome_alojamento' => 'Hotel Ritz'
+        'tipo' => 'Hotel'
+        'data_checkin' => '2026-08-02'
+        'destino_id' => '52'
+        'plano_viagem_id' => '36'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=nhp2i6nva0c2t0n823np6k4jdp'
+    'HTTP_POSTMAN_TOKEN' => '0c0340ef-d79c-4d0a-b1fc-18b49d4cafae'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '283'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53210'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743823.0708
+    'REQUEST_TIME' => 1767743823
+]
+2026-01-06 23:57:56 [::1][1][7ldqnkco6fk4kbooin7lkmdtbo][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: destino_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:173
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(54): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#6 {main}
+2026-01-06 23:57:56 [::1][1][7ldqnkco6fk4kbooin7lkmdtbo][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Estadia' => [
+        'nome_alojamento' => 'Hotel Ritz'
+        'tipo' => 'Hotel'
+        'data_checkin' => '2026-08-02'
+        'destino_id' => '17'
+        'plano_viagem_id' => '36'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=hl44r793r7gh20mgfk4tpvn7au'
+    'HTTP_POSTMAN_TOKEN' => 'bfad8e71-7572-4e8a-a0fc-d28d8ae9ec5c'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '283'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53259'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743876.2278
+    'REQUEST_TIME' => 1767743876
+]
+2026-01-06 23:58:28 [::1][1][tkmrqot8mh08qu19g144to1svo][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: destino_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:173
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(54): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#6 {main}
+2026-01-06 23:58:28 [::1][1][tkmrqot8mh08qu19g144to1svo][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Estadia' => [
+        'nome_alojamento' => 'Hotel Ritz'
+        'tipo' => 'Hotel'
+        'data_checkin' => '2026-08-02'
+        'destino_id' => '52'
+        'plano_viagem_id' => '36'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=7ldqnkco6fk4kbooin7lkmdtbo'
+    'HTTP_POSTMAN_TOKEN' => 'fba8093b-88d6-4130-b85e-99adc40bc0e0'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '283'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53284'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743908.0562
+    'REQUEST_TIME' => 1767743908
+]
+2026-01-06 23:59:00 [::1][1][b9rcgdb1l70irk6mg8gt4j264h][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: destino_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:173
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(54): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#6 {main}
+2026-01-06 23:59:00 [::1][1][b9rcgdb1l70irk6mg8gt4j264h][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Estadia' => [
+        'nome_alojamento' => 'Hotel Ritz'
+        'tipo' => 'Hotel'
+        'data_checkin' => '2026-08-02'
+        'destino_id' => '52'
+        'plano_viagem_id' => '35'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=tkmrqot8mh08qu19g144to1svo'
+    'HTTP_POSTMAN_TOKEN' => 'b35476b5-b7cf-4f4d-a3a6-481ace21f0de'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '283'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53313'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743940.0984
+    'REQUEST_TIME' => 1767743940
+]
+2026-01-06 23:59:48 [::1][1][j7ofdgvgf2c80go9p5sb0959fs][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: destino_id in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Controller.php:173
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\InlineAction.php(54): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#2 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#3 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#4 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#6 {main}
+2026-01-06 23:59:47 [::1][1][j7ofdgvgf2c80go9p5sb0959fs][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'Z_TvccxNkq-aufDA1HuL6eO5Ho5sNzbfKKMtw1_BnZIJs8I3v3qk5qrYqrOdOcLdvIgv31lSXrdM1x2JZ_eo8Q=='
+    'login-button' => ''
+    'Estadia' => [
+        'nome_alojamento' => 'Hotel Ritz'
+        'tipo' => 'Hotel'
+        'data_checkin' => '2026-08-02'
+        'destino_id' => '52'
+        'plano_viagem_id' => '35'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    'advanced-backend' => 's0g8g0bcr5sf1oaitfij4e6e7u'
+    '_csrf-backend' => 'd58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"GPwiz690TqiUavHXOziQXwUFYLCPpKDu\";}'
+    '_csrf-frontend' => '52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c\";}'
+    'advanced-frontend' => 'dkquoj3mklg15a6nonmgm2minp'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; advanced-backend=s0g8g0bcr5sf1oaitfij4e6e7u; _csrf-backend=d58931983b627e4045f065b6d168466e25546ae66f9d332079334546e31dea1fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22GPwiz690TqiUavHXOziQXwUFYLCPpKDu%22%3B%7D; _csrf-frontend=52f7e2e2bf579c44dedc692f88152d48335d359de991662a9f055514dd7ef5c8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22nG-Fs76I0aZsIBI4_11Q5ehhdt0J865c%22%3B%7D; advanced-frontend=dkquoj3mklg15a6nonmgm2minp; _csrf-frontend=3e639174649b2020c605efdc8a36322fa8139338ed70b470cc35ab245e542ddfa%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22rDWhScS_L8AGXUgZ-ewBfK9IryFpR2GN%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-frontend=b9rcgdb1l70irk6mg8gt4j264h'
+    'HTTP_POSTMAN_TOKEN' => 'eb84d6ad-e816-4a9d-836b-1acc03ccac22'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'CONTENT_LENGTH' => '283'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53345'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/estadia/create'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767743987.9357
+    'REQUEST_TIME' => 1767743987
+]
+2026-01-07 19:25:06 [::1][1][0ed2tvhnfdqtn1592r7o2dbmkc][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/favicon.ico". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('img/favicon.ico', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-07 19:25:03 [::1][1][0ed2tvhnfdqtn1592r7o2dbmkc][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_identity-frontend' => '5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9\",2592000]\";}'
+    'advanced-backend' => '003hk9mvcntfj3e4oue1v909pg'
+    '_csrf-backend' => '8fecdf5cd586c4ee6055e2b5347cb9b0641f2ea1a33eed33232d809e633b5623a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"1xMedGDhnX_ltYNaLA2Fvr1p5q0d4Y0D\";}'
+    'advanced-frontend' => '0ed2tvhnfdqtn1592r7o2dbmkc'
+    '_csrf-frontend' => '8b587c765a1b5afdfa9ddd13b6e8c797420955631081a4e4a55b25d256853fc3a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"8wwsrL3gTg_ckD2wYqbdOp1EujXObHCz\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => 'dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _identity-frontend=5c37131a4aacafd744b7816013d32548ce21980689e8bb6cf02bbd5d225e8852a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22dCszqxm6hC77nCml_XlCgUaF4jPA4Nj9%22%2C2592000%5D%22%3B%7D; advanced-backend=003hk9mvcntfj3e4oue1v909pg; _csrf-backend=8fecdf5cd586c4ee6055e2b5347cb9b0641f2ea1a33eed33232d809e633b5623a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%221xMedGDhnX_ltYNaLA2Fvr1p5q0d4Y0D%22%3B%7D; advanced-frontend=0ed2tvhnfdqtn1592r7o2dbmkc; _csrf-frontend=8b587c765a1b5afdfa9ddd13b6e8c797420955631081a4e4a55b25d256853fc3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%228wwsrL3gTg_ckD2wYqbdOp1EujXObHCz%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '49903'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/img/favicon.ico'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/img/favicon.ico'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767813903.067
+    'REQUEST_TIME' => 1767813903
+]
+2026-01-10 14:46:04 [::1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/favicon.ico". in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('img/favicon.ico', Array)
+#1 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\tripplan-web\tripplan\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\tripplan-web\tripplan\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-10 14:46:03 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'Phpstorm-103aa988' => 'bf38dfb5-04b5-4849-a933-fbc4e7b3e27f'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => 'efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_identity-frontend' => '4e07501798a96b0fe9e8ef87deb153771a964ea69ebb8dffbde4ff64467e5af3a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[5,\"XtQljr3I7zzomKmcSywhu1fSRKmNTnWE\",2592000]\";}'
+    '_csrf-frontend' => 'dbcf01f2ebe42ce171874e3f17611d32fd0c026373ff72ca781423641821c812a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"hRBOmD8JUJiX_rtYOc4w6aoITT2pmF5G\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/tripplan-web/tripplan/frontend/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'Phpstorm-103aa988=bf38dfb5-04b5-4849-a933-fbc4e7b3e27f; sidebar-collapse=false; _identity-backend=efac37b7ec4b6a017b986eb8763e4cb4c30694fe70d46ced32c11414f87fe87aa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _identity-frontend=4e07501798a96b0fe9e8ef87deb153771a964ea69ebb8dffbde4ff64467e5af3a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22XtQljr3I7zzomKmcSywhu1fSRKmNTnWE%22%2C2592000%5D%22%3B%7D; _csrf-frontend=dbcf01f2ebe42ce171874e3f17611d32fd0c026373ff72ca781423641821c812a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22hRBOmD8JUJiX_rtYOc4w6aoITT2pmF5G%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\msys64\\ucrt64\\bin;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php8.1.31;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.1.31 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/tripplan-web/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '53278'
+    'REDIRECT_URL' => '/tripplan-web/tripplan/frontend/web/img/favicon.ico'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/tripplan-web/tripplan/frontend/web/img/favicon.ico'
+    'SCRIPT_NAME' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'PHP_SELF' => '/tripplan-web/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768056363.7028
+    'REQUEST_TIME' => 1768056363
+]
