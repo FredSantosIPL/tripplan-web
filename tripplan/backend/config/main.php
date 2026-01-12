@@ -54,14 +54,20 @@ return [
 
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => true,
+            'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/trip'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/transporte'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/destino'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/atividade'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/fotos-memorias'],
-
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => [
+                        'api/trip',
+                        'api/transporte',
+                        'api/destino',
+                        'api/atividade',
+                        'api/fotos-memorias',
+                        'api/estadia', // <--- ADICIONA ESTA LINHA AQUI!
+                    ],
+                    'pluralize' => false,
+                ],
                 'POST api/auth/login' => 'api/auth/login',
             ],
         ],

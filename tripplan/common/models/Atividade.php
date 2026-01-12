@@ -17,7 +17,8 @@ use Yii;
  */
 class Atividade extends \yii\db\ActiveRecord
 {
-
+    // Variável auxiliar para formulários (não existe na BD 'atividade')
+    public $plano_viagem_id;
     public $cidade_aux;
 
     /**
@@ -40,7 +41,7 @@ class Atividade extends \yii\db\ActiveRecord
             [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
 
             // ADICIONADO: Regra 'safe' para permitir carregar o plano_viagem_id no form
-            [['plano_viagem_id'], 'safe'],
+            [['plano_viagem_id', 'cidade_aux'], 'safe'],
         ];
     }
 

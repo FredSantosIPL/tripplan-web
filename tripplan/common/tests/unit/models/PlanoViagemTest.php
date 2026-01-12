@@ -3,8 +3,7 @@
 namespace common\tests\unit\models;
 
 use common\models\PlanoViagem;
-use common\models\User; // Importar o modelo User para buscar um ID válido
-// use common\fixtures\UserFixture; // Comentado para usar dados reais da BD importada
+use common\models\User;
 
 class PlanoViagemTest extends \Codeception\Test\Unit
 {

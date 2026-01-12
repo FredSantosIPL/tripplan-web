@@ -1,7 +1,6 @@
 <?php
 
-namespace app\modules\api\controllers;
-
+namespace backend\modules\api\controllers;
 use yii\rest\ActiveController;
 
 class DestinoController extends ActiveController

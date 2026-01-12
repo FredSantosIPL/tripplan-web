@@ -38,6 +38,7 @@ class Estadia extends \yii\db\ActiveRecord
             [['data_checkin'], 'safe'],
             [['nome_alojamento'], 'string', 'max' => 80],
             [['tipo'], 'string'],
+            [['plano_viagem_id'], 'safe'],
 
             [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
         ];
