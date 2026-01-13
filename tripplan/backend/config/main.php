@@ -69,6 +69,7 @@ return [
                     'pluralize' => false,
                 ],
                 'POST api/auth/login' => 'api/auth/login',
+                'POST api/auth/signup' => 'api/auth/signup',
             ],
         ],
     ], // <-- ARRAY DE COMPONENTES FECHA AQUI
