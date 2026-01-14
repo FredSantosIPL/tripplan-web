@@ -128,6 +128,11 @@ class PlanoViagem extends \yii\db\ActiveRecord
         return $this->hasMany(Destino::class, ['plano_viagem_id' => 'id']);
     }
 
+    public function extraFields()
+    {
+        return ['destinos', 'estadias', 'transportes'];
+    }
+
     /**
      * Relação: Uma Viagem tem Muitas Atividades (Indiretas)
      * Como a atividade está ligada ao DESTINO e não à viagem, usamos via('destinos')

@@ -49,4 +49,41 @@ class AuthController extends Controller
         Yii::$app->response->statusCode = 401;
         return ['message' => 'Login incorreto!'];
     }
+
+    // Adiciona isto dentro da classe AuthController
+
+    public function actionSignup()
+    {
+        $request = Yii::$app->request;
+        $username = $request->post('username');
+        $email = $request->post('email');
+        $password = $request->post('password');
+
+        // 1. Validar se os dados chegaram
+        if (empty($username) || empty($email) || empty($password)) {
+            throw new \yii\web\HttpException(422, "Faltam dados (username, email ou password)");
+        }
+
+        // 2. Criar o Utilizador (Usando o modelo comum)
+        $user = new \common\models\User();
+        $user->username = $username;
+        $user->email = $email;
+        $user->status = \common\models\User::STATUS_ACTIVE; // Ativa logo a conta
+
+        // Assegura que a password é encriptada
+        $user->setPassword($password);
+        $user->generateAuthKey();
+
+        // 3. Tentar Guardar
+        if ($user->save()) {
+            return [
+                'message' => 'Registo efetuado com sucesso!',
+                'id' => $user->id,
+                'username' => $user->username
+            ];
+        } else {
+            // Se falhar (ex: email já existe), retorna os erros
+            return $user->getErrors();
+        }
+    }
 }
