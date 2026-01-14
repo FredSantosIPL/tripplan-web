@@ -14,16 +14,9 @@ class AtividadeController extends ActiveController
     {
         $actions = parent::actions();
 
-        // Intercetar a ação de criar (create) para adicionar a lógica "inteligente"
-        $actions['create']['class'] = 'yii\rest\CreateAction';
-        $actions['create']['modelClass'] = $this->modelClass;
-        $actions['create']['checkAccess'] = [$this, 'checkAccess'];
-        $actions['create']['scenario'] = $this->createScenario;
-
-        // Aqui está o truque: Modificar o body params antes de salvar
-        $actions['create']['findModel'] = function($id, $action) {
-            // Se precisasses de lógica de find customizada...
-        };
+        // 1. DESLIGAR A AÇÃO PADRÃO
+        // Como vamos criar uma actionCreate personalizada, temos de desligar a automática
+        unset($actions['create']);
 
         return $actions;
     }
@@ -32,30 +25,40 @@ class AtividadeController extends ActiveController
     {
         $model = new \common\models\Atividade();
 
-        // Carrega os dados que vêm do Android (JSON)
+        // 1. Carregar os dados normais (nome, tipo, etc.)
         $model->load(Yii::$app->request->post(), '');
 
-        // 1. A BATOTA: Tentar descobrir o destino_id se não vier preenchido
-        if (empty($model->destino_id) && !empty($model->plano_viagem_id)) {
-            // Procura o PRIMEIRO destino dessa viagem
-            $destino = Destino::find()
-                ->where(['plano_viagem_id' => $model->plano_viagem_id])
-                ->one();
+        // 2. LER O ID DA VIAGEM QUE VEM DO ANDROID
+        $planoViagemId = Yii::$app->request->post('plano_viagem_id');
 
-            if ($destino) {
-                $model->destino_id = $destino->id;
-            } else {
-                // Se a viagem não tiver destinos, cria um "Destino Geral" automático?
-                // Ou retorna erro. Por agora, vamos assumir que falha.
+        // --- CORREÇÃO AQUI: Forçar a gravação do ID na base de dados ---
+        // Se isto não estiver aqui, o modelo pode ignorar o campo se faltar na regra "safe"
+        if ($planoViagemId) {
+            $model->plano_viagem_id = $planoViagemId;
+        }
+        // ----------------------------------------------------------------
+
+        // 3. A BATOTA (Descobrir o Destino Automaticamente)
+        if (empty($model->destino_id) || $model->destino_id == 0) {
+            if (!empty($planoViagemId)) {
+                // Procura o PRIMEIRO destino desta viagem
+                $destino = Destino::find()
+                    ->where(['plano_viagem_id' => $planoViagemId])
+                    ->one();
+
+                if ($destino) {
+                    $model->destino_id = $destino->id;
+                }
             }
         }
 
+        // 4. Gravar
         if ($model->save()) {
             return $model;
-        } elseif (!$model->hasErrors()) {
-            throw new \yii\web\ServerErrorHttpException('Failed to create the object for unknown reason.');
         }
 
-        return $model;
+        // Se falhar, mostra o erro
+        Yii::$app->response->statusCode = 422;
+        return $model->getErrors();
     }
 }

@@ -11270,3 +11270,144 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1768150522.1634
     'REQUEST_TIME' => 1768150522
 ]
+2026-01-12 19:09:09 [::1][8][533vmvl2fi8qhtsq776mqtph9v][error][yii\db\IntegrityException] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'plano_viagem_id' cannot be null in /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Command.php:1320
+Stack trace:
+#0 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Command.php(1320): PDOStatement->execute()
+#1 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `es...')
+#2 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Schema.php(431): yii\db\Command->execute()
+#3 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/ActiveRecord.php(610): yii\db\Schema->insert('estadia', Array)
+#4 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/ActiveRecord.php(576): yii\db\ActiveRecord->insertInternal(NULL)
+#5 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/BaseActiveRecord.php(688): yii\db\ActiveRecord->insert(true, NULL)
+#6 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/controllers/EstadiaController.php(92): yii\db\BaseActiveRecord->save()
+#7 [internal function]: frontend\controllers\EstadiaController->actionCreate('34')
+#8 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/InlineAction.php(60): call_user_func_array(Array, Array)
+#9 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#10 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php(555): yii\base\Controller->runAction('create', Array)
+#11 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#12 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\IntegrityException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'plano_viagem_id' cannot be null
+The SQL being executed was: INSERT INTO `estadia` (`destino_id`, `plano_viagem_id`, `nome_alojamento`, `tipo`, `data_checkin`) VALUES (34, NULL, 'Casa dos primos', 'Casa Alugada', '2030-03-20') in /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `es...')
+#1 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->internalExecute('INSERT INTO `es...')
+#2 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/Schema.php(431): yii\db\Command->execute()
+#3 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/ActiveRecord.php(610): yii\db\Schema->insert('estadia', Array)
+#4 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/ActiveRecord.php(576): yii\db\ActiveRecord->insertInternal(NULL)
+#5 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/db/BaseActiveRecord.php(688): yii\db\ActiveRecord->insert(true, NULL)
+#6 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/controllers/EstadiaController.php(92): yii\db\BaseActiveRecord->save()
+#7 [internal function]: frontend\controllers\EstadiaController->actionCreate('34')
+#8 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/InlineAction.php(60): call_user_func_array(Array, Array)
+#9 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#10 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php(555): yii\base\Controller->runAction('create', Array)
+#11 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('estadia/create', Array)
+#12 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 23000
+    [1] => 1048
+    [2] => Column 'plano_viagem_id' cannot be null
+)
+
+2026-01-12 19:09:09 [::1][8][533vmvl2fi8qhtsq776mqtph9v][info][application] $_GET = [
+    'destino_id' => '34'
+]
+
+$_POST = [
+    '_csrf-frontend' => '34gdzsfdwZBOz2DfghtRTqZp0SwO5cSJvPcRWaQRDzuX2nOrs5Ot6CC-UufdLAIB-S-AdEWQ9eT0sk4e9l9HSQ=='
+    'Estadia' => [
+        'plano_viagem_id' => ''
+        'destino_id' => '34'
+        'nome_alojamento' => 'Casa dos primos'
+        'tipo' => 'Casa Alugada'
+        'data_checkin' => '2030-03-20'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'djp0p8342dhp7fsikv4g0uqoej'
+    '_csrf' => 'c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV\";}'
+    'dark-mode' => 'true'
+    'sidebar-collapse' => 'false'
+    '_identity-backend' => '28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-backend' => '4381d489c255ea4135534d03d9c994ed0daa2c7f31a280d8b18817962da3cc4ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"ic7Zw3pZRKBaSMWrnZjVN__AwLn_SFXO\";}'
+    'advanced-backend' => '2081vklnk498rl6bqamae83k2a'
+    'advanced-frontend' => '533vmvl2fi8qhtsq776mqtph9v'
+    '_identity-frontend' => 'a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-frontend' => 'dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 8
+    '__authKey' => 'F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt'
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/tripplan/tripplan/tripplan/frontend/web/estadia/create?destino_id=34'
+    'QUERY_STRING' => 'destino_id=34'
+    'REQUEST_METHOD' => 'POST'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_QUERY_STRING' => 'destino_id=34'
+    'REDIRECT_URL' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '62271'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_COOKIE' => 'PHPSESSID=djp0p8342dhp7fsikv4g0uqoej; _csrf=c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV%22%3B%7D; dark-mode=true; sidebar-collapse=false; _identity-backend=28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-backend=4381d489c255ea4135534d03d9c994ed0daa2c7f31a280d8b18817962da3cc4ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ic7Zw3pZRKBaSMWrnZjVN__AwLn_SFXO%22%3B%7D; advanced-backend=2081vklnk498rl6bqamae83k2a; advanced-frontend=533vmvl2fi8qhtsq776mqtph9v; _identity-frontend=a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-frontend=dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:8888/tripplan/tripplan/tripplan/frontend/web/estadia/create?destino_id=34'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.6'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ORIGIN' => 'http://localhost:8888'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"macOS\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Brave\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_LENGTH' => '277'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768244949.003
+    'REQUEST_TIME' => 1768244949
+]

@@ -64,7 +64,8 @@ return [
                         'api/destino',
                         'api/atividade',
                         'api/fotos-memorias',
-                        'api/estadia', // <--- ADICIONA ESTA LINHA AQUI!
+                        'api/estadia',
+                        'api/fotos-memorias',
                     ],
                     'pluralize' => false,
                 ],
