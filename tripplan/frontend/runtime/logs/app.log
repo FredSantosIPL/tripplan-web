@@ -11411,3 +11411,593 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1768244949.003
     'REQUEST_TIME' => 1768244949
 ]
+2026-01-17 02:10:32 [::1][8][533vmvl2fi8qhtsq776mqtph9v][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "memoria_1768321678_862.jpg". in /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('memoria_1768321...', Array)
+#1 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:10:32 [::1][8][533vmvl2fi8qhtsq776mqtph9v][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'djp0p8342dhp7fsikv4g0uqoej'
+    '_csrf' => 'c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV\";}'
+    'dark-mode' => 'true'
+    'sidebar-collapse' => 'false'
+    'advanced-frontend' => '533vmvl2fi8qhtsq776mqtph9v'
+    '_identity-frontend' => 'a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-frontend' => 'dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr\";}'
+    'advanced-backend' => 'dhcl5s018dambe09k5pi9ct9ak'
+    '_identity-backend' => '28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-backend' => 'c5a955f75487186fdef6ad59512cd3b7a38cbd899c15f7b41335d85c766b4c97a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"628-sR05JSMv5qHL51M73bLwhb6x_Nlj\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 8
+    '__authKey' => 'F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt'
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/tripplan/tripplan/tripplan/frontend/web/memoria_1768321678_862.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '60613'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_COOKIE' => 'PHPSESSID=djp0p8342dhp7fsikv4g0uqoej; _csrf=c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV%22%3B%7D; dark-mode=true; sidebar-collapse=false; advanced-frontend=533vmvl2fi8qhtsq776mqtph9v; _identity-frontend=a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-frontend=dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr%22%3B%7D; advanced-backend=dhcl5s018dambe09k5pi9ct9ak; _identity-backend=28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-backend=c5a955f75487186fdef6ad59512cd3b7a38cbd899c15f7b41335d85c766b4c97a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22628-sR05JSMv5qHL51M73bLwhb6x_Nlj%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.6'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"macOS\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Brave\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768615832.4721
+    'REQUEST_TIME' => 1768615832
+]
+2026-01-17 02:13:58 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "memoria_1768321678_862.jpg". in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('memoria_1768321...', Array)
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:13:58 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/TripPlan/tripplan/tripplan/frontend/web/memoria_1768321678_862.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '60728'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_HOST' => '10.0.2.2:8888'
+    'HTTP_USER_AGENT' => 'Dalvik/2.1.0 (Linux; U; Android 16; sdk_gphone64_arm64 Build/BP41.250822.007)'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768616038.2483
+    'REQUEST_TIME' => 1768616038
+]
+2026-01-17 02:14:00 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "memoria_1768613784_5740.jpg". in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('memoria_1768613...', Array)
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:14:00 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/TripPlan/tripplan/tripplan/frontend/web/memoria_1768613784_5740.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '60730'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_HOST' => '10.0.2.2:8888'
+    'HTTP_USER_AGENT' => 'Dalvik/2.1.0 (Linux; U; Android 16; sdk_gphone64_arm64 Build/BP41.250822.007)'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768616040.3129
+    'REQUEST_TIME' => 1768616040
+]
+2026-01-17 02:14:00 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "memoria_1768615239_4724.jpg". in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('memoria_1768615...', Array)
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:14:00 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/TripPlan/tripplan/tripplan/frontend/web/memoria_1768615239_4724.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '60731'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_HOST' => '10.0.2.2:8888'
+    'HTTP_USER_AGENT' => 'Dalvik/2.1.0 (Linux; U; Android 16; sdk_gphone64_arm64 Build/BP41.250822.007)'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768616040.6728
+    'REQUEST_TIME' => 1768616040
+]
+2026-01-17 02:14:19 [::1][8][533vmvl2fi8qhtsq776mqtph9v][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "memoria_1768615239_4724.jpg". in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('memoria_1768615...', Array)
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:14:19 [::1][8][533vmvl2fi8qhtsq776mqtph9v][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'djp0p8342dhp7fsikv4g0uqoej'
+    '_csrf' => 'c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV\";}'
+    'dark-mode' => 'true'
+    'sidebar-collapse' => 'false'
+    'advanced-frontend' => '533vmvl2fi8qhtsq776mqtph9v'
+    '_identity-frontend' => 'a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-frontend' => 'dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr\";}'
+    'advanced-backend' => 'dhcl5s018dambe09k5pi9ct9ak'
+    '_identity-backend' => '28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-backend' => 'c5a955f75487186fdef6ad59512cd3b7a38cbd899c15f7b41335d85c766b4c97a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"628-sR05JSMv5qHL51M73bLwhb6x_Nlj\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 8
+    '__authKey' => 'F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt'
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/TripPlan/tripplan/tripplan/frontend/web/memoria_1768615239_4724.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '60740'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_COOKIE' => 'PHPSESSID=djp0p8342dhp7fsikv4g0uqoej; _csrf=c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV%22%3B%7D; dark-mode=true; sidebar-collapse=false; advanced-frontend=533vmvl2fi8qhtsq776mqtph9v; _identity-frontend=a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-frontend=dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr%22%3B%7D; advanced-backend=dhcl5s018dambe09k5pi9ct9ak; _identity-backend=28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-backend=c5a955f75487186fdef6ad59512cd3b7a38cbd899c15f7b41335d85c766b4c97a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22628-sR05JSMv5qHL51M73bLwhb6x_Nlj%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.6'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"macOS\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Brave\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768616059.7217
+    'REQUEST_TIME' => 1768616059
+]
+2026-01-17 02:14:20 [::1][8][533vmvl2fi8qhtsq776mqtph9v][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/favicon.ico". in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('img/favicon.ico', Array)
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:14:20 [::1][8][533vmvl2fi8qhtsq776mqtph9v][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'djp0p8342dhp7fsikv4g0uqoej'
+    '_csrf' => 'c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV\";}'
+    'dark-mode' => 'true'
+    'sidebar-collapse' => 'false'
+    'advanced-frontend' => '533vmvl2fi8qhtsq776mqtph9v'
+    '_identity-frontend' => 'a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-frontend' => 'dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr\";}'
+    'advanced-backend' => 'dhcl5s018dambe09k5pi9ct9ak'
+    '_identity-backend' => '28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[8,\"F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt\",2592000]\";}'
+    '_csrf-backend' => 'c5a955f75487186fdef6ad59512cd3b7a38cbd899c15f7b41335d85c766b4c97a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"628-sR05JSMv5qHL51M73bLwhb6x_Nlj\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 8
+    '__authKey' => 'F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt'
+]
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/TripPlan/tripplan/tripplan/frontend/web/img/favicon.ico'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '60742'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_COOKIE' => 'PHPSESSID=djp0p8342dhp7fsikv4g0uqoej; _csrf=c4da311218c40a403609debf088abe5aac5b3e261ea4796c0d9764c8670f4662a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Pt0ikAiqqGp5qWS0OX1eelOGzDgOZqoV%22%3B%7D; dark-mode=true; sidebar-collapse=false; advanced-frontend=533vmvl2fi8qhtsq776mqtph9v; _identity-frontend=a56207e74a4a28fee511c5b79c99fce70ce005517ed058334f25ebb9dddd15a7a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-frontend=dea198c18c83a2d968e704677d8030fddc02291e1e83dde8bd1a794d6f0922f8a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22HRnetNlxnq28_7SO_FQXKu1mHE_GRNHr%22%3B%7D; advanced-backend=dhcl5s018dambe09k5pi9ct9ak; _identity-backend=28d036ff78c20df62ef2b7b7a36f0102f78e122949b01781616806ec9a67bb4fa%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B8%2C%22F8iSIrBPc2WeseOIPDgZsgsdkTU2Ufqt%22%2C2592000%5D%22%3B%7D; _csrf-backend=c5a955f75487186fdef6ad59512cd3b7a38cbd899c15f7b41335d85c766b4c97a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22628-sR05JSMv5qHL51M73bLwhb6x_Nlj%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_REFERER' => 'http://localhost:8888/TripPlan/tripplan/tripplan/frontend/web/memoria_1768615239_4724.jpg'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.6'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA' => '\"Brave\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"macOS\"'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost:8888'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768616060.504
+    'REQUEST_TIME' => 1768616060
+]
+2026-01-17 02:17:10 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "memoria_1768321678_862.jpg". in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('memoria_1768321...', Array)
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:17:10 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/TripPlan/tripplan/tripplan/frontend/web/memoria_1768321678_862.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '60852'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_HOST' => '10.0.2.2:8888'
+    'HTTP_USER_AGENT' => 'Dalvik/2.1.0 (Linux; U; Android 16; sdk_gphone64_arm64 Build/BP41.250822.007)'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/TripPlan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768616230.4076
+    'REQUEST_TIME' => 1768616230
+]
+2026-01-17 02:29:40 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "memoria_1768321678_862.jpg". in /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Module.php:564
+Stack trace:
+#0 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('memoria_1768321...', Array)
+#1 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/vendor/yiisoft/yii2/base/Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-17 02:29:40 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'PHP_FCGI_CHILDREN' => '4'
+    'PWD' => '/Applications/MAMP/fcgi-bin'
+    'SHLVL' => '0'
+    'PHP_FCGI_MAX_REQUESTS' => '200'
+    '__CF_USER_TEXT_ENCODING' => '0x1F5:0x0:0x2'
+    'ORIG_SCRIPT_NAME' => '/fcgi-bin/php.fcgi'
+    'ORIG_PATH_TRANSLATED' => '/Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_PATH_INFO' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'ORIG_SCRIPT_FILENAME' => '/Applications/MAMP/fcgi-bin/php.fcgi'
+    'SCRIPT_NAME' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_URI' => '/tripplan/tripplan/tripplan/frontend/web/memoria_1768321678_862.jpg'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REDIRECT_URL' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REMOTE_PORT' => '61342'
+    'SCRIPT_FILENAME' => '/Applications/MAMP/htdocs/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'SERVER_ADMIN' => 'you@example.com'
+    'CONTEXT_DOCUMENT_ROOT' => '/Applications/MAMP/fcgi-bin/'
+    'CONTEXT_PREFIX' => '/fcgi-bin/'
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/Applications/MAMP/htdocs'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '10.0.2.2'
+    'SERVER_SOFTWARE' => 'Apache/2.4.58 (Unix) OpenSSL/1.1.1u mod_fastcgi/mod_fastcgi-SNAP-0910052141'
+    'SERVER_SIGNATURE' => ''
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_HOST' => '10.0.2.2:8888'
+    'HTTP_USER_AGENT' => 'Dalvik/2.1.0 (Linux; U; Android 16; sdk_gphone64_arm64 Build/BP41.250822.007)'
+    'REDIRECT_STATUS' => '200'
+    'REDIRECT_HANDLER' => 'php-fastcgi'
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/tripplan/tripplan/tripplan/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1768616980.8055
+    'REQUEST_TIME' => 1768616980
+]

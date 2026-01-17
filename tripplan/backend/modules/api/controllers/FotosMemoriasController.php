@@ -3,7 +3,6 @@
 namespace backend\modules\api\controllers;
 
 use yii\rest\ActiveController;
-use yii\web\UploadedFile;
 use common\models\FotosMemorias;
 use Yii;
 
@@ -14,7 +13,7 @@ class FotosMemoriasController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
-        // Desativar a ação create padrão para usarmos a nossa com upload
+        // Desativar o create padrão para usarmos o nosso customizado
         unset($actions['create']);
         return $actions;
     }
@@ -23,51 +22,61 @@ class FotosMemoriasController extends ActiveController
     {
         $model = new FotosMemorias();
 
-        // 1. Receber os dados de texto (ID da viagem e Comentário)
-        // Nota: Como é multipart/form-data, usamos Yii::$app->request->post() direto
-        $model->plano_viagem_id = Yii::$app->request->post('plano_viagem_id'); // O Android tem de enviar com este nome
-        $model->comentario = Yii::$app->request->post('comentario');
+        // 1. Receber os dados
+        $params = Yii::$app->request->post();
 
-        $model->user_id = Yii::$app->request->post('user_id');
+        $model->plano_viagem_id = isset($params['plano_viagem_id']) ? $params['plano_viagem_id'] : null;
+        $model->comentario = isset($params['comentario']) ? $params['comentario'] : '';
 
-        // Se o Android enviar apenas "id" em vez de "plano_viagem_id", fazemos a conversão:
-        if (empty($model->plano_viagem_id)) {
-            $model->plano_viagem_id = Yii::$app->request->post('id');
+        // --- CORREÇÃO DO UTILIZADOR (SAFETY NET) ---
+        // 1. Tenta pelo Login
+        if (!Yii::$app->user->isGuest) {
+            $model->user_id = Yii::$app->user->id;
+        }
+        // 2. Tenta pelo POST do Android
+        elseif (isset($params['user_id'])) {
+            $model->user_id = $params['user_id'];
         }
 
-        // 2. Receber o Ficheiro
-        $fotoUpload = UploadedFile::getInstanceByName('foto'); // "foto" é o nome que definiste no MultipartBody do Android
+        // 3. (A MAGIA) Se ainda for NULL, vai buscar o dono da Viagem!
+        if (empty($model->user_id) && !empty($model->plano_viagem_id)) {
+            $viagem = \common\models\PlanoViagem::findOne($model->plano_viagem_id);
+            if ($viagem) {
+                $model->user_id = $viagem->user_id; // Atribui a foto ao dono da viagem
+            }
+        }
+        // -------------------------------------------
 
-        if ($fotoUpload) {
-            // Gerar um nome único para a imagem (ex: memoria_123456.jpg)
-            $nomeFicheiro = 'memoria_' . time() . '_' . rand(100, 999) . '.' . $fotoUpload->extension;
+        // 2. Receber a Imagem Base64
+        $base64Data = isset($params['imagem_base64']) ? $params['imagem_base64'] : null;
 
-            // Definir onde guardar (na pasta pública do frontend)
-            $caminhoPasta = Yii::getAlias('@frontend/web/uploads/');
-
-            // Criar a pasta se não existir
-            if (!file_exists($caminhoPasta)) {
-                mkdir($caminhoPasta, 0777, true);
+        if ($base64Data) {
+            $pastaUploads = Yii::getAlias('@frontend/web/uploads/');
+            if (!file_exists($pastaUploads)) {
+                mkdir($pastaUploads, 0777, true);
             }
 
-            $caminhoCompleto = $caminhoPasta . $nomeFicheiro;
+            $nomeFicheiro = 'memoria_' . time() . '_' . rand(1000, 9999) . '.jpg';
+            $caminhoCompleto = $pastaUploads . $nomeFicheiro;
 
-            // 3. Guardar o ficheiro no disco
-            if ($fotoUpload->saveAs($caminhoCompleto)) {
-                // Guardar apenas o nome do ficheiro na Base de Dados
-                $model->foto = $nomeFicheiro;
+            $dadosBinarios = base64_decode($base64Data);
 
-                // Gravar na BD
-                if ($model->save()) {
-                    return $model;
-                } else {
-                    return $model->getErrors();
-                }
+            if ($dadosBinarios === false) {
+                throw new \yii\web\BadRequestHttpException('Base64 inválido.');
+            }
+
+            if (file_put_contents($caminhoCompleto, $dadosBinarios)) {
+                $model->foto = $nomeFicheiro; // Define o nome do ficheiro no modelo
             } else {
-                throw new \yii\web\ServerErrorHttpException('Falha ao gravar o ficheiro no servidor.');
+                throw new \yii\web\ServerErrorHttpException('Erro ao gravar ficheiro no disco.');
             }
         }
 
-        throw new \yii\web\BadRequestHttpException('Nenhuma imagem enviada. (Campo "foto" vazio)');
+        // 4. Gravar na BD
+        if ($model->save()) {
+            return $model;
+        } else {
+            return $model->getErrors();
+        }
     }
 }

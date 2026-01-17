@@ -9,7 +9,6 @@ use Yii;
  *
  * @property int $id
  * @property int $destino_id
- * @property int $plano_viagem_id  <-- Agora é uma propriedade da BD
  * @property string $nome_atividade
  * @property string $tipo
  *
@@ -17,10 +16,11 @@ use Yii;
  */
 class Atividade extends \yii\db\ActiveRecord
 {
-    // --- REMOVIDO: public $plano_viagem_id; ---
-    // Se deixasses aquela linha, o Yii ignorava a coluna da base de dados.
+    // --- VARIÁVEL VIRTUAL ---
+    // Como não existe na BD, criamos aqui para o Controller poder receber o valor do Android
+    // antes de descobrir qual é o destino_id.
+    public $plano_viagem_id;
 
-    // Mantemos apenas variáveis que NÃO existem na BD
     public $cidade_aux;
 
     /**
@@ -39,15 +39,16 @@ class Atividade extends \yii\db\ActiveRecord
         return [
             [['destino_id', 'nome_atividade', 'tipo'], 'required', 'message' => 'Este campo é obrigatório.'],
 
-            // CORREÇÃO: Definimos plano_viagem_id como inteiro para gravar na BD
-            [['destino_id', 'plano_viagem_id'], 'integer'],
+            [['destino_id'], 'integer'],
+
+            // O plano_viagem_id é 'safe' (pode vir do formulário/API) mas não é gravado na BD diretamente
+            [['plano_viagem_id'], 'integer'],
 
             [['nome_atividade', 'tipo'], 'string', 'max' => 255],
 
-            // Regras de chaves estrangeiras
+            // Chave Estrangeira: Garante que o destino existe mesmo
             [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
 
-            // Regra para a variável auxiliar (que não vai para a BD)
             [['cidade_aux'], 'safe'],
         ];
     }
@@ -61,22 +62,16 @@ class Atividade extends \yii\db\ActiveRecord
             'id' => 'ID',
             'destino_id' => 'Destino',
             'nome_atividade' => 'Nome da Atividade',
-            'tipo' => 'Tipo de Atividade',
-            'plano_viagem_id' => 'Plano de Viagem',
+            'tipo' => 'Tipo',
         ];
     }
 
     /**
-     * Relações
+     * RELAÇÃO IMPORTANTE
+     * Uma atividade pertence a um Destino
      */
     public function getDestino()
     {
         return $this->hasOne(Destino::class, ['id' => 'destino_id']);
-    }
-
-    // Se quiseres aceder à viagem diretamente
-    public function getPlanoViagem()
-    {
-        return $this->hasOne(PlanoViagem::class, ['id' => 'plano_viagem_id']);
     }
 }
