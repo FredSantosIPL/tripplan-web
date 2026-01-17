@@ -42,7 +42,7 @@ class Favorito extends \yii\db\ActiveRecord
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
 
             // Valida se o destino existe (CRUCIAL)
-            [['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
+            //[['destino_id'], 'exist', 'skipOnError' => true, 'targetClass' => Destino::class, 'targetAttribute' => ['destino_id' => 'id']],
         ];
     }
 
@@ -81,6 +81,27 @@ class Favorito extends \yii\db\ActiveRecord
      */
     public function getDestino()
     {
+        return $this->hasOne(Destino::class, ['id' => 'destino_id']);
+    }
+
+
+    // No teu Favorito.php
+    public function fields()
+    {
+        // Campos base que vão sempre
+        return ['id', 'user_id', 'destino_id'];
+    }
+
+    public function extraFields()
+    {
+        // Permite que o Android peça ?expand=viagem
+        return ['viagem'];
+    }
+
+    // A relação que o Android vai "expandir"
+    public function getViagem()
+    {
+        // Aqui usamos a relação com o model Destino (onde tens o nome da viagem)
         return $this->hasOne(Destino::class, ['id' => 'destino_id']);
     }
 }

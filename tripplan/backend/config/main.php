@@ -66,6 +66,7 @@ return [
                         'api/fotos-memorias',
                         'api/estadia',
                         'api/fotos-memorias',
+                        'api/favorito',
                     ],
                     'pluralize' => false,
                 ],

@@ -43,7 +43,8 @@ class TripController extends ActiveController
                 'transportes',     // Relação getTransportes()
                 'destinos',        // Relação getDestinos()
                 'atividades',      // Relação getAtividades()
-                'fotosMemorias'    // Relação getFotosMemorias()
+                'fotosMemorias',    // Relação getFotosMemorias()
+                'estadias',
             ])
             ->asArray()
             ->one();
@@ -61,7 +62,8 @@ class TripController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
-        unset($actions['update'], $actions['create']);
+        // Removemos o delete padrão para o fazermos à mão
+        unset($actions['update'], $actions['create'], $actions['delete']);
         return $actions;
     }
 
@@ -69,22 +71,15 @@ class TripController extends ActiveController
     public function actionCreate()
     {
         $model = new PlanoViagem();
-
-        // Carrega os dados do POST
-        $model->load(\Yii::$app->request->post(), '');
+        // USAR getBodyParams() em vez de post()
+        $model->load(\Yii::$app->request->getBodyParams(), '');
 
         if ($model->save()) {
-            // REQUISITO 2: Messaging
-            // Usa 'nome_viagem' conforme o teu modelo
             $msg = "Novo plano criado: " . $model->nome_viagem;
             $this->publishMqtt($model->id, $msg);
-
             return $model;
-        } elseif (!$model->hasErrors()) {
-            throw new \yii\web\ServerErrorHttpException('Falha ao criar o objeto por razões desconhecidas.');
         }
-
-        return $model;
+        return $model; // O Yii2 envia automaticamente o 422 com os erros de validação
     }
 
     // Ação Update personalizada com MQTT
@@ -95,19 +90,61 @@ class TripController extends ActiveController
             throw new NotFoundHttpException("Plano de viagem não encontrado.");
         }
 
-        $model->load(\Yii::$app->request->post(), '');
+        // USAR getBodyParams() para pedidos PUT/JSON
+        $model->load(\Yii::$app->request->getBodyParams(), '');
 
         if ($model->save()) {
-            // REQUISITO 2: Messaging
             $msg = "Plano atualizado: " . $model->nome_viagem;
             $this->publishMqtt($model->id, $msg);
-
             return $model;
-        } elseif (!$model->hasErrors()) {
-            throw new \yii\web\ServerErrorHttpException('Falha ao atualizar o objeto.');
+        }
+        return $model;
+    }
+    public function actionDelete($id)
+    {
+        // 1. Procurar a viagem
+        $model = \common\models\PlanoViagem::findOne($id);
+
+        if (!$model) {
+            throw new \yii\web\NotFoundHttpException("Plano de viagem não encontrado.");
         }
 
-        return $model;
+        // 2. Lógica de Apagar em Cascata (Manualmente)
+
+        // A. Primeiro as ATIVIDADES (que estão dentro dos destinos)
+        // Vamos buscar os IDs de todos os destinos desta viagem
+        $idsDestinos = \common\models\Destino::find()
+            ->select('id')
+            ->where(['plano_viagem_id' => $id])
+            ->column();
+
+        if (!empty($idsDestinos)) {
+            // Apaga todas as atividades que pertencem a esses destinos
+            \common\models\Atividade::deleteAll(['destino_id' => $idsDestinos]);
+        }
+
+        // B. Apagar os DESTINOS da viagem
+        \common\models\Destino::deleteAll(['plano_viagem_id' => $id]);
+
+        // C. Apagar os TRANSPORTES da viagem
+        \common\models\Transporte::deleteAll(['plano_viagem_id' => $id]);
+
+        // D. Outras relações (Estadias e Fotos)
+        // Como vimos no teu Java, também tens estas listas, convém limpar
+        \common\models\Estadia::deleteAll(['plano_viagem_id' => $id]);
+        \common\models\FotosMemorias::deleteAll(['plano_viagem_id' => $id]);
+
+        // 3. Finalmente, apagar a VIAGEM
+        if ($model->delete()) {
+            // Enviar notificação MQTT (Opcional)
+            $this->publishMqtt($id, "Viagem removida: " . $model->nome_viagem);
+
+            // Responder com 204 (Sucesso sem conteúdo)
+            \Yii::$app->response->statusCode = 204;
+            return null;
+        }
+
+        throw new \yii\web\ServerErrorHttpException("Erro ao apagar a viagem da base de dados.");
     }
 
     /**
