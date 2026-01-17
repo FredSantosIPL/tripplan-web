@@ -1,7 +1,7 @@
 <?php
 
 namespace common\models;
-
+use common\models\PlanoViagem;
 use Yii;
 
 /**
@@ -102,6 +102,6 @@ class Favorito extends \yii\db\ActiveRecord
     public function getViagem()
     {
         // Aqui usamos a relação com o model Destino (onde tens o nome da viagem)
-        return $this->hasOne(Destino::class, ['id' => 'destino_id']);
+        return $this->hasOne(PlanoViagem::class, ['id' => 'destino_id']);
     }
 }
